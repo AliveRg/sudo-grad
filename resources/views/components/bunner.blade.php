@@ -1,6 +1,6 @@
 
 <div>
-    <div class="banner">
+    <div class="banner d-flex col-12">
         <div class="sep">
             <img src="images/Sep.svg" alt="">
         </div>
