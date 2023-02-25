@@ -34,7 +34,17 @@ class ProductTableSeeder extends Seeder
                 'price'=> '90',
                 'image_path' => 'Empty',
 
-            ]
+            ],
+
+            [
+                'product_id' => '3',
+                'title' => 'Car Accident',
+                'content' => ' But majority 
+                going to use a passage.',
+                'price'=> '1200',
+                'image_path' => 'Empty',
+            ],
+
         ];
 
         foreach($products as $key => $value) {
