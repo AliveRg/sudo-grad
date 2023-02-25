@@ -1,0 +1,307 @@
+.section_3 {
+    background-color: #fff;
+
+    .wrapper__section_3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner__wrapper {
+    }
+
+    .banner__wrapper-3 {
+    }
+
+    .banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner__content {
+        text-align: center;
+    }
+
+    .content {
+        @include font-Garamond-700-title(#161d27);
+    }
+
+    .sep {
+        display: flex;
+        align-items: center;
+        max-width: 95px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .banner_sub-content {
+        text-align: center;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .sub-content {
+        overflow-y: hidden;
+        @include font-Outfit-sub-title(#919191);
+    }
+
+    .reviews {
+        margin: 20px auto 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .review {
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        background-color: #fbfbfb;
+        width: 250px;
+    }
+
+    .bg-review {
+        background-image: url(images/Photo-review.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .review__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .bg-review__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 153px;
+    }
+
+    .recomend {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: solid 1px #000;
+
+        img {
+            width: 15px;
+        }
+
+        span {
+            @include font-Outfit-text(#1f2732);
+        }
+    }
+
+    .case__review {
+        @include font-Garamond-700-title(#fff);
+    }
+
+    .case__review-text {
+        @include font-Outfit-sub-title(#fff);
+    }
+
+    .lending__recomend {
+    }
+
+    .title {
+        @include font-Outfit-text(#161d27);
+    }
+
+    .sub__title {
+        @include font-Outfit-text(#919191);
+    }
+}
+
+@media (min-width: 1024px) {
+    .section_3 {
+        background-color: #fff;
+
+        .content {
+            @include font-Garamond-700-title(#161d27);
+        }
+
+        .banner_sub-content {
+            margin: 47px 0px 0px 0px;
+        }
+
+        .sub-content {
+            @include font-Outfit-sub-title(#919191);
+        }
+
+        .reviews {
+            margin: 52px auto 151px;
+
+            gap: 26px;
+        }
+
+        .review {
+            padding: 32px 40px;
+
+            width: 369px;
+        }
+
+        .bg-review {
+            background-image: url(images/Photo-review.png);
+        }
+
+        .review__wrapper {
+            gap: 18px;
+        }
+
+        .recomend {
+            gap: 7px;
+            width: 118px;
+            height: 118px;
+            border-radius: 50%;
+
+            img {
+                width: 30px;
+            }
+            span {
+                @include font-Outfit-sub-title(#1f2732);
+            }
+        }
+
+        .case__review {
+            @include font-Garamond-700-title(#fff);
+        }
+
+        .case__review-text {
+            @include font-Outfit-sub-title(#fff);
+        }
+
+        .title {
+            @include font-Outfit-sub-title(#161d27);
+        }
+
+        .sub__title {
+            @include font-Outfit-text(#919191);
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .section_3 {
+        background-color: #fff;
+
+        .wrapper__section_3 {
+            padding-top: 129px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banner__wrapper {
+        }
+
+        .banner__wrapper-3 {
+        }
+
+        .banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banner__content {
+            text-align: center;
+        }
+
+        .content {
+            @include font-Garamond-700-title(#161d27);
+        }
+
+        .sep {
+            max-width: 95px;
+            width: 100%;
+        }
+
+        .banner_sub-content {
+            text-align: center;
+            margin: 47px 0px 0px 0px;
+        }
+
+        .sub-content {
+            @include font-Outfit-sub-title(#919191);
+        }
+
+        .reviews {
+            margin: 52px auto 151px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 26px;
+        }
+
+        .review {
+            padding: 32px 40px;
+            display: flex;
+            align-items: center;
+            background-color: #fbfbfb;
+            width: 369px;
+        }
+
+        .bg-review {
+            background-image: url(images/Photo-review.png);
+        }
+
+        .review__wrapper {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .bg-review__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            width: 153px;
+        }
+
+        .recomend {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            width: 150px;
+            height: 118px;
+            border-radius: 50%;
+            border: solid 1px #000;
+
+            img {
+                width: 30px;
+            }
+            span {
+                @include font-Outfit-sub-title(#1f2732);
+            }
+        }
+
+        .case__review {
+            @include font-Outfit-sub-title(#fff);
+        }
+
+        .case__review-text {
+            @include font-Outfit-text(#fff);
+        }
+
+        .lending__recomend {
+        }
+
+        .title {
+            @include font-Outfit-sub-title(#161d27);
+        }
+
+        .sub__title {
+            @include font-Outfit-text(#919191);
+        }
+    }
+}

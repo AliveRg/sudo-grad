@@ -1,0 +1,105 @@
+// Fonts
+@import url("https://fonts.bunny.net/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+@mixin font-Garamond-700-title($color) {
+    font-family: "Cormorant Garamond";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    color: $color;
+
+    @media (min-width: 1024px) {
+        font-size: 45px;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 55px;
+    }
+}
+
+@mixin font-Outfit-sub-title($color) {
+    font-family: "Outfit";
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    color: $color;
+
+    @media (min-width: 1024px) {
+        font-size: 20px;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 22px;
+    }
+}
+
+@mixin font-Outfit-text($color) {
+    font-family: "Outfit";
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 100%;
+    color: $color;
+
+    @media (min-width: 1024px) {
+        font-size: 13px;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 18px;
+    }
+}
+
+@mixin font-Luxurious-btn($color) {
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 100%;
+    color: $color;
+
+    @media (min-width: 1024px) {
+        font-size: 17px;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 22px;
+    }
+}
+
+@import "./reset.scss";
+@import "./page_1.scss/app_page_1.scss";
+
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
+body {
+    background-color: #1f2732;
+    width: 100%;
+}
+
+hr {
+    height: 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.141);
+}
+
+.container {
+    max-width: 425px;
+    padding: 0px 15px 0px 15px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1431px;
+    }
+}

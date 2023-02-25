@@ -1,0 +1,104 @@
+.section_8 {
+    background-image: url(images/bg-section-8.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .wrapper__section-8 {
+        padding: 60px 0;
+    }
+
+    .form__contact {
+        background-color: #1f2732;
+        padding: 20px 40px;
+    }
+
+    .form_data {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        @include font-Outfit-sub-title(#d7d7d7);
+    }
+
+    .input_section-8 {
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+        color: #fff;
+        background-color: #1f2732;
+        box-shadow: none;
+        padding: 0;
+        border: none;
+        border-bottom: solid 1px #e0dbdb4c;
+    }
+    .input_section-8:focus {
+        border: none;
+    }
+
+    .box_name,
+    .box_email,
+    .box_number,
+    .box_subject {
+        max-width: 510px;
+        width: 100%;
+    }
+
+    .form_massage {
+        margin-top: 27px;
+    }
+
+    .box_massage {
+        @include font-Outfit-sub-title(#d7d7d7);
+    }
+
+    .btn_section-8 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 27px;
+    }
+
+    .btn-inner-8 {
+        padding: 19px 25px;
+        background-color: #fff;
+        @include font-Luxurious-btn(#1f2732);
+    }
+}
+
+@media (min-width: 1024px) {
+    .section_8 {
+        .wrapper__section-8 {
+            padding: 220px 0 199px 0;
+        }
+
+        .form__contact {
+            padding: 95px 157px;
+        }
+
+        .form_data {
+            gap: 65px;
+            @include font-Outfit-sub-title(#d7d7d7);
+        }
+
+        .form_massage {
+            margin-top: 57px;
+        }
+
+        .box_massage {
+            @include font-Outfit-sub-title(#d7d7d7);
+        }
+
+        .btn_section-8 {
+            margin-top: 57px;
+        }
+
+        .btn-inner-8 {
+            padding: 29px 45px;
+            @include font-Outfit-sub-title(#1f2732);
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+}

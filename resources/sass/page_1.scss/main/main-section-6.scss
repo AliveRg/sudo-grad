@@ -1,0 +1,30 @@
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1440px) {
+    .section_6 {
+        background-color: #fff;
+
+        .wrapper__section-6 {
+            padding-top: 177px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 70px;
+        }
+        .wrapper-title__comments {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title__comments {
+            @include font-Garamond-700-title(#000);
+            text-align: center;
+        }
+        .title-inner {
+        }
+        .sep {
+        }
+    }
+}

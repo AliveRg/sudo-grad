@@ -1,0 +1,194 @@
+.section_4 {
+    background-image: url(images/bg-section-4.png);
+    width: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: #00000022;
+
+    .opacity_section-4 {
+        background-color: #00000052;
+        width: 100%;
+        height: 100%;
+    }
+
+    .wrapper__section-4 {
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+    }
+
+    .info_left {
+        display: none;
+    }
+
+    .title__content {
+        @include font-Garamond-700-title(#fff);
+    }
+
+    .sep {
+        max-width: 65px;
+        width: 100%;
+    }
+
+    .banner-section-4__content {
+        margin-bottom: 8px;
+        @include font-Outfit-sub-title(#d1b06b);
+    }
+
+    .banner__sub-content {
+        @include font-Outfit-sub-title(#d7d7d7);
+    }
+
+    .img__wrapper {
+        display: none;
+    }
+
+    .info_right {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 370px;
+    }
+
+    .progress-bar__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .info__consolting-section-4 {
+        span {
+            color: #fff;
+        }
+        p {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            @include font-Outfit-sub-title(#fff);
+            text-align: end;
+        }
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 4px;
+        background: #ffffff;
+        overflow: hidden;
+
+        .bar {
+            background: #d1b06b;
+            height: 4px;
+        }
+        .bar-0 {
+            width: 96%;
+        }
+        .bar-1 {
+            width: 85%;
+        }
+        .bar-2 {
+            width: 97%;
+        }
+        .bar-3 {
+            width: 91%;
+        }
+    }
+
+    .btn-section-4_inner {
+        display: inline-block;
+        background-color: #ccaa60;
+        padding: 15px 23px;
+        @include font-Luxurious-btn(#1f2732);
+    }
+}
+
+@media (min-width: 1024px) {
+    .section_4 {
+        .wrapper__section-4 {
+            padding: 144px 78px;
+        }
+
+        .info_left {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 370px;
+        }
+
+        .title__content {
+            @include font-Outfit-sub-title(#fff);
+        }
+
+        .sep {
+            margin-top: 10px;
+            max-width: 60px;
+        }
+
+        .banner-section-4__content {
+            @include font-Outfit-text(#d1b06b);
+        }
+
+        .banner__sub-content {
+            @include font-Outfit-text(#d7d7d7);
+        }
+
+        .info__consolting-section-4 {
+            p {
+                @include font-Outfit-text(#fff);
+            }
+        }
+
+        .img__wrapper {
+            display: block;
+            width: 264px;
+
+            .img-section-4 {
+                background-image: url(images/photo-section-4.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .btn-section-4_inner {
+            padding: 20px 35px;
+            @include font-Luxurious-btn(#1f2732);
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .section_4 {
+        .title__content {
+            @include font-Garamond-700-title(#fff);
+        }
+
+        .sep {
+            max-width: 95px;
+            width: 100%;
+        }
+
+        .banner-section-4__content {
+            @include font-Outfit-sub-title(#d1b06b);
+        }
+
+        .banner__sub-content {
+            @include font-Outfit-sub-title(#d7d7d7);
+        }
+
+        .info__consolting-section-4 {
+            p {
+                @include font-Outfit-sub-title(#fff);
+            }
+        }
+
+        .btn-section-4_inner {
+            padding: 29px 66px;
+            @include font-Outfit-sub-title(#1f2732);
+        }
+    }
+}

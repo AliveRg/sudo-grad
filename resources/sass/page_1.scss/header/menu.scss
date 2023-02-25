@@ -1,0 +1,196 @@
+.header-info__consult {
+    padding-bottom: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 26px;
+    // border-top: solid 1px rgba($color: #ffffff, $alpha: 0.3);
+    border-bottom: solid 1px rgba($color: #ffffff, $alpha: 0.3);
+}
+
+.header-about__us {
+    display: none;
+}
+
+.logotype-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.logo {
+    max-width: 30px;
+    display: block;
+    overflow: visible;
+}
+.name {
+    @include font-Outfit-sub-title(#fff);
+    text-transform: capitalize;
+}
+.header__btn {
+}
+.consult {
+    padding: 9px 8px;
+    background-color: #88838395;
+    display: block;
+    width: max-content;
+    @include font-Outfit-sub-title(#fff);
+}
+.consult__name {
+}
+// .shop__card {
+// 	font-size: 15px !important;
+// }
+// .name {
+// 	font-size: 37px;
+// }
+//
+
+@media (min-width: 1024px) {
+    .logo {
+        max-width: 40px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .header-info__consult {
+        border-bottom: none;
+        justify-content: space-between;
+        padding: 0 0 38px 0;
+    }
+
+    .logotype-name {
+        display: flex;
+        align-items: center;
+
+        a {
+            .logo {
+                max-width: 120px;
+                width: 100%;
+            }
+        }
+    }
+
+    .name {
+        @include font-Outfit-sub-title(#fff);
+    }
+
+    .consult {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 28px 45px;
+        @include font-Outfit-sub-title(#fff);
+    }
+
+    .header-about__us {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 126px;
+        margin-top: 30px;
+        border-top: solid 1px rgba($color: #ffffff, $alpha: 01);
+        border-bottom: solid 1px rgba($color: #ffffff, $alpha: 01);
+    }
+
+    .link__pages {
+        display: flex;
+        justify-content: space-between;
+        width: 475px;
+    }
+
+    .link__page {
+        display: flex;
+        align-items: center;
+        @include font-Outfit-sub-title(#fff);
+    }
+
+    .material-symbols-outlined {
+        margin-left: 9px;
+    }
+
+    .contact {
+        display: flex;
+        justify-content: end;
+        gap: 46px;
+        max-width: 590px;
+
+        .contact__header {
+            display: flex;
+            align-items: center;
+            @include font-Outfit-text(#fff);
+            font-size: 18px;
+
+            .contact__link {
+                display: flex;
+                flex-direction: column;
+                padding-left: 12px;
+
+                a {
+                    color: #fff;
+                }
+            }
+
+            img {
+                padding: 22px;
+                border: solid 1px #ccaa60;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.menu {
+    position: relative;
+    top: -15px;
+}
+.menu-triger {
+    display: block;
+    width: 25px;
+    height: 17px;
+    background: url(https://snipp.ru/demo/449/menu.png) 0 0 repeat;
+    position: absolute;
+    left: 15px;
+    top: 28px;
+    filter: hue-rotate(45deg);
+}
+.menu-close {
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: url(https://snipp.ru/demo/449/close.png) 0 0 repeat;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 100;
+    filter: hue-rotate(45deg);
+}
+.menu-popup {
+    display: none;
+    background: #2c2e3e;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0;
+    box-sizing: border-box;
+    padding: 30px;
+    z-index: 9999;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.menu-popup ul {
+    margin: 0;
+    padding: 0;
+}
+.menu-popup li {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+.menu-popup li a {
+    font-size: 18px;
+    font-family: "Arial";
+    color: rgb(255, 255, 255);
+    line-height: 1.4;
+    text-decoration: none;
+}
+.body_pointer * {
+    cursor: pointer;
+}
