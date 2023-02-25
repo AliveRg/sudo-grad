@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Product;
+
 use DB;
 
 class ProductTableSeeder extends Seeder
@@ -20,7 +22,7 @@ class ProductTableSeeder extends Seeder
                 'content' => 'There are many variations of passages
                 of Lorem Ipsum available, but majority 
                 going to use a passage.',
-                'price'=> '80$',
+                'price'=> '80',
                 'image_path' => 'Empty',
             ],
             [ 
@@ -29,14 +31,14 @@ class ProductTableSeeder extends Seeder
                 'title' => 'Construction Law',
                 'content' => 'There are many variations of passages
                 of Lorem.',
-                'price'=> '90$',
+                'price'=> '90',
                 'image_path' => 'Empty',
 
             ]
         ];
 
         foreach($products as $key => $value) {
-            Product::create($value);
+            Product::factory() -> create($value);
         }
         // это почему-то не работает. php artisan db:seed 
 
