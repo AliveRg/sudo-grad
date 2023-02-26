@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +20,12 @@ use App\Http\Controllers\PageController;
 
 
 
-Route::get('/', [PageController::class, 'index']);
-Route::get('/about', [PageController::class, 'about']);
+Route::get('/', [ProductController::class, 'index']) -> name('page_home');
+Route::get('/about', [ProductController::class, 'about']) -> name('page_about');
 
 
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/auth', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

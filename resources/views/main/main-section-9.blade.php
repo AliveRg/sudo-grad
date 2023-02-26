@@ -48,13 +48,13 @@
 						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
 					</div>
 					<div class="carousel-inner">
-						<div class="carousel-item active">
+						<div class="carousel-item active" data-interval="10000">
 							@include('main.data-work-section-9')
 						</div>
-						<div class="carousel-item">
+						<div class="carousel-item" data-interval="10000">
 							@include('main.data-work-section-9')
 						</div>
-						<div class="carousel-item">
+						<div class="carousel-item" data-interval="10000">
 							@include('main.data-work-section-9')
 						</div>
 					</div>

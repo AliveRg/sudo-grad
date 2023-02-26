@@ -48,7 +48,7 @@ class ProductTableSeeder extends Seeder
         ];
 
         foreach($products as $key => $value) {
-            Product::factory() -> create($value);
+            Product::create($value);
         }
         // это почему-то не работает. php artisan db:seed 
 

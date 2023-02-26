@@ -24,12 +24,15 @@
         gap: 40px;
     }
     .data__work-central {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 36px;
+        display: none;
+        // display: flex;
+        // flex-wrap: wrap;
+        // gap: 36px;
 
         .wrapper__img-section_9 {
             max-width: 698px;
+            margin: 0 auto;
+            padding-bottom: 30px;
             overflow: hidden;
 
             img {
@@ -69,6 +72,7 @@
     .info_data__work {
         display: flex;
         flex-direction: column;
+        margin: 0 auto;
         gap: 10px;
     }
     .info_work-date {
@@ -102,7 +106,7 @@
             img {
                 width: 100%;
                 max-height: 200px;
-                background-size: cover;
+                object-fit: cover;
                 background-position: center;
             }
         }
@@ -141,6 +145,7 @@
         }
 
         .data__work-central {
+            display: block;
             .info_data__work {
                 max-width: 560px;
             }
