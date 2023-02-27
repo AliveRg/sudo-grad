@@ -8,14 +8,14 @@
 
 <main class="main">
 		@include("main.main-section-1")
-		@include("main.main-section-2")
+		{{-- @include("main.main-section-2")
 		@include("main.main-section-3")
 		@include("main.main-section-4")
 		@include("main.main-section-5")
 		@include("main.main-section-6")
 		@include("main.main-section-7")
 		@include("main.main-section-8")
-		@include("main.main-section-9")
+		@include("main.main-section-9") --}}
 </main>
 
 <footer class="footer">
