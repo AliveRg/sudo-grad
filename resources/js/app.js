@@ -1,30 +1,23 @@
-import "./bootstrap";
+import './bootstrap';
+import '../css/app.css';
 
-import "../sass/app.scss";
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/vue3';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 
-import * as bootstrap from "bootstrap";
+const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
-import jQuery from "jquery";
-window.$ = jQuery;
-
-$(function () {
-    var $menu_popup = $(".menu-popup");
-
-    $(".menu-triger, .menu-close").click(function () {
-        $menu_popup.slideToggle(300, function () {
-            if ($menu_popup.is(":hidden")) {
-                $("body").removeClass("body_pointer");
-            } else {
-                $("body").addClass("body_pointer");
-            }
-        });
-        return false;
-    });
-
-    $(document).on("click", function (e) {
-        if (!$(e.target).closest(".menu").length) {
-            $("body").removeClass("body_pointer");
-            $menu_popup.slideUp(300);
-        }
-    });
+createInertiaApp({
+    title: (title) => `${title} - ${appName}`,
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
+    setup({ el, App, props, plugin }) {
+        return createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .use(ZiggyVue, Ziggy)
+            .mount(el);
+    },
+    progress: {
+        color: '#4B5563',
+    },
 });

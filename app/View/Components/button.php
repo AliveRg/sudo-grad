@@ -11,9 +11,12 @@ class button extends Component
     /**
      * Create a new component instance.
      */
+
+    // public $text;
+
     public function __construct()
     {
-        //
+        // $this -> $text = $text;
     }
 
     /**
