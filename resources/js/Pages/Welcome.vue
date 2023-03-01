@@ -1,5 +1,6 @@
 <script setup>
 import { Head, Link } from "@inertiajs/vue3";
+import LinkWelcome from "@/Components/LinkWelcome.vue";
 
 defineProps({
     canLogin: Boolean,
@@ -13,7 +14,7 @@ defineProps({
     <Head title="Welcome" />
 
     <div
-        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-purple-500 selection:text-white"
+        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-amber-500 selection:text-white"
     >
         <div
             v-if="canLogin"
@@ -22,22 +23,22 @@ defineProps({
             <Link
                 v-if="$page.props.auth.user"
                 :href="route('dashboard')"
-                class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
-                >Dashboard</Link
+                class="px-2 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-amber-500"
+                >Наши Услуги</Link
             >
 
             <template v-else>
                 <Link
                     :href="route('login')"
-                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
-                    >Log in</Link
+                    class="px-2 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-amber-500"
+                    >Вход</Link
                 >
 
                 <Link
                     v-if="canRegister"
                     :href="route('register')"
-                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
-                    >Register</Link
+                    class="ml-4 px-2 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-amber-500"
+                    >Регистрация</Link
                 >
             </template>
         </div>
@@ -59,170 +60,193 @@ defineProps({
 
             <div class="mt-16">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                    <a
-                        href="https://laravel.com/docs"
-                        class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-purple-500"
-                    >
-                        <div>
-                            <div
-                                class="h-16 w-16 bg-purple-50 dark:bg-purple-800/20 flex items-center justify-center rounded-full"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    class="w-7 h-7 stroke-purple-500"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
-                                    />
-                                </svg>
-                            </div>
+                    <!-- Next Path -->
 
-                            <h2
-                                class="mt-6 text-xl font-semibold text-gray-900 dark:text-white"
-                            >
-                                Documentation
-                            </h2>
-
-                            <p
-                                class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
-                            >
-                                Laravel has wonderful documentation covering
-                                every aspect of the framework. Whether you are a
-                                newcomer or have prior experience with Laravel,
-                                we recommend reading our documentation from
-                                beginning to end.
-                            </p>
-                        </div>
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            class="self-center shrink-0 stroke-purple-500 w-6 h-6 mx-6"
+                    <div v-if="canLogin">
+                        <a
+                            v-if="$page.props.auth.user"
+                            :href="route('dashboard')"
+                            class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-amber-500"
                         >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                            />
-                        </svg>
-                    </a>
-
-                    <a
-                        href="https://laracasts.com"
-                        class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-purple-500"
-                    >
-                        <div>
-                            <div
-                                class="h-16 w-16 bg-purple-50 dark:bg-purple-800/20 flex items-center justify-center rounded-full"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    class="w-7 h-7 stroke-purple-500"
+                            <LinkWelcome>
+                                <h2
+                                    class="mt-6 text-xl font-semibold text-gray-900 dark:text-white"
                                 >
-                                    <path
-                                        stroke-linecap="round"
-                                        d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
-                                    />
-                                </svg>
-                            </div>
+                                    Наши Услуги
+                                </h2>
 
-                            <h2
-                                class="mt-6 text-xl font-semibold text-gray-900 dark:text-white"
-                            >
-                                Laracasts
-                            </h2>
-
-                            <p
-                                class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
-                            >
-                                Laracasts offers thousands of video tutorials on
-                                Laravel, PHP, and JavaScript development. Check
-                                them out, see for yourself, and massively level
-                                up your development skills in the process.
-                            </p>
-                        </div>
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            class="self-center shrink-0 stroke-purple-500 w-6 h-6 mx-6"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                            />
-                        </svg>
-                    </a>
-
-                    <a
-                        href="https://laravel-news.com"
-                        class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-purple-500"
-                    >
-                        <div>
-                            <div
-                                class="h-16 w-16 bg-purple-50 dark:bg-purple-800/20 flex items-center justify-center rounded-full"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    class="w-7 h-7 stroke-purple-500"
+                                <p
+                                    class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
                                 >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"
-                                    />
-                                </svg>
-                            </div>
+                                    Laravel has wonderful documentation covering
+                                    every aspect of the framework. Whether you
+                                    are a newcomer or have prior experience with
+                                    Laravel, we recommend reading our
+                                    documentation from beginning to end. Lorem,
+                                    ipsum dolor sit amet consectetur adipisicing
+                                    elit. Rem neque adipisci eius aliquam
+                                    asperiores vel dolorum architecto
+                                    voluptatibus quia optio.
+                                </p>
+                            </LinkWelcome>
+                        </a>
 
-                            <h2
-                                class="mt-6 text-xl font-semibold text-gray-900 dark:text-white"
+                        <div v-else>
+                            <a
+                                :href="route('login')"
+                                class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-amber-500"
                             >
-                                Laravel News
-                            </h2>
+                                <LinkWelcome>
+                                    <h2
+                                        class="mt-6 text-xl font-semibold text-gray-900 dark:text-white"
+                                    >
+                                        Наши Услуги
+                                    </h2>
 
-                            <p
-                                class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
-                            >
-                                Laravel News is a community driven portal and
-                                newsletter aggregating all of the latest and
-                                most important news in the Laravel ecosystem,
-                                including new package releases and tutorials.
-                            </p>
+                                    <p
+                                        class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
+                                    >
+                                        Laravel has wonderful documentation
+                                        covering every aspect of the framework.
+                                        Whether you are a newcomer or have prior
+                                        experience with Laravel, we recommend
+                                        reading our documentation from beginning
+                                        to end. Lorem ipsum dolor, sit amet
+                                        consectetur adipisicing elit. Optio
+                                        autem nulla ipsam nisi iure voluptate
+                                        quasi distinctio sit tenetur unde.
+                                    </p>
+                                </LinkWelcome>
+                            </a>
                         </div>
+                    </div>
 
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            class="self-center shrink-0 stroke-purple-500 w-6 h-6 mx-6"
+                    <!-- Next Path -->
+
+                    <div v-if="canLogin">
+                        <a
+                            v-if="$page.props.auth.user"
+                            :href="route('dashboard')"
+                            class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-amber-500"
                         >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                            />
-                        </svg>
-                    </a>
+                            <LinkWelcome>
+                                <h2
+                                    class="mt-6 text-xl font-semibold text-gray-900 dark:text-white"
+                                >
+                                    О Нас
+                                </h2>
+
+                                <p
+                                    class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
+                                >
+                                    Laravel has wonderful documentation covering
+                                    every aspect of the framework. Whether you
+                                    are a newcomer or have prior experience with
+                                    Laravel, we recommend reading our
+                                    documentation from beginning to end. Lorem,
+                                    ipsum dolor sit amet consectetur adipisicing
+                                    elit. Rem neque adipisci eius aliquam
+                                    asperiores vel dolorum architecto
+                                    voluptatibus quia optio.
+                                </p>
+                            </LinkWelcome>
+                        </a>
+
+                        <div v-else>
+                            <a
+                                :href="route('login')"
+                                class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-amber-500"
+                            >
+                                <LinkWelcome>
+                                    <h2
+                                        class="mt-6 text-xl font-semibold text-gray-900 dark:text-white"
+                                    >
+                                        О Нас
+                                    </h2>
+
+                                    <p
+                                        class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
+                                    >
+                                        Laravel has wonderful documentation
+                                        covering every aspect of the framework.
+                                        Whether you are a newcomer or have prior
+                                        experience with Laravel, we recommend
+                                        reading our documentation from beginning
+                                        to end. Lorem ipsum dolor, sit amet
+                                        consectetur adipisicing elit. Optio
+                                        autem nulla ipsam nisi iure voluptate
+                                        quasi distinctio sit tenetur unde.
+                                    </p>
+                                </LinkWelcome>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Next Path -->
+
+                    <div v-if="canLogin">
+                        <a
+                            v-if="$page.props.auth.user"
+                            :href="route('dashboard')"
+                            class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-amber-500"
+                        >
+                            <LinkWelcome>
+                                <h2
+                                    class="mt-6 text-xl font-semibold text-gray-900 dark:text-white"
+                                >
+                                    Наши Работы
+                                </h2>
+
+                                <p
+                                    class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
+                                >
+                                    Laravel has wonderful documentation covering
+                                    every aspect of the framework. Whether you
+                                    are a newcomer or have prior experience with
+                                    Laravel, we recommend reading our
+                                    documentation from beginning to end. Lorem,
+                                    ipsum dolor sit amet consectetur adipisicing
+                                    elit. Rem neque adipisci eius aliquam
+                                    asperiores vel dolorum architecto
+                                    voluptatibus quia optio.
+                                </p>
+                            </LinkWelcome>
+                        </a>
+
+                        <div v-else>
+                            <a
+                                :href="route('login')"
+                                class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-amber-500"
+                            >
+                                <LinkWelcome>
+                                    <h2
+                                        class="mt-6 text-xl font-semibold text-gray-900 dark:text-white"
+                                    >
+                                        Наши Работы
+                                    </h2>
+
+                                    <p
+                                        class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"
+                                    >
+                                        Laravel has wonderful documentation
+                                        covering every aspect of the framework.
+                                        Whether you are a newcomer or have prior
+                                        experience with Laravel, we recommend
+                                        reading our documentation from beginning
+                                        to end. Lorem ipsum dolor, sit amet
+                                        consectetur adipisicing elit. Optio
+                                        autem nulla ipsam nisi iure voluptate
+                                        quasi distinctio sit tenetur unde.
+                                    </p>
+                                </LinkWelcome>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Next Path -->
 
                     <div
-                        class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-purple-500"
+                        class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-amber-500"
                     >
                         <div>
                             <div
@@ -255,22 +279,22 @@ defineProps({
                                 Laravel's robust library of first-party tools
                                 and libraries, such as
                                 <a
-                                    href="https://forge.laravel.com"
+                                    href="#"
                                     class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
                                     >Forge</a
                                 >,
                                 <a
-                                    href="https://vapor.laravel.com"
+                                    href="#"
                                     class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
                                     >Vapor</a
                                 >,
                                 <a
-                                    href="https://nova.laravel.com"
+                                    href="#"
                                     class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
                                     >Nova</a
                                 >, and
                                 <a
-                                    href="https://envoyer.io"
+                                    href="#"
                                     class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
                                     >Envoyer</a
                                 >
@@ -278,32 +302,32 @@ defineProps({
                                 Pair them with powerful open source libraries
                                 like
                                 <a
-                                    href="https://laravel.com/docs/billing"
+                                    href="#"
                                     class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
                                     >Cashier</a
                                 >,
                                 <a
-                                    href="https://laravel.com/docs/dusk"
+                                    href="#"
                                     class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
                                     >Dusk</a
                                 >,
                                 <a
-                                    href="https://laravel.com/docs/broadcasting"
+                                    href="#"
                                     class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
                                     >Echo</a
                                 >,
                                 <a
-                                    href="https://laravel.com/docs/horizon"
+                                    href="#"
                                     class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
                                     >Horizon</a
                                 >,
                                 <a
-                                    href="https://laravel.com/docs/sanctum"
+                                    href="#"
                                     class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
                                     >Sanctum</a
                                 >,
                                 <a
-                                    href="https://laravel.com/docs/telescope"
+                                    href="#"
                                     class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500"
                                     >Telescope</a
                                 >, and more.
