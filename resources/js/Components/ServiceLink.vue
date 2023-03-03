@@ -2,11 +2,11 @@
 export default {
     name: "ServiceLink",
     props: {
-        news: Object,
+        product: Object,
     },
     computed: {
         bg() {
-            return `background-image: url("./images/${this.news.img}");`;
+            return `background-image: url("./images/${this.product.image_path}");`;
         },
     },
 };
@@ -22,10 +22,10 @@ export default {
                 class="w-full h-40 mx-auto bg-center bg-no-repeat bg-cover rounded-lg sm:max-w1/2 backdrop-brightness-50 text-xl p-1 style flex justify-center items-center text-white"
                 :style="bg"
             >
-                {{ news.title }}
+                {{ product.title }}
             </div>
             <p class="mt-4">
-                {{ news.desc }}
+                {{ product.content }}
             </p>
         </div>
     </a>

@@ -10,20 +10,12 @@ class ProductController extends Controller
 {
     public function index() 
     {
-        // $products = DB::table('products') 
-        // -> orderBy('id', 'desc')
-        // -> get();
+        $products = DB::table('products') 
+        -> get();
         // dd($products);
-        $products = Product::limit(12)->get();
 
-        return view('content-page-1', [
-            'products' => $products
-        ]);
+
     }
 
-	public function about() {
-		return view('about-page');
 
-	
-	}
 }
