@@ -22,7 +22,7 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link href="/">
+                                <Link :href="route('welcome')">
                                     <ApplicationLogo
                                         class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
                                     />
@@ -37,7 +37,25 @@ const showingNavigationDropdown = ref(false);
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
                                 >
-                                    Dashboard
+                                    Услуги
+                                </NavLink>
+                                <NavLink
+                                    :href="route('about')"
+                                    :active="route().current('about')"
+                                >
+                                    О Нас
+                                </NavLink>
+                                <NavLink
+                                    :href="route('contact')"
+                                    :active="route().current('contact')"
+                                >
+                                    Контакты
+                                </NavLink>
+                                <NavLink
+                                    :href="route('cases')"
+                                    :active="route().current('cases')"
+                                >
+                                    Кейсы
                                 </NavLink>
                             </div>
                         </div>
@@ -144,7 +162,25 @@ const showingNavigationDropdown = ref(false);
                             :href="route('dashboard')"
                             :active="route().current('dashboard')"
                         >
-                            Dashboard
+                            Услуги
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('about')"
+                            :active="route().current('about')"
+                        >
+                            О Нас
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('contact')"
+                            :active="route().current('contact')"
+                        >
+                            Контакты
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('cases')"
+                            :active="route().current('cases')"
+                        >
+                            Кейсы
                         </ResponsiveNavLink>
                     </div>
 

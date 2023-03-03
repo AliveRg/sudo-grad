@@ -1,6 +1,7 @@
 <script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
+import ServiseLink from "@/Components/ServiceLink.vue";
+import { Head } from "@inertiajs/vue3";
 </script>
 
 <template>
@@ -8,15 +9,76 @@ import { Head } from '@inertiajs/vue3';
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Dashboard</h2>
+            <h2
+                class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"
+            >
+                Наши Услуги
+            </h2>
         </template>
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">You're logged in!</div>
+                <div
+                    class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"
+                >
+                    <div
+                        class="p-6 text-gray-900 dark:text-gray-100 grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-6"
+                    >
+                        <ServiseLink
+                            v-for="(news, i) in newsData"
+                            :key="i"
+                            :news="news"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
     </AuthenticatedLayout>
 </template>
+
+<script>
+export default {
+    name: "DashBoard",
+    components: {
+        ServiseLink,
+    },
+    data() {
+        return {
+            newsData: [
+                {
+                    img: "ugolovnoe-delo.png",
+                    title: "Уголовные Дела",
+                    desc: "Никто не застрахован от неприятностей, связанных с уголовными делами. Не важно какой у вас статус свидетель, подозреваемый, потерпевший или кто угодно, закон дает право каждому на защиту от уголовного преследования и профессиональную правовую помощь.",
+                },
+                {
+                    img: "ugolovnoe-delo.png",
+                    title: "Наследственные Споры",
+                    desc: "Преимущество использования услуг адвоката по наследственным спорам состоит в том, что адвокат обладает знанием законов, опытом в практическом применении законов. Адвокат всегда в курсе актуальной судебной практики, что дает возможности анализа перспектив успешного решения вашего вопроса и выбора наиболее эффективной стратегии и тактики ведения дела.   Подробнее.... ",
+                },
+                {
+                    img: "ugolovnoe-delo.png",
+                    title: "Жилищные Споры",
+                    desc: "Жилищные споры - конфликтные ситуации, которые возникают между физическими и юридическими лицами по поводу нарушения их прав на владение, распоряжение и использование жилыми помещениями. Адвокат по жилищным вопросам в Белгороде поможет урегулировать конфликт.",
+                },
+                {
+                    img: "ugolovnoe-delo.png",
+                    title: "Арбитражные Споры",
+                    desc: "Одной из проблем в коммерческой деятельности организаций и предпринимателей является нарушение договорных обязательств одной из сторон, что приводит к столкновению интересов, и как следствие к арбитражному спору. Адвокат поможет в вопросах с арбитражным спором.",
+                },
+                {
+                    img: "ugolovnoe-delo.png",
+                    title: "Семейные Споры",
+                    desc: "Адвокат по семейным спорам  – специалист, который может оказать профессиональную правовую помощь в спорах между супругами. Кроме споров между супругами, не редко граждане обращаются к семейному адвокату за защитой своих прав в отношениях между: родителями и детьми, усыновителями и усыновленными, между матерью и отцом ребенка по его воспитанию, развитию и содержанию.",
+                },
+                {
+                    img: "ugolovnoe-delo.png",
+                    title: "Земельные Споры",
+                    desc: "Адвокатская помощь  по земельным и иным спорам в сфере недвижимости, предварительные анализ доказательств и оценка перспектив судебного земельного спора, разработка плана действий для успешного решения земельного вопроса, консультации по земельным делам.",
+                },
+            ],
+        };
+    },
+};
+</script>
+
+<style></style>
