@@ -2,7 +2,7 @@
 export default {
     name: "ServiceLink",
     props: {
-        news: Array,
+        news: Object,
     },
     computed: {
         bg() {
