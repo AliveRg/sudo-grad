@@ -11,6 +11,32 @@ module.exports = {
 
     theme: {
         extend: {
+            rotate: {
+                5: "5deg",
+                10: "10deg",
+                15: "15deg",
+                20: "20deg",
+                25: "25deg",
+                30: "30deg",
+                35: "35deg",
+                40: "40deg",
+                45: "45deg",
+                50: "50deg",
+                55: "55deg",
+                60: "60deg",
+                65: "65deg",
+                70: "70deg",
+                75: "75deg",
+                80: "80deg",
+                85: "85deg",
+                90: "90deg",
+                95: "75deg",
+                100: "100deg",
+                105: "105deg",
+                110: "110deg",
+                115: "115deg",
+                120: "120deg",
+            },
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
