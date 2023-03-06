@@ -27,7 +27,7 @@ import { Head } from "@inertiajs/vue3";
                             v-for="product in products"
                             :key="product.id"
                             href="#"
-                            class="bg-gray-200 dark:bg-gray-900 flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-amber-500 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none w-full"
+                            class="bg-gray-200 dark:bg-gray-900 flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none w-full"
                         >
                             <div class="p-5 w-full flex flex-col">
                                 <div
@@ -64,7 +64,7 @@ import { Head } from "@inertiajs/vue3";
                         <div class="w-full relative">
                             <div
                                 id="text"
-                                class="text absolute position-center rotate-90 border-2 rounded-full border-amber-400 h-32 w-32"
+                                class="text absolute position-center rotate-90 border-2 rounded-full border-teal-400 h-32 w-32"
                             >
                                 <p>
                                     <span

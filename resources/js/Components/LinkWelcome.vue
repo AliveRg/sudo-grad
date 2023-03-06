@@ -3,14 +3,14 @@
         <div>
             <div>
                 <div
-                    class="h-16 w-16 bg-amber-50 dark:bg-amber-800/20 flex items-center justify-center rounded-full"
+                    class="h-16 w-16 bg-teal-50 dark:bg-teal-800/20 flex items-center justify-center rounded-full"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
-                        class="w-7 h-7 stroke-amber-400"
+                        class="w-7 h-7 stroke-teal-400"
                     >
                         <path
                             stroke-linecap="round"
@@ -37,7 +37,7 @@
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            class="self-center shrink-0 stroke-amber-400 w-6 h-6 mx-6"
+            class="self-center shrink-0 stroke-teal-400 w-6 h-6 mx-6"
         >
             <path
                 stroke-linecap="round"
