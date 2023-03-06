@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 /*
-|--------------------------------------------------------------------------
+|---------------0------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -26,6 +26,8 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/dashboard',[ ProductController::class, 'index'] )->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/products/{id}',[ ProductController::class, 'pug'] )->middleware(['auth', 'verified'])->name('products');
+
 
 Route::get('/about', function () {
     return Inertia::render('About');

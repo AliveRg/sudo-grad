@@ -17,8 +17,12 @@ class ProductController extends Controller
         // dd($products);
         return Inertia::render('Dashboard', compact('products'));
         
+    }
 
-
+    public function pug() {
+        $products = DB::table('products') 
+        -> get();
+        return Inertia::render('Product', compact('products'));
     }
 
 
