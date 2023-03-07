@@ -22,21 +22,21 @@ defineProps({
         >
             <Link
                 v-if="$page.props.auth.user"
-                :href="route('dashboard')"
+                :href="'dashboard'"
                 class="px-2 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
                 >Наши Услуги</Link
             >
 
             <template v-else>
                 <Link
-                    :href="route('login')"
+                    :href="'login'"
                     class="px-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
                     >Вход</Link
                 >
 
                 <Link
                     v-if="canRegister"
-                    :href="route('register')"
+                    :href="'register'"
                     class="ml-4 px-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
                     >Регистрация</Link
                 >
@@ -65,7 +65,7 @@ defineProps({
                     <div v-if="canLogin">
                         <a
                             v-if="$page.props.auth.user"
-                            :href="route('dashboard')"
+                            :href="'dashboard'"
                             class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
                         >
                             <LinkWelcome
@@ -81,7 +81,7 @@ defineProps({
 
                         <div v-else>
                             <a
-                                :href="route('login')"
+                                :href="'login'"
                                 class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
                             >
                                 <LinkWelcome
@@ -102,7 +102,7 @@ defineProps({
                     <div v-if="canLogin">
                         <a
                             v-if="$page.props.auth.user"
-                            :href="route('about')"
+                            :href="'about'"
                             class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
                         >
                             <LinkWelcome
@@ -118,7 +118,7 @@ defineProps({
 
                         <div v-else>
                             <a
-                                :href="route('login')"
+                                :href="'login'"
                                 class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
                             >
                                 <LinkWelcome
@@ -139,7 +139,7 @@ defineProps({
                     <div v-if="canLogin">
                         <a
                             v-if="$page.props.auth.user"
-                            :href="route('contact')"
+                            :href="'contact'"
                             class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
                         >
                             <LinkWelcome
@@ -155,7 +155,7 @@ defineProps({
 
                         <div v-else>
                             <a
-                                :href="route('login')"
+                                :href="'login'"
                                 class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
                             >
                                 <LinkWelcome
@@ -209,12 +209,12 @@ defineProps({
                                     Laravel's robust library of first-party
                                     tools and libraries, such as
                                     <a
-                                        :href="route('login')"
+                                        :href="'login'"
                                         class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
                                         >Forge</a
                                     >,
                                     <a
-                                        :href="route('login')"
+                                        :href="'login'"
                                         class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
                                         >Envoyer</a
                                     >
@@ -222,22 +222,22 @@ defineProps({
                                     level. Pair them with powerful open source
                                     libraries like
                                     <a
-                                        :href="route('login')"
+                                        :href="'login'"
                                         class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
                                         >Cashier</a
                                     >,
                                     <a
-                                        :href="route('login')"
+                                        :href="'login'"
                                         class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
                                         >Dusk</a
                                     >,
                                     <a
-                                        :href="route('login')"
+                                        :href="'login'"
                                         class="underline hover:text-teal-300 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
                                         >Sanctum</a
                                     >,
                                     <a
-                                        :href="route('login')"
+                                        :href="'login'"
                                         class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
                                         >Telescope</a
                                     >, and more.

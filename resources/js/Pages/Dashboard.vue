@@ -1,6 +1,7 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
+import CardProduct from "@/Components/CardProduct.vue";
 </script>
 
 <template>
@@ -23,30 +24,16 @@ import { Head } from "@inertiajs/vue3";
                     <div
                         class="p-6 text-gray-900 dark:text-gray-400 grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-6"
                     >
-                        <a
-                            v-for="product in products"
-                            :key="product.id"
-                            :href="'products/' + product.product_id"
-                            class="bg-gray-200 dark:bg-gray-900 flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none w-full"
-                        >
-                            <div class="p-5 w-full flex flex-col">
-                                <div
-                                    class="w-full h-40 mx-auto bg-center bg-no-repeat bg-cover rounded-lg sm:max-w1/2 backdrop-brightness-50 text-xl p-1 style flex justify-center items-center text-gray-100"
-                                    v-bind:style="{
-                                        backgroundImage:
-                                            'url(./images/' +
-                                            product.image_path +
-                                            ')',
-                                    }"
-                                >
-                                    {{ product.title }}
-                                </div>
-                                <p class="mt-4">
-                                    {{ product.content }}
-                                </p>
-                            </div>
-                        </a>
+                        <div v-for="product in products" :key="product.id">
+                            <CardProduct
+                                :title="product.title"
+                                :content="product.content"
+                                :image_path="product.image_path"
+                                :product_id="product.product_id"
+                            />
+                        </div>
                     </div>
+
                     <div
                         class="h-full w-full p-6 grid grid-cols-1 gap-20 lg:grid-rows-1 lg:grid-cols-3"
                     >
@@ -96,6 +83,9 @@ export default {
         products: Object,
     },
     name: "DashBoard",
+    components: {
+        CardProduct,
+    },
 };
 </script>
 

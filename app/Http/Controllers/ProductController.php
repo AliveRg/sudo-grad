@@ -20,9 +20,9 @@ class ProductController extends Controller
     }
 
     public function pug() {
-        $products = DB::table('products') 
+        $cases = DB::table('cases') 
         -> get();
-        return Inertia::render('Product', compact('products'));
+        return Inertia::render('Cases', compact('cases'));
     }
 
 

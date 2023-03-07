@@ -1,6 +1,8 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
 </script>
 
 <template>
@@ -8,11 +10,20 @@ import { Head } from "@inertiajs/vue3";
 
     <AuthenticatedLayout>
         <template #header>
-            <h2
-                class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"
+            <swiper
+                :slides-per-view="3"
+                :space-between="50"
+                @swiper="onSwiper"
+                @slideChange="onSlideChange"
             >
-                Наши Дела
-            </h2>
+                <swiper-slide>Slide 1</swiper-slide>
+                <swiper-slide>Slide 2</swiper-slide>
+                <swiper-slide>Slide 3</swiper-slide>
+                <swiper-slide>Slide 3</swiper-slide>
+                <swiper-slide>Slide 3</swiper-slide>
+                <swiper-slide>Slide 3</swiper-slide>
+                <swiper-slide>Slide 3</swiper-slide>
+            </swiper>
         </template>
 
         <div class="py-12">
@@ -26,3 +37,29 @@ import { Head } from "@inertiajs/vue3";
         </div>
     </AuthenticatedLayout>
 </template>
+
+<script>
+export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    setup() {
+        const onSwiper = (swiper) => {
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log("slide change");
+        };
+        return {
+            onSwiper,
+            onSlideChange,
+        };
+    },
+
+    props: {
+        cases: Object,
+    },
+    name: "Cases",
+};
+</script>
