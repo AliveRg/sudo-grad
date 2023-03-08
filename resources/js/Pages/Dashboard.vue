@@ -2,6 +2,7 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import CardProduct from "@/Components/CardProduct.vue";
+import CircleLogo from "@/Components/CircleLogo.vue";
 </script>
 
 <template>
@@ -52,22 +53,8 @@ import CardProduct from "@/Components/CardProduct.vue";
                                 помочь
                             </p>
                         </div>
-                        <div class="w-full relative">
-                            <div
-                                id="text"
-                                class="text absolute position-center rotate-90 border-2 rounded-full border-teal-400 h-32 w-32"
-                            >
-                                <p>
-                                    <span
-                                        v-for="(item, index) in text"
-                                        :key="index"
-                                        class="dark:text-gray-200"
-                                    >
-                                        {{ item }}
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
+
+                        <CircleLogo text="Gorodova-Advokate" />
                     </div>
                 </div>
             </div>
@@ -76,8 +63,6 @@ import CardProduct from "@/Components/CardProduct.vue";
 </template>
 
 <script>
-const text = "Gorodova - Advokate".split("");
-
 export default {
     props: {
         products: Object,
@@ -85,15 +70,9 @@ export default {
     name: "DashBoard",
     components: {
         CardProduct,
+        CircleLogo,
     },
 };
 </script>
 
-<style>
-.position-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-</style>
+<style></style>

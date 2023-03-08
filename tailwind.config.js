@@ -9,9 +9,12 @@ module.exports = {
         "./resources/js/**/*.vue",
     ],
 
+    safelist: [{ pattern: /rotate-./ }],
+
     theme: {
         extend: {
             rotate: {
+                0: "0deg",
                 5: "5deg",
                 10: "10deg",
                 15: "15deg",
@@ -30,12 +33,29 @@ module.exports = {
                 80: "80deg",
                 85: "85deg",
                 90: "90deg",
-                95: "75deg",
+                95: "95deg",
                 100: "100deg",
                 105: "105deg",
                 110: "110deg",
                 115: "115deg",
                 120: "120deg",
+                135: "135deg",
+                150: "150deg",
+                165: "165deg",
+                180: "180deg",
+                195: "195deg",
+                210: "210deg",
+                225: "225deg",
+                240: "240deg",
+                255: "255deg",
+                270: "270deg",
+                285: "285deg",
+                300: "300deg",
+                315: "315deg",
+                320: "320deg",
+                335: "335deg",
+                350: "350deg",
+                365: "365deg",
             },
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
