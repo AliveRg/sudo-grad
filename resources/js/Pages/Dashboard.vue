@@ -54,7 +54,7 @@ import CircleLogo from "@/Components/CircleLogo.vue";
                             </p>
                         </div>
 
-                        <CircleLogo text="Gorodova-Advokate" />
+                        <CircleLogo text="SD-Gorodova-Advokate-GD-" />
                     </div>
                 </div>
             </div>
