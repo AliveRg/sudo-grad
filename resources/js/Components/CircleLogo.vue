@@ -1,14 +1,14 @@
 <template>
     <div
         id="circle"
-        class="h-40 w-40 relative flex justify-center items-center radius"
+        class="h-28 w-28 md:h-40 md:w-40 relative flex justify-center items-center radius"
     >
         <p class="absolute w-full h-full text">
             <span
                 v-for="(item, index) in count"
                 :key="index"
                 :class="'rotate-' + index * 15"
-                class="dark:text-gray-200 absolute left-1/2 text-lg trans"
+                class="text-gray-50 absolute left-1/2 text-sm md:text-xl trans"
             >
                 {{ item }}
             </span>
@@ -49,6 +49,12 @@ export default {
 }
 
 .trans {
-    transform-origin: 0 80px;
+    transform-origin: 0 58px;
+}
+
+@media (min-width: 768px) {
+    .trans {
+        transform-origin: 0 80px;
+    }
 }
 </style>

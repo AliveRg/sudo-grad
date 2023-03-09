@@ -3,6 +3,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import CardProduct from "@/Components/CardProduct.vue";
 import CircleLogo from "@/Components/CircleLogo.vue";
+import SecondaryButton from "@/Components/SecondaryButton.vue";
 </script>
 
 <template>
@@ -34,27 +35,30 @@ import CircleLogo from "@/Components/CircleLogo.vue";
                             />
                         </div>
                     </div>
-
                     <div
-                        class="h-full w-full p-6 grid grid-cols-1 gap-20 lg:grid-rows-1 lg:grid-cols-3"
+                        class="flex items-center justify-center h-min mb-12 bg-fixed bg-center bg-cover custom-img"
                     >
-                        <div class="lg:col-span-2">
-                            <h1
-                                class="w-full text-2xl font-bold dark:text-gray-300 p-4"
-                            >
-                                Не нашли нужной категории или не уверены в
-                                выборе?
-                            </h1>
-                            <p
-                                class="w-3/4 text-xl font-medium dark:text-gray-400 px-4"
-                            >
-                                Для этого и нужны адвокаты, мы помогаем людям
-                                разобраться в их проблемах и хотим максимально
-                                помочь
-                            </p>
-                        </div>
+                        <div
+                            class="h-full w-full p-6 grid grid-cols-1 gap-8 lg:gap-20 lg:grid-rows-1 lg:grid-cols-3"
+                        >
+                            <div class="grid lg:col-span-2 gap-4">
+                                <h1
+                                    class="w-full text-2xl font-bold text-gray-50 p-4"
+                                >
+                                    Не нашли нужной категории или не уверены в
+                                    выборе?
+                                </h1>
+                                <CircleLogo text="SD-Gorodova-Advokate-GD-" />
 
-                        <CircleLogo text="SD-Gorodova-Advokate-GD-" />
+                                <SecondaryButton
+                                    class="ml-4"
+                                    type="submit"
+                                    href="/"
+                                >
+                                    Заказать Консультацию
+                                </SecondaryButton>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,8 +75,13 @@ export default {
     components: {
         CardProduct,
         CircleLogo,
+        SecondaryButton,
     },
 };
 </script>
 
-<style></style>
+<style>
+.custom-img {
+    background-image: url(./images/under_main-paralax.png);
+}
+</style>
