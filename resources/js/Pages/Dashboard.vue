@@ -50,11 +50,7 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
                                 </h1>
                                 <CircleLogo text="SD-Gorodova-Advokate-GD-" />
 
-                                <SecondaryButton
-                                    class="ml-4"
-                                    type="submit"
-                                    href="/"
-                                >
+                                <SecondaryButton class="ml-4" type="submit">
                                     Заказать Консультацию
                                 </SecondaryButton>
                             </div>

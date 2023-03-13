@@ -26,7 +26,10 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/dashboard',[ ProductController::class, 'index'] )->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/products/{id}',[ ProductController::class, 'pug'] )->middleware(['auth', 'verified'])->name('products');
+Route::get('/cases',[ ProductController::class, 'pug'] )->middleware(['auth', 'verified'])->name('cases');
+Route::get('/cases/1',[ ProductController::class, 'CaseOne'] )->middleware(['auth', 'verified'])->name('cases1');
+
+// Route::get('/products/{id}',[ ProductController::class, 'pug'] )->middleware(['auth', 'verified'])->name('products');
 
 
 Route::get('/about', function () {
@@ -37,9 +40,6 @@ Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->middleware(['auth', 'verified'])->name('contact');
 
-Route::get('/cases', function () {
-    return Inertia::render('Cases');
-})->middleware(['auth', 'verified'])->name('cases');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
