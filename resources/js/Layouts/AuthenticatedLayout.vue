@@ -7,6 +7,7 @@ import NavLink from "@/Components/NavLink.vue";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import CardProduct from "@/Components/CardProduct.vue";
 import CircleLogo from "@/Components/CircleLogo.vue";
+import HistoryButton from "@/Components/HistoryButton.vue";
 import { Link } from "@inertiajs/vue3";
 
 const showingNavigationDropdown = ref(false);

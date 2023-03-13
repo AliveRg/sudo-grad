@@ -40,7 +40,9 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
                     >
                         <NavLink
                             :href="'/cases/' + product.product_id"
-                            :active="route().current('dashboard')"
+                            :active="
+                                route().current('/cases/' + product.product_id)
+                            "
                         >
                             {{ product.title }}
                         </NavLink>
@@ -54,7 +56,13 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
                 <div
                     class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"
                 >
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div
+                        v-if="router.query('/cases')"
+                        class="p-6 text-gray-900 dark:text-gray-100"
+                    >
+                        testx
+                    </div>
+                    <div v-else class="p-6 text-gray-900 dark:text-gray-100">
                         <slot />
                     </div>
                 </div>
@@ -86,8 +94,8 @@ export default {
     },
 
     props: {
-        products: Object,
-        cases: Object,
+        products: Array,
+        cases: Array,
     },
     name: "Cases",
 };
