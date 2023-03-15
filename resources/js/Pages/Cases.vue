@@ -5,7 +5,9 @@ import NavLink from "@/Components/NavLink.vue";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import { Head } from "@inertiajs/vue3";
+
 import { Swiper, SwiperSlide } from "swiper/vue";
+import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper";
 
 // swiper bundle styles
 import "swiper/swiper-bundle.min.css";
@@ -16,7 +18,6 @@ import "swiper/swiper.min.css";
 // modules styles
 
 // import Swiper core and required modules
-import SwiperCore, { Pagination, Navigation } from "swiper";
 </script>
 
 <template>
@@ -26,12 +27,24 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
         <template #header>
             <div>
                 <swiper
-                    :slidesPerView="3"
+                    :breakpoints="{
+                        600: { slidesPerView: 1 },
+                        900: { slidesPerView: 3 },
+                    }"
                     :spaceBetween="30"
                     :slidesPerGroup="1"
+                    :autoplay="{
+                        delay: 4500,
+                        disableOnInteraction: false,
+                    }"
                     :loop="true"
                     :loopFillGroupWithBlank="true"
                     :navigation="true"
+                    :pagination="{
+                        dynamicBullets: true,
+                        clickable: true,
+                    }"
+                    :modules="modules"
                 >
                     <swiper-slide
                         v-for="product in products"
@@ -56,13 +69,10 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
                 <div
                     class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"
                 >
-                    <div
-                        v-if="router.query('/cases')"
-                        class="p-6 text-gray-900 dark:text-gray-100"
-                    >
-                        testx
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        cases
                     </div>
-                    <div v-else class="p-6 text-gray-900 dark:text-gray-100">
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
                         <slot />
                     </div>
                 </div>
@@ -71,14 +81,25 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
     </AuthenticatedLayout>
 </template>
 
+<style>
+.swiper-pagination {
+    padding-top: 20px;
+}
+
+.swiper-wrapper {
+    height: 80px;
+}
+</style>
+
 <script>
-SwiperCore.use([Pagination, Navigation]);
+SwiperCore.use([Pagination, Navigation, Autoplay]);
 
 export default {
     components: {
         Swiper,
         SwiperSlide,
     },
+
     setup() {
         const onSwiper = (swiper) => {
             console.log(swiper);
@@ -89,7 +110,7 @@ export default {
         return {
             onSwiper,
             onSlideChange,
-            modules: [Navigation, Pagination, Scrollbar, A11y],
+            modules: [Autoplay, Navigation, Pagination, Scrollbar, A11y],
         };
     },
 

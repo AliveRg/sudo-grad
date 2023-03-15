@@ -48,11 +48,16 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
                                     Не нашли нужной категории или не уверены в
                                     выборе?
                                 </h1>
-                                <CircleLogo text="SD-Gorodova-Advokate-GD-" />
+                                <div class="grid grid-cols-2">
+                                    <CircleLogo
+                                        color="black"
+                                        text="SD-Gorodova-Advokate-GD-"
+                                    />
 
-                                <SecondaryButton class="ml-4" type="submit">
-                                    Заказать Консультацию
-                                </SecondaryButton>
+                                    <SecondaryButton class="ml-4" type="submit">
+                                        Заказать Консультацию
+                                    </SecondaryButton>
+                                </div>
                             </div>
                         </div>
                     </div>

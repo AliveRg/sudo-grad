@@ -3,12 +3,13 @@
         id="circle"
         class="h-28 w-28 md:h-40 md:w-40 relative flex justify-center items-center radius"
     >
-        <p class="absolute w-full h-full text">
+        <p class="absolute w-full h-full text rounded-full bg-slate-50">
             <span
                 v-for="(item, index) in count"
                 :key="index"
                 :class="'rotate-' + index * 15"
-                class="text-gray-50 absolute left-1/2 text-sm md:text-xl trans"
+                :style="'color:' + color"
+                class="absolute left-1/2 text-sm md:text-xl trans"
             >
                 {{ item }}
             </span>
@@ -20,6 +21,7 @@
 export default {
     props: {
         text: String,
+        color: String,
     },
     data: function () {
         return {
