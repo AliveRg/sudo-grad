@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::dropIfExists('cases');
         Schema::create('cases', function (Blueprint $table) {
             $table->id();
             $table->integer('product_id');
+            $table->text('name');
             $table->string('title')->unique();
             $table->text('content');
             $table->integer('price');

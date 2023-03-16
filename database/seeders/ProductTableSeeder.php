@@ -61,6 +61,7 @@ class ProductTableSeeder extends Seeder
                 'price'=> '1200',
                 'image_path' => 'zemelnye-spory.png',
             ],
+            
 
         ];
 

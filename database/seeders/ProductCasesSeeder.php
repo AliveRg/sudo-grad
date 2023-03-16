@@ -14,7 +14,7 @@ class ProductCasesSeeder extends Seeder
     public function run(): void
     {
         $cases = [
-
+            
         ];
     }
 }
