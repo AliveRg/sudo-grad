@@ -3,7 +3,7 @@
         <img :src="'./images/' + src" alt="" class="rounded-lg" />
         <div
             v-if="hover"
-            class="absolute w-full h-full bg-amber-500 opacity-20 inset-0 rounded-lg"
+            class="absolute w-full h-full bg-neutral-900 opacity-50 inset-0 rounded-lg"
         ></div>
         <div
             v-if="hover"

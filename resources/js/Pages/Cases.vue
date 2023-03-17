@@ -74,34 +74,42 @@ import "swiper/swiper.min.css";
                             <div
                                 v-for="arr in subArrays"
                                 :key="arr"
-                                class="w-1/4"
+                                class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
                             >
                                 <div
                                     v-for="product in arr"
                                     :key="product.title"
                                     class="w-full p-6"
                                 >
-                                    <CardCases
-                                        :src="product.image_path"
-                                        :title="product.title"
-                                    />
-                                    <div
-                                        class="w-full flex items-center gap-4 pt-3"
-                                    >
-                                        <div class="">
-                                            <div
-                                                class="w-8 h-8 rounded-full bg-black"
-                                            ></div>
-                                        </div>
-                                        <div class="w-full">
-                                            <span class="font-medium">{{
-                                                product.title
-                                            }}</span>
+                                    <div class="bg-slate-200 p-0 rounded-lg">
+                                        <CardCases
+                                            :src="product.image_path"
+                                            :title="product.title"
+                                        />
+                                        <div
+                                            class="w-full flex items-center gap-4 p-3"
+                                        >
+                                            <div class="">
+                                                <div
+                                                    class="w-8 h-8 rounded-full bg-black"
+                                                ></div>
+                                            </div>
+                                            <div class="w-full">
+                                                <span class="font-medium">{{
+                                                    product.title
+                                                }}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div
+                        class="mx-auto w-1/2 flex justify-evenly items-center mb-6 p-5"
+                    >
+                        <button disabled="disabled">Назад</button>
+                        <button disabled="disabled">Вперед</button>
                     </div>
                 </div>
             </div>
@@ -123,21 +131,42 @@ import "swiper/swiper.min.css";
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 
 export default {
+    name: "Cases",
     props: {
         products: Array,
         cases: Array,
     },
+
+    data() {
+        return {
+            page: 1,
+        };
+    },
+
     components: {
         Swiper,
         SwiperSlide,
     },
 
+    methods: {
+        filterPage() {
+            return this.subArrays.slice(start, end);
+        },
+    },
+
     computed: {
         subArrays() {
-            let length = Math.ceil(this.cases.length / 4);
+            const start = (this.page - 1) * 6;
+            const end = this.page * 6;
+            let width = window.screen.width;
+            let cols =
+                width > 1280 ? 4 : width > 1024 ? 3 : width > 640 ? 2 : 1;
+
+            let length = Math.ceil(this.cases.length / cols);
 
             const result = new Array(length).fill().map((i) => {
-                return this.cases.splice(0, length);
+                return this.cases.splice(0, length).slice(start, end);
+                console.log(result);
             });
             return result;
         },
@@ -156,7 +185,5 @@ export default {
             modules: [Autoplay, Navigation, Pagination, Scrollbar, A11y],
         };
     },
-
-    name: "Cases",
 };
 </script>

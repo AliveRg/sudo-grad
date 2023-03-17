@@ -3,9 +3,11 @@
 namespace Database\Seeders;
 
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Product;
+use App\Models\Cases;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,6 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this -> call(ProductTableSeeder::class);
-        // Cases::factory(10) -> create(); 
+        $this -> call(CasesSeeder::class);
+        // Cases::factory(50) -> create(); 
     }
 }
