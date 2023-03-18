@@ -1,6 +1,10 @@
 <template>
     <div @mouseover="hover = true" @mouseleave="hover = false" class="relative">
-        <img :src="'./images/' + src" alt="" class="rounded-lg" />
+        <img
+            :src="'./images/' + src"
+            alt=""
+            class="rounded-t-lg drop-shadow-2xl"
+        />
         <div
             v-if="hover"
             class="absolute w-full h-full bg-neutral-900 opacity-50 inset-0 rounded-lg"

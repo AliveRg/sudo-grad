@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\CasesController;
 
 /*
 |---------------0------------------------------------------------------------
@@ -26,8 +27,8 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/dashboard',[ ProductController::class, 'index'] )->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/cases',[ ProductController::class, 'pug'] )->middleware(['auth', 'verified'])->name('cases');
-Route::get('/cases/1',[ ProductController::class, 'CaseOne'] )->middleware(['auth', 'verified'])->name('cases1');
+Route::get('/cases',[ CasesController::class, 'pug'] )->middleware(['auth', 'verified'])->name('cases');
+Route::get('/cases/1',[ CasesController::class, 'CaseOne'] )->middleware(['auth', 'verified'])->name('cases1');
 
 // Route::get('/products/{id}',[ ProductController::class, 'pug'] )->middleware(['auth', 'verified'])->name('products');
 

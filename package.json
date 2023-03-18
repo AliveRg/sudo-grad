@@ -23,7 +23,6 @@
     },
     "dependencies": {
         "swiper": "^9.1.0",
-        "vue-awesome-paginate": "^1.1.46",
         "vue-breakpoints": "^1.1.0",
         "vue-next-breakpoints": "^1.0.1"
     }

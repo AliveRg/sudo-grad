@@ -5,8 +5,8 @@ import NavLink from "@/Components/NavLink.vue";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import CardCases from "@/Components/CardCases.vue";
 import useBreakpoints from "vue-next-breakpoints";
-import { Head } from "@inertiajs/vue3";
 
+import { Head } from "@inertiajs/vue3";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper";
 
@@ -15,10 +15,6 @@ import "swiper/swiper-bundle.min.css";
 
 // swiper core styles
 import "swiper/swiper.min.css";
-
-// modules styles
-
-// import Swiper core and required modules
 </script>
 
 <template>
@@ -70,16 +66,14 @@ import "swiper/swiper.min.css";
                     class="bg-white mt-12 dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"
                 >
                     <div class="p-6 text-gray-900 dark:text-gray-100">
-                        <div class="flex flex-wrap">
+                        <div class="">
                             <div
-                                v-for="arr in subArrays"
-                                :key="arr"
-                                class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
+                                class="w-full columns-1 sm:columns-2 lg:columns-3 xl:columns-4"
                             >
                                 <div
-                                    v-for="product in arr"
+                                    v-for="product in cases"
                                     :key="product.title"
-                                    class="w-full p-6"
+                                    class="break-inside-avoid w-full p-3"
                                 >
                                     <div class="bg-slate-200 p-0 rounded-lg">
                                         <CardCases
@@ -130,6 +124,8 @@ import "swiper/swiper.min.css";
 <script>
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 
+// Register the package
+
 export default {
     name: "Cases",
     props: {
@@ -154,23 +150,7 @@ export default {
         },
     },
 
-    computed: {
-        subArrays() {
-            const start = (this.page - 1) * 6;
-            const end = this.page * 6;
-            let width = window.screen.width;
-            let cols =
-                width > 1280 ? 4 : width > 1024 ? 3 : width > 640 ? 2 : 1;
-
-            let length = Math.ceil(this.cases.length / cols);
-
-            const result = new Array(length).fill().map((i) => {
-                return this.cases.splice(0, length).slice(start, end);
-                console.log(result);
-            });
-            return result;
-        },
-    },
+    computed: {},
 
     setup() {
         const onSwiper = (swiper) => {
