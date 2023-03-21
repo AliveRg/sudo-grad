@@ -22,8 +22,10 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+        "@emailjs/browser": "^3.10.0",
         "swiper": "^9.1.0",
-        "vue-breakpoints": "^1.1.0",
-        "vue-next-breakpoints": "^1.0.1"
+        "vue-intersection-observer": "^0.1.9",
+        "vue-next-breakpoints": "^1.0.1",
+        "vue-screen": "^2.2.0"
     }
 }

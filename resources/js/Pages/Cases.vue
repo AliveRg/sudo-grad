@@ -18,55 +18,57 @@ import "swiper/swiper.min.css";
 </script>
 
 <template>
-    <Head title="AboutUs" />
+    <Head title="Практика" />
 
     <AuthenticatedLayout>
         <template #header>
-            <div>
-                <swiper
-                    :breakpoints="{
-                        600: { slidesPerView: 1 },
-                        900: { slidesPerView: 3 },
-                    }"
-                    :spaceBetween="30"
-                    :slidesPerGroup="1"
-                    :autoplay="{
-                        delay: 4500,
-                        disableOnInteraction: false,
-                    }"
-                    :loop="true"
-                    :loopFillGroupWithBlank="true"
-                    :navigation="true"
-                    :pagination="{
-                        dynamicBullets: true,
-                        clickable: true,
-                    }"
-                    :modules="modules"
+            <div class="flex justify-center items-center">
+                <h1
+                    class="font-semibold text-2xl lg:text-4xl text-gray-800 dark:text-gray-50 leading-tight"
                 >
-                    <swiper-slide
-                        v-for="product in products"
-                        :key="product.id"
-                        class="text-center"
-                    >
-                        <NavLink
-                            :href="'/cases/' + product.product_id"
-                            :active="
-                                route().current('/cases/' + product.product_id)
-                            "
-                        >
-                            {{ product.title }}
-                        </NavLink>
-                    </swiper-slide>
-                </swiper>
+                    Наши Дела
+                </h1>
             </div>
         </template>
         <div class="main">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div
-                    class="bg-white mt-12 dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"
-                >
+            <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
+                <div class="overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
-                        <div class="">
+                        <swiper
+                            :breakpoints="{
+                                700: { slidesPerView: 1 },
+                                900: { slidesPerView: 3 },
+                            }"
+                            :spaceBetween="30"
+                            :slidesPerGroup="1"
+                            :autoplay="{
+                                delay: 4500,
+                                disableOnInteraction: false,
+                            }"
+                            :loop="true"
+                            :loopFillGroupWithBlank="true"
+                            :navigation="true"
+                            :pagination="{
+                                dynamicBullets: true,
+                                clickable: true,
+                            }"
+                            :modules="modules"
+                        >
+                            <swiper-slide
+                                v-for="product in products"
+                                :key="product.id"
+                                class="text-center p-6"
+                            >
+                                <NavLink :href="'/cases/' + product.product_id">
+                                    <div
+                                        class="text-md lg:text-lg text-black dark:text-white hover:border-none"
+                                    >
+                                        {{ product.title }}
+                                    </div>
+                                </NavLink>
+                            </swiper-slide>
+                        </swiper>
+                        <div class="border-b-2 border-slate-500">
                             <div
                                 class="w-full columns-1 sm:columns-2 lg:columns-3 xl:columns-4"
                             >
@@ -89,9 +91,10 @@ import "swiper/swiper.min.css";
                                                 ></div>
                                             </div>
                                             <div class="w-full">
-                                                <span class="font-medium">{{
-                                                    product.title
-                                                }}</span>
+                                                <span
+                                                    class="font-medium dark:text-black"
+                                                    >{{ product.title }}</span
+                                                >
                                             </div>
                                         </div>
                                     </div>
@@ -100,7 +103,7 @@ import "swiper/swiper.min.css";
                         </div>
                     </div>
                     <div
-                        class="mx-auto w-1/2 flex justify-evenly items-center mb-6 p-5"
+                        class="mx-auto w-3/4 flex justify-evenly items-center mb-6 p-5"
                     >
                         <button disabled="disabled">Назад</button>
                         <button disabled="disabled">Вперед</button>
@@ -117,12 +120,23 @@ import "swiper/swiper.min.css";
 }
 
 .swiper-wrapper {
-    height: 80px;
+    height: 120px;
+}
+
+.swiper-initialized {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
 }
 </style>
 
 <script>
 SwiperCore.use([Pagination, Navigation, Autoplay]);
+const heightScreen = window.screen.height;
 
 // Register the package
 
@@ -136,9 +150,15 @@ export default {
     data() {
         return {
             page: 1,
+            windowHeight: window.innerHeight,
         };
     },
 
+    mounted() {
+        window.onresize = () => {
+            this.windowHeight = window.innerHeight;
+        };
+    },
     components: {
         Swiper,
         SwiperSlide,

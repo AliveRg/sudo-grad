@@ -7,59 +7,47 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Адвокатская помощь" />
 
     <AuthenticatedLayout>
         <template #header>
-            <h2
-                class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"
-            >
-                Наши Услуги
-            </h2>
+            <div class="flex justify-center items-center">
+                <h1
+                    class="font-semibold text-2xl lg:text-4xl text-gray-800 dark:text-gray-50 leading-tight"
+                >
+                    Наши Услуги
+                </h1>
+            </div>
         </template>
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div
-                    class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"
-                >
+        <div class="pt-12">
+            <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
+                <div class="overflow-hidden shadow-sm sm:rounded-lg">
                     <div
                         class="p-6 text-gray-900 dark:text-gray-400 grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-6"
                     >
-                        <div v-for="product in products" :key="product.id">
+                        <section
+                            v-for="(product, index) in products"
+                            :key="product.id"
+                            :style="
+                                'transition-duration:' +
+                                ' ' +
+                                '1' +
+                                index +
+                                '0' +
+                                '0' +
+                                'ms'
+                            "
+                            :class="'addClass'"
+                            @scroll="handleSCroll"
+                        >
                             <CardProduct
                                 :title="product.title"
                                 :content="product.content"
                                 :image_path="product.image_path"
                                 :product_id="product.product_id"
                             />
-                        </div>
-                    </div>
-                    <div
-                        class="flex items-center justify-center h-min mb-12 bg-fixed bg-center bg-cover custom-img"
-                    >
-                        <div
-                            class="h-full w-full p-6 grid grid-cols-1 gap-8 lg:gap-20 lg:grid-rows-1 lg:grid-cols-3"
-                        >
-                            <div class="grid lg:col-span-2 gap-4">
-                                <h1
-                                    class="w-full text-2xl font-bold text-gray-50 p-4"
-                                >
-                                    Не нашли нужной категории или не уверены в
-                                    выборе?
-                                </h1>
-                                <div class="grid grid-cols-2">
-                                    <CircleLogo
-                                        color="black"
-                                        text="SD-Gorodova-Advokate-GD-"
-                                    />
-
-                                    <SecondaryButton class="ml-4" type="submit">
-                                        Заказать Консультацию
-                                    </SecondaryButton>
-                                </div>
-                            </div>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </div>
@@ -69,6 +57,9 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
 
 <script>
 export default {
+    data() {
+        return {};
+    },
     props: {
         products: Object,
     },
@@ -78,11 +69,38 @@ export default {
         CircleLogo,
         SecondaryButton,
     },
+
+    methods: {
+        handleSCroll(event) {
+            let card = document.querySelectorAll(".addClass");
+            for (let index = 0; index < card.length; index++) {
+                const element = card[index];
+                if (window.scrollY > 100) {
+                    element.classList.add("card_product");
+                }
+            }
+        },
+    },
+    created() {
+        window.addEventListener("scroll", this.handleSCroll);
+    },
+    destroyed() {
+        window.removeEventListener("scroll", this.handleSCroll);
+    },
+
+    computed: {},
 };
 </script>
 
 <style>
-.custom-img {
-    background-image: url(./images/under_main-paralax.png);
+.addClass {
+    opacity: 0;
+    transition: all ease-in;
+    transform: translateY(30%);
+}
+
+.card_product {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>

@@ -21,6 +21,13 @@ module.exports = {
     ],
 
     theme: {
+        backgroundSize: {
+            auto: "auto",
+            cover: "cover",
+            contain: "contain",
+            "120%": "120%",
+            "160%": "160%",
+        },
         extend: {
             rotate: {
                 0: "0deg",

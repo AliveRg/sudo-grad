@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head title="Услуги адвоката - адвокатская помощь, Белгород" />
 
     <div
         class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-teal-500 selection:text-white"
@@ -120,7 +120,7 @@ defineProps({
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                     <!-- Next Path -->
 
-                    <div v-if="canLogin">
+                    <section v-if="canLogin">
                         <a
                             v-if="$page.props.auth.user"
                             :href="'dashboard'"
@@ -153,11 +153,11 @@ defineProps({
                                 />
                             </a>
                         </div>
-                    </div>
+                    </section>
 
                     <!-- Next Path -->
 
-                    <div v-if="canLogin">
+                    <section v-if="canLogin">
                         <a
                             v-if="$page.props.auth.user"
                             :href="'about'"
@@ -190,11 +190,11 @@ defineProps({
                                 />
                             </a>
                         </div>
-                    </div>
+                    </section>
 
                     <!-- Next Path -->
 
-                    <div v-if="canLogin">
+                    <section v-if="canLogin">
                         <a
                             v-if="$page.props.auth.user"
                             :href="'contact'"
@@ -227,11 +227,11 @@ defineProps({
                                 />
                             </a>
                         </div>
-                    </div>
+                    </section>
 
                     <!-- Next Path -->
 
-                    <div v-if="canLogin">
+                    <section v-if="canLogin">
                         <div
                             v-if="$page.props.auth.user"
                             class="min-h-full bg-0-50 bg-image-welcome bg-no-repeat bg-cover bg-center backdrop-opacity-30 scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
@@ -373,7 +373,7 @@ defineProps({
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>
