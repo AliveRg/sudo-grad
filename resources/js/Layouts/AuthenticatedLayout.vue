@@ -228,33 +228,26 @@ const showingNavigationDropdown = ref(false);
                     <div class="flex">
                         <div
                             class="w-full"
-                            :style="'height:' + windowHeight / 1.3 + 'px'"
+                            :style="'height:' + windowHeight / 1.1 + 'px'"
                         ></div>
                         <div class="mirror mirror-0 z-20 overflow-hidden">
                             <div
-                                class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover sm:bg-120% bg-fixed bg-center bg-no-repeat"
-                                :style="'height:' + windowHeight / 1.3 + 'px'"
+                                class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% bg-fixed bg-center bg-no-repeat"
+                                :style="'height:' + windowHeight / 1.1 + 'px'"
                             ></div>
                         </div>
                         <div
                             class="mirror mirror-1 w-full z-20 overflow-hidden"
                         >
                             <div
-                                class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover sm:bg-120% bg-fixed bg-center bg-no-repeat"
-                                :style="'height:' + windowHeight / 1.3 + 'px'"
+                                class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% bg-fixed bg-center bg-no-repeat"
+                                :style="'height:' + windowHeight / 1.1 + 'px'"
                             ></div>
                         </div>
-                        <div
-                            class="mirror mirror-2 w-full z-20 overflow-hidden"
-                        >
-                            <div
-                                class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover sm:bg-120% bg-fixed bg-center bg-no-repeat"
-                                :style="'height:' + windowHeight / 1.3 + 'px'"
-                            ></div>
-                        </div>
+
                         <div
                             class="absolute w-full mx-auto bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover bg-fixed bg-center bg-no-repeat"
-                            :style="'height:' + windowHeight / 1.3 + 'px'"
+                            :style="'height:' + windowHeight / 1.1 + 'px'"
                         ></div>
                     </div>
 
@@ -362,22 +355,17 @@ export default {
 }
 
 .mirror-0 {
-    clip-path: polygon(0 0, 77% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(100% 0, 77% 0, 100% 100%, 50% 100%);
     top: 0;
     left: -65vw;
 }
 .mirror-1 {
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 150% 150%, 0% 150%);
     left: 80%;
-}
-.mirror-2 {
-    clip-path: polygon(100% 0, 39% 50%, 0 0);
-    width: 30%;
-    left: 30%;
 }
 
 .custom-img {
-    background-image: url(./images/under_main-paralax.png);
+    background-image: url(./images/under_main-paralax.jpg);
 }
 .position-center {
     position: absolute;
