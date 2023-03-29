@@ -251,7 +251,9 @@ const showingNavigationDropdown = ref(false);
                         ></div>
                     </div>
 
-                    <div class="absolute position-center z-10">
+                    <div
+                        class="absolute position-center z-10 py-6 w-full bg-slate-200 bg-opacity-50 backdrop-blur-sm"
+                    >
                         <slot name="header" />
                     </div>
                 </section>

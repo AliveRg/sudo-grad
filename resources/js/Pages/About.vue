@@ -30,80 +30,79 @@ function selectDate() {}
                         <div class="grid grid-row-auto gap-24">
                             <TitleImage />
                         </div>
-                        <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-12">
                             <div
                                 class="text-left text-2xl sm:text-3xl md:text-5xl lg:text-7xl w-full"
                             >
                                 <h1>Who we are</h1>
                             </div>
                             <div
-                                class="flex flex-col gap-8 ml-auto mr-16 sm:mr-32 text-left text-md md:text-lg lg:text-xl w-1/2"
+                                class="flex flex-col md:flex-row gap-8 justify-between ml-auto mr-16 sm:mr-32 text-left text-lg md:text-xl lg:text-2xl w-full"
                             >
-                                <h3 class="max-h-72 overflow-y-auto">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Ipsum, magnam aperiam
-                                    quibusdam soluta quasi et dolor porro amet
-                                    quo, distinctio ex sint aspernatur nisi,
-                                    expedita possimus enim repellendus
-                                    consequuntur veniam magni id! Harum
-                                    voluptate ipsam corrupti voluptatem ad fugit
-                                    porro dignissimos. Nam ea repellat illum
-                                    sint culpa magnam perspiciatis commodi.
-                                </h3>
-                                <h3 class="max-h-72 overflow-y-auto">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Ipsum, magnam aperiam
-                                    quibusdam soluta quasi et dolor porro amet
-                                    quo, distinctio ex sint aspernatur nisi,
-                                    expedita possimus enim repellendus
-                                    consequuntur veniam magni id! Harum
-                                    voluptate ipsam corrupti voluptatem ad fugit
-                                    porro dignissimos. Nam ea repellat illum
-                                    sint culpa magnam perspiciatis commodi.
-                                </h3>
-                                <h3 class="max-h-72 overflow-y-auto">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Ipsum, magnam aperiam
-                                    quibusdam soluta quasi et dolor porro amet
-                                    quo, distinctio ex sint aspernatur nisi,
-                                    expedita possimus enim repellendus
-                                    consequuntur veniam magni id! Harum
-                                    voluptate ipsam corrupti voluptatem ad fugit
-                                    porro dignissimos. Nam ea repellat illum
-                                    sint culpa magnam perspiciatis commodi.
-                                </h3>
+                                <img
+                                    src="/images/about-gif.gif"
+                                    class="w-full md:w-1/3"
+                                />
+
+                                <div
+                                    class="flex flex-col justify-center w-full md:w-1/2 gap-8"
+                                >
+                                    <h3 class="max-h-72 overflow-y-auto">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Ipsum, magnam aperiam
+                                        quibusdam soluta quasi et dolor porro
+                                        amet quo, distinctio ex sint aspernatur
+                                        nisi.
+                                    </h3>
+
+                                    <h3 class="max-h-72 overflow-y-auto">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Ipsum, magnam aperiam
+                                        quibusdam soluta quasi et dolor porro
+                                        amet quo, distinctio ex sint aspernatur
+                                        nisi, expedita possimus enim repellendus
+                                        consequuntur veniam magni id!
+                                    </h3>
+                                </div>
                             </div>
                         </div>
                         <div
-                            class="mt-16 text-xl sm:text-2xl md:text-3xl lg:text-5xl w-full text-center"
+                            class="mt-16 text-xl sm:text-3xl md:text-4xl lg:text-5xl w-full text-center"
                         >
                             <h2>History</h2>
                         </div>
-                        <div
-                            class="mb-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
-                        >
-                            <div v-for="item in 6" :key="item" class="flex">
+                        <div class="mb-32 grid grid-cols-1 gap-8">
+                            <div
+                                v-for="item in items"
+                                :key="item"
+                                class="flex mb-4"
+                            >
                                 <div
-                                    class="text-sm border-b-2 border-indigo-500 w-full grid"
+                                    class="text-sm border-b-2 border-l-2 border-indigo-500 rounded-lg w-full grid"
                                 >
-                                    <div class="font-semibold text-base">
-                                        <h3>Lorem ipsum dolor sit amet.</h3>
+                                    <div
+                                        class="font-semibold text-base sm:text-2xl flex justify-between pr-8 pl-2"
+                                    >
+                                        <h3>{{ item.title }}</h3>
+                                        <h2 class="text-md text-orange-300">
+                                            {{ "0" + item.number }}
+                                        </h2>
                                     </div>
-                                    <div class="overflow-hidden">
+                                    <div
+                                        class="overflow-hidden sm:text-lg pl-2"
+                                    >
                                         <p
-                                            :id="'His' + item"
-                                            class="unActive pt-4 h-auto duration-1000"
+                                            :id="'His' + item.number"
+                                            class="unActive pt-4 h-auto duration-1000 md:w-1/2"
                                         >
-                                            Lorem ipsum dolor sit, amet
-                                            consectetur adipisicing elit. Nihil,
-                                            tempore!
+                                            {{ item.message }}
                                         </p>
                                     </div>
                                 </div>
                                 <span class="inline-flex rounded-sm">
                                     <button
                                         type="button"
-                                        @click="alerting($event, item)"
+                                        @click="alerting($event, item.number)"
                                         class="inline-flex items-start px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
                                     >
                                         <span class="material-symbols-outlined">
@@ -128,19 +127,55 @@ export default {
                 type: String,
                 default: false,
             },
+            items: [
+                {
+                    number: "1",
+                    title: "1982",
+                    message:
+                        "Lorem ipsum dolor sit, ametconsectetur adipisicing elit. Nihil,tempore! Lorem ipsum dolor sit ametconsectetur adipisicing elit.",
+                },
+                {
+                    number: "2",
+                    title: "1991",
+                    message:
+                        "Lorem ipsum dolor sit ametconsectetur adipisicing elit.",
+                },
+                {
+                    number: "3",
+                    title: "2004",
+                    message:
+                        "aspernatur liberoiste nesciunt aut? Harum, ipsam!",
+                },
+                {
+                    number: "4",
+                    title: "2011",
+                    message:
+                        " Lorem ipsum dolor sit, ametconsectetur adipisicing elit. Nihil,tempore! Lorem ipsum dolor sit ametconsectetur adipisicing elit.Adipisci blanditiis, recusandaeaccusamus tenetur aspernatur liberoiste nesciunt aut? Harum, ipsam!",
+                },
+                {
+                    number: "5",
+                    title: "2022",
+                    message:
+                        " Lorem ipsum dolor sit, ametconsectetur adipisicing elit. Nihil,tempore! Lorem ipsum dolor sit ametconsectetur adipisicing elit.Adipisci blanditiis, recusandaeaccusamus tenetur aspernatur liberoiste nesciunt aut? Harum, ipsam!iste nesciunt aut?",
+                },
+                {
+                    number: "6",
+                    title: "2023",
+                    message:
+                        " Lorem ipsum dolor sit, ametconsectetur adipisicing elit. Nihil,tempore! Lorem ipsum dolor sit ametconsectetur adipisicing elit.Adipisci blanditiis, recusandaeaccusamus tenetur aspernatur liberoiste nesciunt aut? Harum, ipsam!",
+                },
+            ],
         };
     },
     methods: {
         alerting(ev, item) {
             const app = document.getElementById("His" + item);
+
             app.classList.contains("active")
                 ? (app.classList.remove("active"),
-                  console.log("nice"),
                   app.classList.add("unActive"))
                 : (app.classList.remove("unActive"),
-                  console.log("not nice"),
                   app.classList.add("active"));
-            console.log(app);
         },
     },
     components: {
@@ -151,7 +186,7 @@ export default {
 
 <style>
 .unActive {
-    margin-top: -100px;
+    margin-top: -200px;
 }
 
 .active {

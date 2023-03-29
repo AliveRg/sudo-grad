@@ -68,6 +68,7 @@ import "swiper/swiper.min.css";
                                 </NavLink>
                             </swiper-slide>
                         </swiper>
+
                         <div class="border-b-2 border-slate-500">
                             <div
                                 class="w-full columns-1 sm:columns-2 lg:columns-3 xl:columns-4"

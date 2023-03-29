@@ -37,7 +37,9 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
                                 <div class="grid content-center items-center">
                                     <p
                                         class="w-full text-lg md:text-2xl text-white font-bold"
-                                    ></p>
+                                    >
+                                        hello
+                                    </p>
                                 </div>
                             </div>
                         </div>

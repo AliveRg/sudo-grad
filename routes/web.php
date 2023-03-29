@@ -28,9 +28,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard',[ ProductController::class, 'index'] )->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/cases',[ CasesController::class, 'pug'] )->middleware(['auth', 'verified'])->name('cases');
-Route::get('/cases/1',[ CasesController::class, 'CaseOne'] )->middleware(['auth', 'verified'])->name('cases1');
+// Route::get('/cases/1',[ CasesController::class, 'CaseOne'] )->middleware(['auth', 'verified'])->name('cases1');
 
-// Route::get('/products/{id}',[ ProductController::class, 'pug'] )->middleware(['auth', 'verified'])->name('products');
+
 
 
 Route::get('/about', function () {
@@ -40,6 +40,8 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->middleware(['auth', 'verified'])->name('contact');
+Route::get('/1',[ ProductController::class, 'indProduct'] )->middleware(['auth', 'verified'])->name('products1');
+Route::get('/2',[ ProductController::class, 'indProductTwo'] )->middleware(['auth', 'verified'])->name('products2');
 
 
 Route::middleware('auth')->group(function () {

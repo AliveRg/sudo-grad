@@ -18,6 +18,22 @@ class ProductController extends Controller
         return Inertia::render('Dashboard', compact('products'));
         
     }
+    public function indProduct() 
+    {
+        $products = DB::table('products') 
+        -> get();
+        // dd($products);
+        return Inertia::render('ProductOne', compact('products'));
+        
+    }
+    public function indProductTwo() 
+    {
+        $products = DB::table('products') 
+        -> get();
+        // dd($products);
+        return Inertia::render('ProductTwo', compact('products'));
+        
+    }
 
    
 
