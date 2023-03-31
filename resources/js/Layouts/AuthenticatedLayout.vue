@@ -230,14 +230,16 @@ const showingNavigationDropdown = ref(false);
                             class="w-full"
                             :style="'height:' + windowHeight / 1.1 + 'px'"
                         ></div>
-                        <div class="mirror mirror-0 z-20 overflow-hidden">
+                        <div
+                            class="mirror hidden md:block mirror-0 z-20 overflow-hidden"
+                        >
                             <div
                                 class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% bg-fixed bg-center bg-no-repeat"
                                 :style="'height:' + windowHeight / 1.1 + 'px'"
                             ></div>
                         </div>
                         <div
-                            class="mirror mirror-1 w-full z-20 overflow-hidden"
+                            class="mirror hidden md:block mirror-1 w-full z-20 overflow-hidden"
                         >
                             <div
                                 class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% bg-fixed bg-center bg-no-repeat"
@@ -252,9 +254,19 @@ const showingNavigationDropdown = ref(false);
                     </div>
 
                     <div
-                        class="absolute position-center z-10 py-6 w-full bg-slate-200 bg-opacity-50 backdrop-blur-sm"
+                        class="absolute flex justify-center items-center gap-8 position-center z-10 py-6 w-full bg-slate-200 bg-opacity-50 backdrop-blur-sm"
                     >
                         <slot name="header" />
+                        <div
+                            class="animate-bounce w-8 h-8 md:w-10 md:h-10 bg-slate-300 bg-opacity-40 shadow-md mx-0 flex items-center justify-center rounded-full"
+                            onselectstart="return false"
+                            onmousedown="return false"
+                            @click="scrollTop"
+                        >
+                            <span class="material-symbols-outlined">
+                                south
+                            </span>
+                        </div>
                     </div>
                 </section>
             </header>
@@ -347,6 +359,13 @@ export default {
         window.onresize = () => {
             this.windowHeight = window.innerHeight;
         };
+    },
+    methods: {
+        scrollTop() {
+            let scrTop =
+                document.documentElement.clientHeight - window.pageYOffset;
+            window.scrollTo({ top: scrTop, behavior: "smooth" });
+        },
     },
 };
 </script>

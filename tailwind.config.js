@@ -30,6 +30,10 @@ module.exports = {
         },
 
         extend: {
+            translate: {
+                550: "550px",
+                1050: "1050px",
+            },
             rotate: {
                 0: "0deg",
                 5: "5deg",
