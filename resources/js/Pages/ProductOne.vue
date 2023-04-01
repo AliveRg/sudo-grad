@@ -20,15 +20,61 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
             </div>
         </template>
         <div class="h-auto">
-            <div class="max-w-9xl mx-auto sm:px-6 lg:px-8 my-16 flex gap-20">
-                <div
-                    class="w-full flex flex-col justify-center gap-6 p-6 md:p-8 rounded-lg shadow-md"
+            <div
+                class="relative max-w-9xl mx-auto sm:px-6 lg:px-8 mb-16 mt-32 flex gap-20 overflow-hidden"
+            >
+                <div class="w-full h-screen my-5">
+                    <div class="cube-wrap flex">
+                        <div
+                            class="cube absolute -right-80 flex gap-16 overflow-hidden py-20"
+                        >
+                            <div
+                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
+                            >
+                                Front
+                            </div>
+                            <div
+                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
+                            >
+                                Front
+                            </div>
+                            <div
+                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
+                            >
+                                Front
+                            </div>
+                            <div
+                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
+                            >
+                                Front
+                            </div>
+                            <div
+                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
+                            >
+                                Front
+                            </div>
+                            <div
+                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
+                            >
+                                Front
+                            </div>
+                            <div
+                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
+                            >
+                                Front
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  <div
+                    class="w-full flex flex-col justify-center gap-6 p-6 md:p-8 rounded-lg  shadow-md"
                 >
-                    <div
+                   
+                     <div
                         class="flex flex-col sm:flex-row sm:items-center gap-10"
                     >
                         <div
-                            class="w-32 h-32 md:w-40 md:h-40 lg:w-52 lg:h-52 transCase bg-[url('./images/ugolovka.jpeg')] flex items-center bg-cover bg-center bg-no-repeat shadow shadow-slate-800 text-center rounded-lg text-xs md:text-base lg:text-xl text-slate-800 dark:text-slate-200"
+                            class="w-64 h-80 md:w-40 md:h rounded-lg -40 lg:w-52 lg:h-80 transCase bg-[url('./images/ugolovka.jpeg')] flex items-center bg-cover bg-center bg-no-repeat shadow shadow-slate-800 text-center rounded-lg  text-xs md:text-base lg:text-xl text-slate-800 dark:text-slate-200"
                         >
                             <p
                                 class="h-1/2 flex items-center p-2 backdrop-blur-sm dark:bg-black/40 bg-white/40"
@@ -50,7 +96,7 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
                         class="flex flex-col sm:flex-row sm:items-center gap-10"
                     >
                         <div
-                            class="w-32 h-32 md:w-40 md:h-40 lg:w-52 lg:h-52 transCase transf bg-[url('./images/ugolovka.jpeg')] flex items-center bg-cover bg-center bg-no-repeat shadow shadow-slate-800 text-center rounded-lg text-xs md:text-base lg:text-xl text-slate-800 dark:text-slate-200"
+                            class="w-64 h-80 md:w-40 md:h rounded-lg -40 lg:w-52 lg:h-80 transCase transf bg-[url('./images/ugolovka.jpeg')] flex items-center bg-cover bg-center bg-no-repeat shadow shadow-slate-800 text-center rounded-lg  text-xs md:text-base lg:text-xl text-slate-800 dark:text-slate-200"
                         >
                             <p
                                 class="h-1/2 flex items-center p-2 backdrop-blur-sm dark:bg-black/40 bg-white/40"
@@ -72,7 +118,7 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
                         class="flex flex-col sm:flex-row sm:items-center gap-10"
                     >
                         <div
-                            class="w-32 h-32 md:w-40 md:h-40 lg:w-52 lg:h-52 transCase transf2 bg-[url('./images/ugolovka.jpeg')] flex items-center bg-cover bg-center bg-no-repeat shadow shadow-slate-800 text-center rounded-lg text-xs md:text-base lg:text-xl text-slate-800 dark:text-slate-200"
+                            class="w-64 h-80 md:w-40 md:h rounded-lg -40 lg:w-52 lg:h-80 transCase transf2 bg-[url('./images/ugolovka.jpeg')] flex items-center bg-cover bg-center bg-no-repeat shadow shadow-slate-800 text-center rounded-lg  text-xs md:text-base lg:text-xl text-slate-800 dark:text-slate-200"
                         >
                             <p
                                 class="h-1/2 flex items-center p-2 backdrop-blur-sm dark:bg-black/40 bg-white/40"
@@ -91,7 +137,7 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -219,6 +265,29 @@ export default {
     opacity: 1;
     transform: translateX(0);
 } */
+
+.front,
+.cube {
+    transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateZ(0deg)
+        translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+    animation: transslide 12s infinite linear;
+}
+
+.cube {
+}
+
+@keyframes transslide {
+    0% {
+        transform: translateX(-800px) rotateY(-15deg);
+    }
+    100% {
+        transform: translateX(900px) rotateY(0deg);
+    }
+}
+.cube-wrap {
+    perspective: 724px;
+    perspective-origin: 50% 50%;
+}
 
 .addClass {
     opacity: 0;

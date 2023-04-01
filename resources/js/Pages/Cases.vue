@@ -71,7 +71,7 @@ import "swiper/swiper.min.css";
 
                         <div class="border-b-2 border-slate-500">
                             <div
-                                class="w-full columns-1 sm:columns-2 lg:columns-3 xl:columns-4"
+                                class="w-full hei-scr columns-1 sm:columns-2 lg:columns-3 xl:columns-4"
                             >
                                 <div
                                     v-for="product in cases"
@@ -103,12 +103,6 @@ import "swiper/swiper.min.css";
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="mx-auto w-3/4 flex justify-evenly items-center mb-6 p-5"
-                    >
-                        <button disabled="disabled">Назад</button>
-                        <button disabled="disabled">Вперед</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -116,6 +110,10 @@ import "swiper/swiper.min.css";
 </template>
 
 <style>
+.hei-scr {
+    height: 400vh;
+    overflow: hidden;
+}
 .swiper-pagination {
     padding-top: 20px;
 }
