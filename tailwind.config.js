@@ -95,6 +95,11 @@ module.exports = {
                 silver: "#ecebff",
                 "bubble-gum": "#ff77e9",
                 bermuda: "#78dcca",
+                currentDark: "#755E66",
+                currentDarkNext: "#DC4733",
+                currentLight: "#FEA68E",
+                currentBroun: "#BA6927",
+                currentCian: "#F2AD4E",
             },
             width: {
                 "card-web": "400px",

@@ -3,7 +3,21 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import CardProduct from "@/Components/CardProduct.vue";
 import CircleLogo from "@/Components/CircleLogo.vue";
+import CartHoverRotate from "@/Components/CartHoverRotate.vue";
+
 import SecondaryButton from "@/Components/SecondaryButton.vue";
+import useBreakpoints from "vue-next-breakpoints";
+import "swiper/css/free-mode";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import SwiperCore, { FreeMode, Scrollbar, Navigation, Autoplay } from "swiper";
+
+// swiper bundle styles
+import "swiper/swiper-bundle.min.css";
+import "swiper/css/scrollbar";
+
+// swiper core styles
+import "swiper/swiper.min.css";
+import TitleImage from "@/Components/TitleImage.vue";
 </script>
 
 <template>
@@ -11,15 +25,138 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
 
     <AuthenticatedLayout>
         <template #header>
-            <div class="flex justify-center items-center">
-                <h1
-                    class="font-semibold text-2xl lg:text-4xl text-gray-800 dark:text-gray-50 leading-tight"
-                >
-                    Наследственные Споры
-                </h1>
-            </div>
+            <h1>Наследственные Споры</h1>
         </template>
-        <div class="h-screen bg-slate-700"></div>
+        <div
+            class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10 grid grid-rows-3 md:grid-cols-4 gap-2 md:gap-6"
+        >
+            <div
+                class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun tracking-widest"
+            >
+                <p>
+                    <span class="text-currentCian"
+                        >Квалифицированная помощь</span
+                    >
+                    на любой стадии уголовного дела
+                </p>
+            </div>
+
+            <div
+                class="overflow-hidden order-3 md:order-2 shadow-sm sm:rounded-lg border-l-2 border-currentBroun row-span-3 col-span-2 grid grid-row-1 justify-items-center gap-8 p-3 py-5"
+            >
+                <div
+                    class="h-max text-xs sm:text-base md:text-lg lg:text-2xl dark:text-slate-200 text-justify flex items-center pr-3 sm:pr-5 md:pr-8 lg:pr-10 md:leading-7 lg:leading-10"
+                >
+                    <p>
+                        Неожиданное задержание, вызов на допрос в
+                        правоохранительные органы, обыск в жилище или офисе
+                        компании, повестка в суд- всегда сильный стресс не
+                        только для того, с кем это событие произошло , но и для
+                        близких людей. <br />
+                        <br />
+                        В этой непростой ситуации противостоять
+                        правоохранительным органам в одиночку практически
+                        невозможно. Опыт и каждодневная практика адвоката по
+                        уголовным делам может оказаться решающим фактором для
+                        преодоления сложных периодов жизни. <br /><br />
+                        Участие защитника возможно на любой стадии уголовного
+                        процесса, вам нужно только позвонить адвокату и мы
+                        вместе найдем законный выход из сложившейся ситуации.
+                    </p>
+                </div>
+            </div>
+            <div
+                style="background-image: url('./images/Apollo_Sticker.webp')"
+                class="p-3 md:order-3 py-5 w-full row-span-2 col-span-2 flex items-center justify-center bg-contain bg-top bg-no-repeat"
+            ></div>
+        </div>
+
+        <div
+            style="
+                -moz-user-select: none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+            "
+            class="relative max-w-9xl mx-auto sm:px-6 lg:px-8 mb-8 mt-24 flex gap-20 overflow-hidden"
+        >
+            <swiper
+                :breakpoints="{
+                    200: { slidesPerView: 1 },
+                    400: { slidesPerView: 2 },
+                    900: { slidesPerView: 3 },
+                }"
+                :spaceBetween="20"
+                :slidesPerGroup="1"
+                :autoplay="{
+                    delay: 5500,
+                    disableOnInteraction: false,
+                }"
+                :loop="true"
+                :loopFillGroupWithBlank="true"
+                :navigation="false"
+                :freeMode="true"
+                :scrollbar="{
+                    hide: true,
+                }"
+                :modules="modules"
+            >
+                <swiper-slide v-for="product in 8" :key="product" class="p-10">
+                    <CartHoverRotate
+                        class="mx-auto"
+                        textFront="Сопровождение"
+                        textBack="Сопровождение при допросе клиента в качестве свидетеля по уголовному делу."
+                    />
+                </swiper-slide>
+            </swiper>
+
+            <!-- <div class="w-[150%] h-[23rem] md:h-[25rem] lg:h-[50rem] my-5">
+                <div class="cube-wrap flex">
+                    <div class="cube absolute -right-80 flex gap-16 py-5 px-16">
+                        <div
+                                class="fixed text-md lg:text-2xl -top-12 lg:-top-16 text-white tracking-widest font-sans"
+                            >
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quam recusandae odit
+                                accusantium vitae, aliquid sit totam unde
+                                tempora saepe praesentium. Lorem ipsum dolor sit
+                                amet consectetur, adipisicing elit. Quasi saepe
+                                inventor.
+                            </div> 
+                        <div
+                            v-for="card in cards"
+                            :key="card"
+                            class="front w-44 h-56 lg:w-80 lg:h-96 hover:scale-125 duration-150 shadow-xl rounded-lg flex flex-row-reverse items-center justify-center rotate-y-4"
+                            @click.stop="modulCard($event)"
+                        >
+                            <CartHoverRotate
+                                textFront="Сопровождение"
+                                textBack="Сопровождение при допросе клиента в качестве свидетеля по уголовному делу."
+                            />
+                        </div>
+                        <div
+                                class="fixed text-md lg:text-2xl -bottom-14 lg:-bottom-16 text-white tracking-widest font-sans"
+                            >
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quam recusandae odit
+                                accusantium vitae, aliquid sit totam unde
+                                tempora saepe praesentium. Lorem ipsum dolor sit
+                                amet consectetur, adipisicing elit. Quasi saepe
+                                inventor.
+                            </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10">
+            <div
+                class="overflow-hidden shadow-sm sm:rounded-lg flex flex-col gap-20 bg-slate-400 p-10"
+            >
+                <TitleImage />
+                <TitleImage />
+            </div>
+        </div>
         <div class="pt-12">
             <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
                 <div class="overflow-hidden shadow-sm sm:rounded-lg">
@@ -56,18 +193,36 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
 </template>
 
 <script>
+SwiperCore.use([Scrollbar, Navigation, Autoplay, FreeMode]);
+
 export default {
+    setup() {
+        const onSwiper = (swiper) => {
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log("slide change");
+        };
+        return {
+            onSwiper,
+            onSlideChange,
+            modules: [Autoplay, Navigation, Scrollbar, A11y, FreeMode],
+        };
+    },
     data() {
         return {};
     },
     props: {
         products: Object,
     },
-    name: "DashBoard",
+
     components: {
         CardProduct,
         CircleLogo,
         SecondaryButton,
+        Swiper,
+        SwiperSlide,
+        TitleImage,
     },
 
     methods: {
@@ -79,6 +234,11 @@ export default {
                     element.classList.add("card_product");
                 }
             }
+        },
+        modulCard: function (event) {
+            event.target.classList.toggle("hideCard");
+            console.log(event.target);
+            // some code to filter users
         },
     },
     created() {

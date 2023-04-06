@@ -26,15 +26,15 @@ onMounted(() => {
         }"
         class="title_image flex flex-row md:odd:flex-row-reverse md:even:flex-row"
     >
-        <div class="w-full flex flex-col md:flex-row justify-between">
+        <div class="w-full flex flex-col md:flex-row justify-between gap-8">
             <div class="w-full md:w-1/2">
                 <div
-                    class="h-32 md:h-full bg-indigo-500 rounded-lg flex justify-center items-center"
+                    class="h-32 md:h-full bg-currentCian rounded-lg flex justify-center items-center"
                 >
                     <h1 class="block">{{ item }}</h1>
                 </div>
             </div>
-            <div class="w-full md:w-5/12">
+            <div class="w-full md:w-5/12 dark:text-slate-200">
                 <h2 class="overflow-scroll h-auto inline align-middle">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Iure commodi est illo laborum reprehenderit atque eaque at
@@ -51,7 +51,11 @@ onMounted(() => {
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        reverse: Boolean,
+    },
+};
 </script>
 
 <style>

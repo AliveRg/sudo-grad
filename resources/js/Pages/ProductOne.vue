@@ -3,7 +3,21 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import CardProduct from "@/Components/CardProduct.vue";
 import CircleLogo from "@/Components/CircleLogo.vue";
+import CartHoverRotate from "@/Components/CartHoverRotate.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
+
+import useBreakpoints from "vue-next-breakpoints";
+import "swiper/css/free-mode";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import SwiperCore, { FreeMode, Scrollbar, Navigation, Autoplay } from "swiper";
+
+// swiper bundle styles
+import "swiper/swiper-bundle.min.css";
+import "swiper/css/scrollbar";
+
+// swiper core styles
+import "swiper/swiper.min.css";
+import TitleImage from "@/Components/TitleImage.vue";
 </script>
 
 <template>
@@ -11,133 +25,136 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
 
     <AuthenticatedLayout>
         <template #header>
-            <div class="flex justify-center items-center">
-                <h1
-                    class="font-semibold text-2xl lg:text-4xl text-gray-800 dark:text-gray-50 leading-tight"
-                >
-                    Уголовные дела
-                </h1>
-            </div>
+            <h1>Уголовные дела</h1>
         </template>
-        <div class="h-auto">
+        <div
+            class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10 grid grid-rows-3 md:grid-cols-4 gap-2 md:gap-6"
+        >
             <div
-                class="relative max-w-9xl mx-auto sm:px-6 lg:px-8 mb-16 mt-32 flex gap-20 overflow-hidden"
+                class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun tracking-widest"
             >
-                <div class="w-full h-screen my-5">
-                    <div class="cube-wrap flex">
+                <p>
+                    <span class="text-currentCian"
+                        >Квалифицированная помощь</span
+                    >
+                    на любой стадии уголовного дела
+                </p>
+            </div>
+
+            <div
+                class="overflow-hidden order-3 md:order-2 shadow-sm sm:rounded-lg border-l-2 border-currentBroun row-span-3 col-span-2 grid grid-row-1 justify-items-center gap-8 p-3 py-5"
+            >
+                <div
+                    class="h-max text-xs sm:text-base md:text-lg lg:text-2xl text-justify dark:text-slate-200 flex items-center pr-3 sm:pr-5 md:pr-8 lg:pr-10 md:leading-7 lg:leading-10"
+                >
+                    <p>
+                        Неожиданное задержание, вызов на допрос в
+                        правоохранительные органы, обыск в жилище или офисе
+                        компании, повестка в суд- всегда сильный стресс не
+                        только для того, с кем это событие произошло , но и для
+                        близких людей. <br />
+                        <br />
+                        В этой непростой ситуации противостоять
+                        правоохранительным органам в одиночку практически
+                        невозможно. Опыт и каждодневная практика адвоката по
+                        уголовным делам может оказаться решающим фактором для
+                        преодоления сложных периодов жизни. <br /><br />
+                        Участие защитника возможно на любой стадии уголовного
+                        процесса, вам нужно только позвонить адвокату и мы
+                        вместе найдем законный выход из сложившейся ситуации.
+                    </p>
+                </div>
+            </div>
+            <div
+                style="background-image: url('./images/Apollo_Sticker.webp')"
+                class="p-3 md:order-3 py-5 w-full row-span-2 col-span-2 flex items-center justify-center bg-contain bg-top bg-no-repeat"
+            ></div>
+        </div>
+
+        <div
+            style="
+                -moz-user-select: none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+            "
+            class="relative max-w-9xl mx-auto sm:px-6 lg:px-8 mb-8 mt-24 flex gap-20 overflow-hidden"
+        >
+            <swiper
+                :breakpoints="{
+                    200: { slidesPerView: 1 },
+                    400: { slidesPerView: 2 },
+                    900: { slidesPerView: 3 },
+                }"
+                :spaceBetween="20"
+                :slidesPerGroup="1"
+                :autoplay="{
+                    delay: 5500,
+                    disableOnInteraction: false,
+                }"
+                :loop="true"
+                :loopFillGroupWithBlank="true"
+                :navigation="false"
+                :freeMode="true"
+                :scrollbar="{
+                    hide: true,
+                }"
+                :modules="modules"
+            >
+                <swiper-slide v-for="product in 8" :key="product" class="p-10">
+                    <CartHoverRotate
+                        class="mx-auto"
+                        textFront="Сопровождение"
+                        textBack="Сопровождение при допросе клиента в качестве свидетеля по уголовному делу."
+                    />
+                </swiper-slide>
+            </swiper>
+
+            <!-- <div class="w-[150%] h-[23rem] md:h-[25rem] lg:h-[50rem] my-5">
+                <div class="cube-wrap flex">
+                    <div class="cube absolute -right-80 flex gap-16 py-5 px-16">
                         <div
-                            class="cube absolute -right-80 flex gap-16 overflow-hidden py-20"
+                                class="fixed text-md lg:text-2xl -top-12 lg:-top-16 text-white tracking-widest font-sans"
+                            >
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quam recusandae odit
+                                accusantium vitae, aliquid sit totam unde
+                                tempora saepe praesentium. Lorem ipsum dolor sit
+                                amet consectetur, adipisicing elit. Quasi saepe
+                                inventor.
+                            </div> 
+                        <div
+                            v-for="card in cards"
+                            :key="card"
+                            class="front w-44 h-56 lg:w-80 lg:h-96 hover:scale-125 duration-150 shadow-xl rounded-lg flex flex-row-reverse items-center justify-center rotate-y-4"
+                            @click.stop="modulCard($event)"
                         >
-                            <div
-                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
-                            >
-                                Front
-                            </div>
-                            <div
-                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
-                            >
-                                Front
-                            </div>
-                            <div
-                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
-                            >
-                                Front
-                            </div>
-                            <div
-                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
-                            >
-                                Front
-                            </div>
-                            <div
-                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
-                            >
-                                Front
-                            </div>
-                            <div
-                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
-                            >
-                                Front
-                            </div>
-                            <div
-                                class="front w-80 h-96 bg-slate-400 shadow-xl rounded-lg flex items-center justify-center rotate-y-4"
-                            >
-                                Front
-                            </div>
+                            <CartHoverRotate
+                                textFront="Сопровождение"
+                                textBack="Сопровождение при допросе клиента в качестве свидетеля по уголовному делу."
+                            />
                         </div>
+                        <div
+                                class="fixed text-md lg:text-2xl -bottom-14 lg:-bottom-16 text-white tracking-widest font-sans"
+                            >
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quam recusandae odit
+                                accusantium vitae, aliquid sit totam unde
+                                tempora saepe praesentium. Lorem ipsum dolor sit
+                                amet consectetur, adipisicing elit. Quasi saepe
+                                inventor.
+                            </div>
                     </div>
                 </div>
-                <!--  <div
-                    class="w-full flex flex-col justify-center gap-6 p-6 md:p-8 rounded-lg  shadow-md"
-                >
-                   
-                     <div
-                        class="flex flex-col sm:flex-row sm:items-center gap-10"
-                    >
-                        <div
-                            class="w-64 h-80 md:w-40 md:h rounded-lg -40 lg:w-52 lg:h-80 transCase bg-[url('./images/ugolovka.jpeg')] flex items-center bg-cover bg-center bg-no-repeat shadow shadow-slate-800 text-center rounded-lg  text-xs md:text-base lg:text-xl text-slate-800 dark:text-slate-200"
-                        >
-                            <p
-                                class="h-1/2 flex items-center p-2 backdrop-blur-sm dark:bg-black/40 bg-white/40"
-                            >
-                                Специализация адвоката в по уголовным делам:
-                            </p>
-                        </div>
-                        <div class="unvisibText w-2/3 p-4">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Earum cupiditate rerum sit
-                                repudiandae sed ipsa quae ducimus dolore officia
-                                laboriosam et soluta maiores voluptates ad hic,
-                                iusto error laborum quis.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-col sm:flex-row sm:items-center gap-10"
-                    >
-                        <div
-                            class="w-64 h-80 md:w-40 md:h rounded-lg -40 lg:w-52 lg:h-80 transCase transf bg-[url('./images/ugolovka.jpeg')] flex items-center bg-cover bg-center bg-no-repeat shadow shadow-slate-800 text-center rounded-lg  text-xs md:text-base lg:text-xl text-slate-800 dark:text-slate-200"
-                        >
-                            <p
-                                class="h-1/2 flex items-center p-2 backdrop-blur-sm dark:bg-black/40 bg-white/40"
-                            >
-                                В чем может потребоваться помощь:
-                            </p>
-                        </div>
-                        <div class="unvisibText w-2/3 p-4">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Earum cupiditate rerum sit
-                                repudiandae sed ipsa quae ducimus dolore officia
-                                laboriosam et soluta maiores voluptates ad hic,
-                                iusto error laborum quis.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-col sm:flex-row sm:items-center gap-10"
-                    >
-                        <div
-                            class="w-64 h-80 md:w-40 md:h rounded-lg -40 lg:w-52 lg:h-80 transCase transf2 bg-[url('./images/ugolovka.jpeg')] flex items-center bg-cover bg-center bg-no-repeat shadow shadow-slate-800 text-center rounded-lg  text-xs md:text-base lg:text-xl text-slate-800 dark:text-slate-200"
-                        >
-                            <p
-                                class="h-1/2 flex items-center p-2 backdrop-blur-sm dark:bg-black/40 bg-white/40"
-                            >
-                                Профессиональная помощь адвоката по уголовным
-                                делам:
-                            </p>
-                        </div>
-                        <div class="unvisibText w-2/3 p-4">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Earum cupiditate rerum sit
-                                repudiandae sed ipsa quae ducimus dolore officia
-                                laboriosam et soluta maiores voluptates ad hic,
-                                iusto error laborum quis.
-                            </p>
-                        </div>
-                    </div>
-                </div> -->
+            </div> -->
+        </div>
+
+        <div class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10">
+            <div
+                class="overflow-hidden shadow-sm sm:rounded-lg flex flex-col gap-20 p-10"
+            >
+                <TitleImage />
+                <TitleImage />
             </div>
         </div>
 
@@ -177,10 +194,74 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
 </template>
 
 <script>
-import { Alert } from "bootstrap";
+SwiperCore.use([Scrollbar, Navigation, Autoplay, FreeMode]);
 export default {
+    setup() {
+        const onSwiper = (swiper) => {
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log("slide change");
+        };
+        return {
+            onSwiper,
+            onSlideChange,
+            modules: [Autoplay, Navigation, Scrollbar, A11y, FreeMode],
+        };
+    },
     data() {
-        return {};
+        return {
+            cards: [
+                {
+                    title: "hack 1",
+                    img: "path",
+                    cantent:
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa unde hic aliquam. audantium similique expedita iusto ducimus laboriosam nam dignissimos!",
+                },
+                {
+                    title: "hack 2",
+                    img: "path",
+                    cantent:
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa unde hic aliquam. audantium similique expedita iusto ducimus laboriosam nam dignissimos!",
+                },
+                {
+                    title: "hack 3",
+                    img: "path",
+                    cantent:
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa unde hic aliquam. audantium similique expedita iusto ducimus laboriosam nam dignissimos!",
+                },
+                {
+                    title: "hack 4",
+                    img: "path",
+                    cantent:
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa unde hic aliquam. audantium similique expedita iusto ducimus laboriosam nam dignissimos!",
+                },
+                {
+                    title: "hack 5",
+                    img: "path",
+                    cantent:
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa unde hic aliquam. audantium similique expedita iusto ducimus laboriosam nam dignissimos!",
+                },
+                {
+                    title: "hack 6",
+                    img: "path",
+                    cantent:
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa unde hic aliquam. audantium similique expedita iusto ducimus laboriosam nam dignissimos!",
+                },
+                {
+                    title: "hack 7",
+                    img: "path",
+                    cantent:
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa unde hic aliquam. audantium similique expedita iusto ducimus laboriosam nam dignissimos!",
+                },
+                {
+                    title: "hack 8",
+                    img: "path",
+                    cantent:
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa unde hic aliquam. audantium similique expedita iusto ducimus laboriosam nam dignissimos!",
+                },
+            ],
+        };
     },
     props: {
         products: Object,
@@ -190,6 +271,9 @@ export default {
         CardProduct,
         CircleLogo,
         SecondaryButton,
+        Swiper,
+        SwiperSlide,
+        TitleImage,
     },
 
     methods: {
@@ -202,32 +286,11 @@ export default {
                 }
             }
         },
-        // animateScroll(event) {
-        //     let animTox = document.querySelectorAll(".transCase");
-
-        //     for (let index = 0; index < animTox.length; index++) {
-        //         const element = animTox[index];
-
-        //         if (window.scrollY > window.innerHeight / 2) {
-        //             element.classList.remove("transf");
-        //             element.classList.remove("transf2");
-        //             element.classList.add("trans_origin");
-
-        //             setTimeout(() => {
-        //                 this.animText();
-        //             }, 1000);
-        //         }
-        //     }
-        // },
-
-        // animText() {
-        //     let visibled = document.querySelectorAll(".unvisibText");
-        //     for (let index = 0; index < visibled.length; index++) {
-        //         const element = visibled[index];
-
-        //         element.classList.add("visibText");
-        //     }
-        // },
+        modulCard: function (event) {
+            event.target.classList.toggle("hideCard");
+            console.log(event.target);
+            // some code to filter users
+        },
     },
     created() {
         window.addEventListener("scroll", this.handleSCroll);
@@ -243,47 +306,36 @@ export default {
 </script>
 
 <style>
-/* .transf {
-    transform: translate(540px, -235px);
-}
-
-.transf2 {
-    transform: translate(1050px, -477px);
-}
-
-.trans_origin {
-    transition: 1.5s all ease-in-out;
-    transform: translateY(0);
-}
-
-.unvisibText {
-    transition: 1s all ease-in-out;
-    opacity: 0;
-    transform: translateX(-50px);
-}
-.visibText {
-    opacity: 1;
-    transform: translateX(0);
-} */
-
-.front,
 .cube {
     transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateZ(0deg)
         translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
-    animation: transslide 12s infinite linear;
+    animation: transslide 35s infinite linear;
 }
 
-.cube {
+.hideCard {
+    animation-play-state: paused;
+    /* opacity: 0; */
 }
 
+@media (min-width: 1024px) {
+    @keyframes transslide {
+        0% {
+            transform: translateX(-900px) rotateY(-15deg);
+        }
+        100% {
+            transform: translateX(1350px) rotateY(-15deg);
+        }
+    }
+}
 @keyframes transslide {
     0% {
-        transform: translateX(-800px) rotateY(-15deg);
+        transform: translateX(-600px) rotateY(-15deg);
     }
     100% {
-        transform: translateX(900px) rotateY(0deg);
+        transform: translateX(1850px) rotateY(-15deg);
     }
 }
+
 .cube-wrap {
     perspective: 724px;
     perspective-origin: 50% 50%;

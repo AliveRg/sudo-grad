@@ -12,13 +12,7 @@ function selectDate() {}
 
     <AuthenticatedLayout>
         <template #header>
-            <div class="h-full flex justify-center items-center">
-                <h1
-                    class="font-semibold text-2xl lg:text-4xl text-gray-800 dark:text-gray-50 leading-tight"
-                >
-                    О Нас
-                </h1>
-            </div>
+            <h1>О Нас</h1>
         </template>
 
         <div class="py-12">
@@ -32,7 +26,7 @@ function selectDate() {}
                         </div>
                         <div class="flex flex-col gap-12">
                             <div
-                                class="text-left text-2xl sm:text-3xl md:text-5xl lg:text-7xl w-full"
+                                class="text-left text-2xl sm:text-3xl md:text-5xl lg:text-7xl w-full text-currentBroun"
                             >
                                 <h1>Who we are</h1>
                             </div>
@@ -67,24 +61,27 @@ function selectDate() {}
                             </div>
                         </div>
                         <div
-                            class="mt-16 text-xl sm:text-3xl md:text-4xl lg:text-5xl w-full text-center"
+                            class="mt-16 text-xl sm:text-3xl md:text-4xl lg:text-5xl text-currentBroun w-full text-center"
                         >
                             <h2>History</h2>
                         </div>
-                        <div class="mb-32 grid grid-cols-1 gap-8">
+                        <div
+                            class="mb-32 mx-auto w-11/12 grid grid-cols-1 gap-8"
+                        >
                             <div
                                 v-for="item in items"
                                 :key="item"
                                 class="flex mb-4"
+                                @click="alerting($event, item.number)"
                             >
                                 <div
-                                    class="text-sm border-b-2 border-l-2 border-indigo-500 rounded-lg w-full grid"
+                                    class="text-sm border-b-2 border-l-2 border-currentBroun rounded-lg w-full grid"
                                 >
                                     <div
                                         class="font-semibold text-base sm:text-2xl flex justify-between pr-8 pl-2"
                                     >
                                         <h3>{{ item.title }}</h3>
-                                        <h2 class="text-md text-orange-300">
+                                        <h2 class="text-md text-currentLight">
                                             {{ "0" + item.number }}
                                         </h2>
                                     </div>
@@ -93,7 +90,7 @@ function selectDate() {}
                                     >
                                         <p
                                             :id="'His' + item.number"
-                                            class="unActive pt-4 h-auto duration-1000 md:w-1/2"
+                                            class="unActive pt-4 h-auto duration-700 md:w-1/2"
                                         >
                                             {{ item.message }}
                                         </p>
@@ -102,7 +99,6 @@ function selectDate() {}
                                 <span class="inline-flex rounded-sm">
                                     <button
                                         type="button"
-                                        @click="alerting($event, item.number)"
                                         class="inline-flex items-start px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
                                     >
                                         <span class="material-symbols-outlined">

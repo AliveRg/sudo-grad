@@ -14,7 +14,7 @@ defineProps({
     <Head title="Услуги адвоката - адвокатская помощь, Белгород" />
 
     <div
-        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-teal-500 selection:text-white"
+        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-currentDarkNext selection:text-white"
     >
         <div
             v-if="canLogin"
@@ -23,21 +23,21 @@ defineProps({
             <Link
                 v-if="$page.props.auth.user"
                 :href="'dashboard'"
-                class="px-2 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                class="px-2 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                 >Наши Услуги</Link
             >
 
             <template v-else>
                 <Link
                     :href="'login'"
-                    class="px-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                    class="px-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                     >Вход</Link
                 >
 
                 <Link
                     v-if="canRegister"
                     :href="'register'"
-                    class="ml-4 px-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                    class="ml-4 px-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                     >Регистрация</Link
                 >
             </template>
@@ -123,33 +123,61 @@ defineProps({
                     <section v-if="canLogin">
                         <a
                             v-if="$page.props.auth.user"
-                            :href="'dashboard'"
-                            class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
+                            :href="'contact'"
+                            class="min-h-full scale-100 p-6 bg-white/70 dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-currentDarkNext"
                         >
                             <LinkWelcome
-                                title="Наши Уcлуги"
+                                title="Заказать консультацию"
                                 content=" Laravel has wonderful documentation covering every aspect of the
                                         framework. Whether you are a newcomer or have prior experience
                                         with Laravel, we recommend reading our documentation from
-                                        beginning to end. Lorem, ipsum dolor sit amet consectetur
-                                        adipisicing elit. Rem neque adipisci eius aliquam asperiores vel
-                                        dolorum architecto voluptatibus quia optio."
+                                        beginning to end."
                             />
                         </a>
 
                         <div v-else>
                             <a
                                 :href="'login'"
-                                class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
+                                class="min-h-full scale-100 p-6 bg-white/70 dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-currentDarkNext"
+                            >
+                                <LinkWelcome
+                                    title="Заказать консультацию"
+                                    content=" Laravel has wonderful documentation covering every aspect of the
+                                        framework. Whether you are a newcomer or have prior experience
+                                        with Laravel, we recommend reading our documentation from
+                                        beginning to end. "
+                                />
+                            </a>
+                        </div>
+                    </section>
+                    <!-- Next Path -->
+
+                    <section v-if="canLogin">
+                        <a
+                            v-if="$page.props.auth.user"
+                            :href="'dashboard'"
+                            class="min-h-full scale-100 p-6 bg-white/70 dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-currentDarkNext"
+                        >
+                            <LinkWelcome
+                                title="Наши Уcлуги"
+                                content=" Laravel has wonderful documentation covering every aspect of the
+                                        framework. Whether you are a newcomer or have prior experience
+                                        with Laravel, we recommend reading our documentation from
+                                        beginning to end. "
+                            />
+                        </a>
+
+                        <div v-else>
+                            <a
+                                :href="'login'"
+                                class="min-h-full scale-100 p-6 bg-white/70 dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-currentDarkNext"
                             >
                                 <LinkWelcome
                                     title="Наши Услуги"
                                     content=" Laravel has wonderful documentation covering every aspect of the
                                         framework. Whether you are a newcomer or have prior experience
                                         with Laravel, we recommend reading our documentation from
-                                        beginning to end. Lorem, ipsum dolor sit amet consectetur
-                                        adipisicing elit. Rem neque adipisci eius aliquam asperiores vel
-                                        dolorum architecto voluptatibus quia optio."
+                                        beginning to end. "
                                 />
                             </a>
                         </div>
@@ -161,69 +189,28 @@ defineProps({
                         <a
                             v-if="$page.props.auth.user"
                             :href="'about'"
-                            class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
+                            class="min-h-full scale-100 p-6 bg-white/70 dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-currentDarkNext"
                         >
                             <LinkWelcome
                                 title="О Нас"
                                 content=" Laravel has wonderful documentation covering every aspect of the
                                         framework. Whether you are a newcomer or have prior experience
                                         with Laravel, we recommend reading our documentation from
-                                        beginning to end. Lorem, ipsum dolor sit amet consectetur
-                                        adipisicing elit. Rem neque adipisci eius aliquam asperiores vel
-                                        dolorum architecto voluptatibus quia optio."
+                                        beginning to end. "
                             />
                         </a>
 
                         <div v-else>
                             <a
                                 :href="'login'"
-                                class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
+                                class="min-h-full scale-100 p-6 bg-white/70 dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-currentDarkNext"
                             >
                                 <LinkWelcome
                                     title="О Нас"
                                     content=" Laravel has wonderful documentation covering every aspect of the
                                         framework. Whether you are a newcomer or have prior experience
                                         with Laravel, we recommend reading our documentation from
-                                        beginning to end. Lorem, ipsum dolor sit amet consectetur
-                                        adipisicing elit. Rem neque adipisci eius aliquam asperiores vel
-                                        dolorum architecto voluptatibus quia optio."
-                                />
-                            </a>
-                        </div>
-                    </section>
-
-                    <!-- Next Path -->
-
-                    <section v-if="canLogin">
-                        <a
-                            v-if="$page.props.auth.user"
-                            :href="'contact'"
-                            class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
-                        >
-                            <LinkWelcome
-                                title="Наши Контакты"
-                                content=" Laravel has wonderful documentation covering every aspect of the
-                                        framework. Whether you are a newcomer or have prior experience
-                                        with Laravel, we recommend reading our documentation from
-                                        beginning to end. Lorem, ipsum dolor sit amet consectetur
-                                        adipisicing elit. Rem neque adipisci eius aliquam asperiores vel
-                                        dolorum architecto voluptatibus quia optio."
-                            />
-                        </a>
-
-                        <div v-else>
-                            <a
-                                :href="'login'"
-                                class="min-h-full scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
-                            >
-                                <LinkWelcome
-                                    title="Наши Контакты"
-                                    content=" Laravel has wonderful documentation covering every aspect of the
-                                        framework. Whether you are a newcomer or have prior experience
-                                        with Laravel, we recommend reading our documentation from
-                                        beginning to end. Lorem, ipsum dolor sit amet consectetur
-                                        adipisicing elit. Rem neque adipisci eius aliquam asperiores vel
-                                        dolorum architecto voluptatibus quia optio."
+                                        beginning to end."
                                 />
                             </a>
                         </div>
@@ -234,7 +221,7 @@ defineProps({
                     <section v-if="canLogin">
                         <div
                             v-if="$page.props.auth.user"
-                            class="min-h-full bg-0-50 bg-image-welcome bg-no-repeat bg-cover bg-center backdrop-opacity-30 scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
+                            class="min-h-full bg-0-50 bg-image-welcome bg-no-repeat bg-cover bg-center backdrop-opacity-30 scale-100 p-6 bg-white/70 dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-currentDarkNext"
                         >
                             <div>
                                 <div
@@ -245,7 +232,7 @@ defineProps({
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke-width="1.5"
-                                        class="w-7 h-7 stroke-teal-500"
+                                        class="w-7 h-7 stroke-currentDarkNext"
                                     >
                                         <path
                                             stroke-linecap="round"
@@ -268,12 +255,12 @@ defineProps({
                                     tools and libraries, such as
                                     <a
                                         :href="'login'"
-                                        class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Forge</a
                                     >,
                                     <a
                                         :href="'login'"
-                                        class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Envoyer</a
                                     >
                                     help you take your projects to the next
@@ -281,22 +268,22 @@ defineProps({
                                     libraries like
                                     <a
                                         :href="'login'"
-                                        class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Cashier</a
                                     >,
                                     <a
                                         :href="'login'"
-                                        class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Dusk</a
                                     >,
                                     <a
                                         :href="'login'"
-                                        class="underline hover:text-teal-300 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-teal-300 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Sanctum</a
                                     >,
                                     <a
                                         :href="'login'"
-                                        class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Telescope</a
                                     >, and more.
                                 </p>
@@ -305,7 +292,7 @@ defineProps({
 
                         <div
                             v-else
-                            class="min-h-full bg-image-welcome bg-no-repeat bg-cover bg-center backdrop-opacity-30 scale-100 p-6 bg-white dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-teal-500"
+                            class="min-h-full bg-image-welcome bg-no-repeat bg-cover bg-center backdrop-opacity-30 scale-100 p-6 bg-white/70 dark:bg-gray-800/80 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-currentDarkNext"
                         >
                             <div>
                                 <div
@@ -316,7 +303,7 @@ defineProps({
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke-width="1.5"
-                                        class="w-7 h-7 stroke-teal-500"
+                                        class="w-7 h-7 stroke-currentDarkNext"
                                     >
                                         <path
                                             stroke-linecap="round"
@@ -339,12 +326,12 @@ defineProps({
                                     tools and libraries, such as
                                     <a
                                         href="#"
-                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Forge</a
                                     >,
                                     <a
                                         href="#"
-                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Envoyer</a
                                     >
                                     help you take your projects to the next
@@ -352,22 +339,22 @@ defineProps({
                                     libraries like
                                     <a
                                         href="#"
-                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Cashier</a
                                     >,
                                     <a
                                         href="#"
-                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Dusk</a
                                     >,
                                     <a
                                         href="#"
-                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Sanctum</a
                                     >,
                                     <a
                                         href="#"
-                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-teal-500"
+                                        class="underline hover:text-amber-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Telescope</a
                                     >, and more.
                                 </p>
@@ -386,13 +373,13 @@ defineProps({
 }
 
 .bg-dots-darker {
-    background-color: #dadada;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='564' height='564' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%230D9488' stroke-width='1.8'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%230D9488'%3E%3Ccircle cx='769' cy='229' r='6'/%3E%3Ccircle cx='539' cy='269' r='6'/%3E%3Ccircle cx='603' cy='493' r='6'/%3E%3Ccircle cx='731' cy='737' r='6'/%3E%3Ccircle cx='520' cy='660' r='6'/%3E%3Ccircle cx='309' cy='538' r='6'/%3E%3Ccircle cx='295' cy='764' r='6'/%3E%3Ccircle cx='40' cy='599' r='6'/%3E%3Ccircle cx='102' cy='382' r='6'/%3E%3Ccircle cx='127' cy='80' r='6'/%3E%3Ccircle cx='370' cy='105' r='6'/%3E%3Ccircle cx='578' cy='42' r='6'/%3E%3Ccircle cx='237' cy='261' r='6'/%3E%3Ccircle cx='390' cy='382' r='6'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: #c0d2e6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='552' height='552' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23C6DAE1' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%231C666D'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
 }
 @media (prefers-color-scheme: dark) {
     .dark\:bg-dots-lighter {
-        background-color: #0d3734;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='564' height='564' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%230D9488' stroke-width='1.8'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%230D9488'%3E%3Ccircle cx='769' cy='229' r='6'/%3E%3Ccircle cx='539' cy='269' r='6'/%3E%3Ccircle cx='603' cy='493' r='6'/%3E%3Ccircle cx='731' cy='737' r='6'/%3E%3Ccircle cx='520' cy='660' r='6'/%3E%3Ccircle cx='309' cy='538' r='6'/%3E%3Ccircle cx='295' cy='764' r='6'/%3E%3Ccircle cx='40' cy='599' r='6'/%3E%3Ccircle cx='102' cy='382' r='6'/%3E%3Ccircle cx='127' cy='80' r='6'/%3E%3Ccircle cx='370' cy='105' r='6'/%3E%3Ccircle cx='578' cy='42' r='6'/%3E%3Ccircle cx='237' cy='261' r='6'/%3E%3Ccircle cx='390' cy='382' r='6'/%3E%3C/g%3E%3C/svg%3E");
+        background-color: #6d6d6d;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='552' height='552' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23C6DAE1' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23C6DAE1'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
     }
 }
 </style>

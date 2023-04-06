@@ -10,6 +10,7 @@ import CircleLogo from "@/Components/CircleLogo.vue";
 import HistoryButton from "@/Components/HistoryButton.vue";
 import { Link } from "@inertiajs/vue3";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
+import TextAdress from "@/Components/TextAdress.vue";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -53,7 +54,7 @@ const showingNavigationDropdown = ref(false);
                                     :href="route('contact')"
                                     :active="route().current('contact')"
                                 >
-                                    Контакты
+                                    Заказать консультацию
                                 </NavLink>
                                 <NavLink
                                     :href="route('cases')"
@@ -178,7 +179,7 @@ const showingNavigationDropdown = ref(false);
                             :href="route('contact')"
                             :active="route().current('contact')"
                         >
-                            Контакты
+                            Заказать консультацию
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
                             :href="route('cases')"
@@ -221,7 +222,7 @@ const showingNavigationDropdown = ref(false);
 
             <!-- Page Heading -->
             <header
-                class="bg-white dark:bg-gray-800 shadow"
+                class="bg-white dark:bg-gray-800 shadow family"
                 v-if="$slots.header"
             >
                 <section class="relative overflow-hidden">
@@ -254,16 +255,22 @@ const showingNavigationDropdown = ref(false);
                     </div>
 
                     <div
-                        class="absolute flex justify-center items-center gap-8 position-center z-10 py-6 w-full bg-slate-200 bg-opacity-50 backdrop-blur-sm"
+                        class="absolute flex justify-center items-center gap-2 sm:gap-8 position-center z-10 py-6 w-full bg-slate-200 dark:bg-slate-900/50 bg-opacity-50 backdrop-blur-sm"
                     >
-                        <slot name="header" />
                         <div
-                            class="animate-bounce w-8 h-8 md:w-10 md:h-10 bg-slate-300 bg-opacity-40 shadow-md mx-0 flex items-center justify-center rounded-full"
+                            class="flex justify-center items-center font-semibold text-2xl lg:text-4xl text-currentBroun dark:text-currentCian leading-tight text-center"
+                        >
+                            <slot name="header" />
+                        </div>
+                        <div
+                            class="animate-bounce w-10 h-10 md:w-10 md:h-10 mr-3 bg-slate-300 bg-opacity-40 shadow-md flex items-center justify-center rounded-full"
                             onselectstart="return false"
                             onmousedown="return false"
                             @click="scrollTop"
                         >
-                            <span class="material-symbols-outlined">
+                            <span
+                                class="material-symbols-outlined text-currentBroun"
+                            >
                                 south
                             </span>
                         </div>
@@ -280,7 +287,7 @@ const showingNavigationDropdown = ref(false);
                     class="mt-6 sm:mt-12 py-28 flex items-center justify-center h-min bg-fixed bg-center bg-cover custom-img"
                 >
                     <div
-                        class="h-full w-full p-6 grid grid-cols-1 gap-8 sm:gap-20 sm:grid-cols-2"
+                        class="h-full w-full p-6 grid grid-cols-1 gap-8 md:gap-20 md:grid-cols-2"
                     >
                         <div class="m-2 flex columns-2 gap-10">
                             <div class="">
@@ -297,48 +304,7 @@ const showingNavigationDropdown = ref(false);
                             </div>
                         </div>
 
-                        <div
-                            class="w-full text-white text-sm sm:text-lg lg:text-2xl font-semibold"
-                        >
-                            <ul class="flex flex-col gap-5">
-                                <li class="w-full flex gap-3 flex-col">
-                                    <div
-                                        class="mb-3 sm:mb-5 font-bold text-2xl sm:text-3xl lg:text-4xl"
-                                    >
-                                        <p>Адрес</p>
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <span class="material-symbols-outlined">
-                                            pin_drop
-                                        </span>
-                                        <span
-                                            >улица Маяковского, 26,
-                                            Белгород</span
-                                        >
-                                    </div>
-                                </li>
-                                <li class="w-full flex-col flex gap-5">
-                                    <div class="flex gap-3">
-                                        <span class="material-symbols-outlined">
-                                            call
-                                        </span>
-                                        <span>+7-980-326-97-94</span>
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <span class="material-symbols-outlined">
-                                            call
-                                        </span>
-                                        <span>31-25-05</span>
-                                    </div>
-                                </li>
-                                <li class="w-full flex gap-3">
-                                    <span class="material-symbols-outlined">
-                                        mail
-                                    </span>
-                                    <span>gorodova.work49280@gmail.com</span>
-                                </li>
-                            </ul>
-                        </div>
+                        <TextAdress />
                     </div>
                 </div>
             </footer>
@@ -350,6 +316,9 @@ const showingNavigationDropdown = ref(false);
 const heightScreen = window.screen.height;
 
 export default {
+    components: {
+        TextAdress,
+    },
     data() {
         return {
             windowHeight: window.innerHeight,
@@ -371,6 +340,11 @@ export default {
 </script>
 
 <style>
+.family {
+    font-family: "Golos Text", sans-serif;
+    font-weight: 400;
+}
+
 .mirror {
     position: absolute;
 }

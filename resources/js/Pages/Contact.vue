@@ -1,5 +1,6 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
+import TextAdress from "@/Components/TextAdress.vue";
 import { Head } from "@inertiajs/vue3";
 </script>
 
@@ -8,13 +9,7 @@ import { Head } from "@inertiajs/vue3";
 
     <AuthenticatedLayout>
         <template #header>
-            <div class="h-full flex justify-center items-center">
-                <h1
-                    class="font-semibold text-2xl lg:text-4xl text-gray-800 dark:text-gray-50 leading-tight"
-                >
-                    Контакты
-                </h1>
-            </div>
+            <h1>Заказать консультацию</h1>
         </template>
 
         <div class="py-12">
@@ -28,56 +23,7 @@ import { Head } from "@inertiajs/vue3";
                             class="map w-full h-80 bg-teal-500 rounded-lg"
                         ></div>
                         <div class="flex flex-col md:flex-row gap-6">
-                            <div
-                                class="w-full text-zinc-600 text-sm sm:text-lg lg:text-2xl font-semibold flex items-start justify-start md:justify-center"
-                            >
-                                <ul class="flex flex-col gap-5">
-                                    <li class="w-full flex gap-3 flex-col">
-                                        <div
-                                            class="mb-3 sm:mb-5 font-bold text-2xl sm:text-3xl lg:text-4xl"
-                                        >
-                                            <p>Адрес</p>
-                                        </div>
-                                        <div class="flex gap-3">
-                                            <span
-                                                class="material-symbols-outlined"
-                                            >
-                                                pin_drop
-                                            </span>
-                                            <span
-                                                >улица Маяковского, 26,
-                                                Белгород</span
-                                            >
-                                        </div>
-                                    </li>
-                                    <li class="w-full flex-col flex gap-5">
-                                        <div class="flex gap-3">
-                                            <span
-                                                class="material-symbols-outlined"
-                                            >
-                                                call
-                                            </span>
-                                            <span>+7-980-326-97-94</span>
-                                        </div>
-                                        <div class="flex gap-3">
-                                            <span
-                                                class="material-symbols-outlined"
-                                            >
-                                                call
-                                            </span>
-                                            <span>31-25-05</span>
-                                        </div>
-                                    </li>
-                                    <li class="w-full flex gap-3">
-                                        <span class="material-symbols-outlined">
-                                            mail
-                                        </span>
-                                        <span
-                                            >gorodova.work49280@gmail.com</span
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
+                            <TextAdress />
                             <form
                                 class="w-full flex flex-col md:w-1/2"
                                 ref="form"
@@ -158,56 +104,8 @@ import { Head } from "@inertiajs/vue3";
                             class="map w-full h-80 bg-violet-500 rounded-lg"
                         ></div>
                         <div class="flex flex-col md:flex-row gap-6">
-                            <div
-                                class="w-full text-zinc-600 text-sm sm:text-lg lg:text-2xl font-semibold flex items-start justify-start md:justify-center"
-                            >
-                                <ul class="flex flex-col gap-5">
-                                    <li class="w-full flex gap-3 flex-col">
-                                        <div
-                                            class="mb-3 sm:mb-5 font-bold text-2xl sm:text-3xl lg:text-4xl"
-                                        >
-                                            <p>Адрес</p>
-                                        </div>
-                                        <div class="flex gap-3">
-                                            <span
-                                                class="material-symbols-outlined"
-                                            >
-                                                pin_drop
-                                            </span>
-                                            <span
-                                                >улица Маяковского, 26,
-                                                Белгород</span
-                                            >
-                                        </div>
-                                    </li>
-                                    <li class="w-full flex-col flex gap-5">
-                                        <div class="flex gap-3">
-                                            <span
-                                                class="material-symbols-outlined"
-                                            >
-                                                call
-                                            </span>
-                                            <span>+7-980-326-97-94</span>
-                                        </div>
-                                        <div class="flex gap-3">
-                                            <span
-                                                class="material-symbols-outlined"
-                                            >
-                                                call
-                                            </span>
-                                            <span>31-25-05</span>
-                                        </div>
-                                    </li>
-                                    <li class="w-full flex gap-3">
-                                        <span class="material-symbols-outlined">
-                                            mail
-                                        </span>
-                                        <span
-                                            >gorodova.work49280@gmail.com</span
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
+                            <TextAdress />
+
                             <form
                                 class="w-full flex flex-col md:w-1/2"
                                 ref="form1"
@@ -295,6 +193,9 @@ document.addEventListener("submit", (e) => {
 });
 
 export default {
+    components: {
+        TextAdress,
+    },
     methods: {
         sendEmail() {
             emailjs

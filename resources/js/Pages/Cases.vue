@@ -22,13 +22,7 @@ import "swiper/swiper.min.css";
 
     <AuthenticatedLayout>
         <template #header>
-            <div class="flex justify-center items-center">
-                <h1
-                    class="font-semibold text-2xl lg:text-4xl text-gray-800 dark:text-gray-50 leading-tight"
-                >
-                    Наши Дела
-                </h1>
-            </div>
+            <h1>Наши Дела</h1>
         </template>
         <div class="main">
             <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
