@@ -26,22 +26,23 @@ Route::get('/', function () {
     ]);
 })->name('welcome');
 
-Route::get('/dashboard',[ ProductController::class, 'index'] )->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/cases',[ CasesController::class, 'pug'] )->middleware(['auth', 'verified'])->name('cases');
-// Route::get('/cases/1',[ CasesController::class, 'CaseOne'] )->middleware(['auth', 'verified'])->name('cases1');
+Route::get('/dashboard',[ ProductController::class, 'index'] )->name('dashboard');
+Route::get('/cases',[ CasesController::class, 'pug'] )->name('cases');
+// Route::get('/cases/1',[ CasesController::class, 'CaseOne'] )->name('cases1');
 
 
 
 
 Route::get('/about', function () {
     return Inertia::render('About');
-})->middleware(['auth', 'verified'])->name('about');
+})->name('about');
 
 Route::get('/contact', function () {
     return Inertia::render('Contact');
-})->middleware(['auth', 'verified'])->name('contact');
-Route::get('/1',[ ProductController::class, 'indProduct'] )->middleware(['auth', 'verified'])->name('products1');
-Route::get('/2',[ ProductController::class, 'indProductTwo'] )->middleware(['auth', 'verified'])->name('products2');
+})->name('contact');
+Route::get('/1',[ ProductController::class, 'indProduct'] )->name('products1');
+Route::get('/2',[ ProductController::class, 'indProductTwo'] )->name('products2');
+// Route::get('/2',[ ProductController::class, 'indProductTwo'] )->middleware(['auth', 'verified'])->name('products2');  странинца для зарегестрированного пользователя
 
 
 Route::middleware('auth')->group(function () {
