@@ -34,10 +34,13 @@ import TitleImage from "@/Components/TitleImage.vue";
                 class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun tracking-widest"
             >
                 <p>
-                    <span class="text-currentCian"
-                        >Квалифицированная помощь</span
-                    >
-                    на любой стадии уголовного дела
+                    Адвокат
+                    <span class="text-currentCian">
+                        Городова Елена Николаевна </span
+                    >занимается наследственными делами и поможет
+                    <span class="text-currentCian">
+                        вступить или оспорить наследство.
+                    </span>
                 </p>
             </div>
 
@@ -48,25 +51,41 @@ import TitleImage from "@/Components/TitleImage.vue";
                     class="h-max text-xs sm:text-base md:text-lg lg:text-2xl dark:text-slate-200 text-justify flex items-center pr-3 sm:pr-5 md:pr-8 lg:pr-10 md:leading-7 lg:leading-10"
                 >
                     <p>
-                        Неожиданное задержание, вызов на допрос в
-                        правоохранительные органы, обыск в жилище или офисе
-                        компании, повестка в суд- всегда сильный стресс не
-                        только для того, с кем это событие произошло , но и для
-                        близких людей. <br />
+                        Наследственные споры относятся к категории сложных дел.
+                        Вступление в наследство не всегда проходит гладко.
+                        Частой бывает ситуация когда наследники не могут прийти
+                        к согласию по поводу раздела наследственного имущества.
+                        Кто-то может пропустить срок вступления в наследство и
+                        лишиться наследственного имущества. Наследника может
+                        ожидать неприятный сюрприз в виде завещания на
+                        постороннего человека.<br />
                         <br />
-                        В этой непростой ситуации противостоять
-                        правоохранительным органам в одиночку практически
-                        невозможно. Опыт и каждодневная практика адвоката по
-                        уголовным делам может оказаться решающим фактором для
-                        преодоления сложных периодов жизни. <br /><br />
-                        Участие защитника возможно на любой стадии уголовного
-                        процесса, вам нужно только позвонить адвокату и мы
-                        вместе найдем законный выход из сложившейся ситуации.
+                        В данных ситуациях разобраться и помочь может только
+                        опытный адвокат с многолетней собственной практикой в
+                        судебных делах по наследственным спорам.
+                        <br /><br />
+                        <span
+                            class="font-bold text-2xl md:text-4xl text-currentBroun tracking-widest"
+                            >Принципы и методы работы адвоката по наследственным
+                            спорам:</span
+                        >
+                        Наследственные споры относятся к категории сложных дел.
+                        Вступление в наследство не всегда проходит гладко.
+                        Частой бывает ситуация когда наследники не могут прийти
+                        к согласию по поводу раздела наследственного имущества.
+                        Кто-то может пропустить срок вступления в наследство и
+                        лишиться наследственного имущества. Наследника может
+                        ожидать неприятный сюрприз в виде завещания на
+                        постороннего человека.<br />
+                        <br />
+                        В данных ситуациях разобраться и помочь может только
+                        опытный адвокат с многолетней собственной практикой в
+                        судебных делах по наследственным спорам.
                     </p>
                 </div>
             </div>
             <div
-                style="background-image: url('./images/Apollo_Sticker.webp')"
+                style="background-image: url('./images/lawyer_state.webp')"
                 class="p-3 md:order-3 py-5 w-full row-span-2 col-span-2 flex items-center justify-center bg-contain bg-top bg-no-repeat"
             ></div>
         </div>
@@ -101,11 +120,17 @@ import TitleImage from "@/Components/TitleImage.vue";
                 }"
                 :modules="modules"
             >
-                <swiper-slide v-for="product in 8" :key="product" class="p-10">
+                <swiper-slide v-for="card in cards" :key="card" class="p-10">
+                    <div
+                        class="text-black backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center mb-5 h-10"
+                    >
+                        {{ card.title }}
+                    </div>
                     <CartHoverRotate
                         class="mx-auto"
-                        textFront="Сопровождение"
-                        textBack="Сопровождение при допросе клиента в качестве свидетеля по уголовному делу."
+                        :textFront="card.title"
+                        :textBack="card.content"
+                        :img__path="card.img"
                     />
                 </swiper-slide>
             </swiper>
@@ -151,7 +176,7 @@ import TitleImage from "@/Components/TitleImage.vue";
 
         <div class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10">
             <div
-                class="overflow-hidden shadow-sm sm:rounded-lg flex flex-col gap-20 bg-slate-400 p-10"
+                class="overflow-hidden shadow-sm sm:rounded-lg flex flex-col gap-20 p-10"
             >
                 <TitleImage />
                 <TitleImage />
@@ -210,7 +235,43 @@ export default {
         };
     },
     data() {
-        return {};
+        return {
+            cards: [
+                {
+                    title: "Правовая помощь",
+                    img: "state_2",
+                    content:
+                        "Правовая помощь в международных наследственных делах.",
+                },
+                {
+                    title: "Признания завещания",
+                    img: "state_11",
+                    content: "Признание завещания недействительным. ",
+                },
+                {
+                    title: "Признание права собственности",
+                    img: "state_10",
+                    content:
+                        "Признание права собственности  в порядке наследования.",
+                },
+                {
+                    title: "Восстановление срока принятия наследства",
+                    img: "state_7",
+                    content: "Восстановление срока для принятия наследства.",
+                },
+                {
+                    title: "Установление факта",
+                    img: "state_5",
+                    content: "Установление факта принятия наследства.",
+                },
+                {
+                    title: "Установление факта",
+                    img: "state_8",
+                    content:
+                        "Раздел наследственного имущества и других ситуациях, связанных с  вступлением и получением наследства в России и в других странах.",
+                },
+            ],
+        };
     },
     props: {
         products: Object,

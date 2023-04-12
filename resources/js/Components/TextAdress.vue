@@ -2,7 +2,9 @@
     <div
         class="w-full text-zinc-600 dark:text-slate-100 text-sm sm:text-lg lg:text-2xl font-semibold flex items-start justify-start md:justify-center"
     >
-        <ul class="flex flex-col gap-5 bg-white/60 p-5 rounded-lg">
+        <ul
+            class="flex flex-col gap-5 bg-white/60 dark:bg-black/60 p-5 rounded-lg"
+        >
             <li class="w-full flex gap-3 flex-col">
                 <div
                     class="mb-3 sm:mb-5 font-bold text-2xl sm:text-3xl lg:text-4xl"

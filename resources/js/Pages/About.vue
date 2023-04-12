@@ -34,8 +34,8 @@ function selectDate() {}
                                 class="flex flex-col md:flex-row gap-8 justify-between ml-auto mr-16 sm:mr-32 text-left text-lg md:text-xl lg:text-2xl w-full"
                             >
                                 <img
-                                    src="/images/about-gif.gif"
-                                    class="w-full md:w-1/3"
+                                    src="/images/ear-stiker.webp"
+                                    class="w-full md:w-1/3 hover:rotate-180 ease-in-out duration-1000"
                                 />
 
                                 <div

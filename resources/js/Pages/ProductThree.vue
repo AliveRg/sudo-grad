@@ -4,8 +4,8 @@ import { Head } from "@inertiajs/vue3";
 import CardProduct from "@/Components/CardProduct.vue";
 import CircleLogo from "@/Components/CircleLogo.vue";
 import CartHoverRotate from "@/Components/CartHoverRotate.vue";
-import SecondaryButton from "@/Components/SecondaryButton.vue";
 
+import SecondaryButton from "@/Components/SecondaryButton.vue";
 import useBreakpoints from "vue-next-breakpoints";
 import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -25,7 +25,7 @@ import TitleImage from "@/Components/TitleImage.vue";
 
     <AuthenticatedLayout>
         <template #header>
-            <h1>Уголовные дела</h1>
+            <h1>Жилищные споры</h1>
         </template>
         <div
             class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10 grid grid-rows-3 md:grid-cols-4 gap-2 md:gap-6"
@@ -34,10 +34,10 @@ import TitleImage from "@/Components/TitleImage.vue";
                 class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun tracking-widest"
             >
                 <p>
-                    <span class="text-currentCian"
-                        >Квалифицированная помощь</span
-                    >
-                    на любой стадии уголовного дела
+                    Споры возникающие по поводу
+                    <span class="text-currentCian"> домов и квартир, </span
+                    >считаются в правовой практике одними из
+                    <span class="text-currentCian"> наиболее сложных. </span>
                 </p>
             </div>
 
@@ -45,28 +45,43 @@ import TitleImage from "@/Components/TitleImage.vue";
                 class="overflow-hidden order-3 md:order-2 shadow-sm sm:rounded-lg border-l-2 border-currentBroun row-span-3 col-span-2 grid grid-row-1 justify-items-center gap-8 p-3 py-5"
             >
                 <div
-                    class="h-max text-xs sm:text-base md:text-lg lg:text-2xl text-justify dark:text-slate-200 flex items-center pr-3 sm:pr-5 md:pr-8 lg:pr-10 md:leading-7 lg:leading-10"
+                    class="h-max text-xs sm:text-base md:text-lg lg:text-2xl dark:text-slate-200 text-justify flex items-center pr-3 sm:pr-5 md:pr-8 lg:pr-10 md:leading-7 lg:leading-10"
                 >
                     <p>
-                        Неожиданное задержание, вызов на допрос в
-                        правоохранительные органы, обыск в жилище или офисе
-                        компании, повестка в суд- всегда сильный стресс не
-                        только для того, с кем это событие произошло , но и для
-                        близких людей. <br />
+                        <span class="text-currentCian">
+                            Городова Елена Николаевна, выступая в качестве
+                            жилищного адвоката, поможет решить их без потерь для
+                            клиента.
+                        </span>
+                        Адвокат эффективно поможет в различных жилищных делах: в
+                        спорах при определении режима пользования квартирой,
+                        комнатой или домом, в исключении необоснованного
+                        препятствования в реализации имеющегося права, во
+                        взыскании излишне удержанной оплаты за ЖКХ, в разделении
+                        лицевого счета и многих других.<br />
                         <br />
-                        В этой непростой ситуации противостоять
-                        правоохранительным органам в одиночку практически
-                        невозможно. Опыт и каждодневная практика адвоката по
-                        уголовным делам может оказаться решающим фактором для
-                        преодоления сложных периодов жизни. <br /><br />
-                        Участие защитника возможно на любой стадии уголовного
-                        процесса, вам нужно только позвонить адвокату и мы
-                        вместе найдем законный выход из сложившейся ситуации.
+                        <br />
+                        <span
+                            class="font-bold text-2xl md:text-4xl text-currentBroun tracking-widest"
+                            >Какую помощь окажет адвокат по жилищным
+                            вопросам?</span
+                        >
+                        <br /><br />
+                        <ul class="list-disc list-inside">
+                        <li>Предоставит устные или письменные консультации по жилищным вопросам.</li>
+                        <li>Проанализирует с юридической точки зрения все имеющиеся в деле документы.</li>
+                        <li>Оценит перспективы судебного разбирательства.</li>
+                        <li>Переведет переговоры со стороной оппонента, предложит варианты мирного урегулирования.</li>
+                        <li>Составит исковое заявление и иные необходимые для суда документы.</li>
+                        <li>Выработает правовую позицию клиента.</li>
+                        <li>Примет участие в судебных заседаниях, представляя интересы своего клиента.</li>
+                        <li>При необходимости обжалует судебное решение.</li>
+                     </ul>
                     </p>
                 </div>
             </div>
             <div
-                style="background-image: url('./images/Apollo_Sticker.webp')"
+                style="background-image: url('./images/stick_hand.webp')"
                 class="p-3 md:order-3 py-5 w-full row-span-2 col-span-2 flex items-center justify-center bg-contain bg-top bg-no-repeat"
             ></div>
         </div>
@@ -102,8 +117,8 @@ import TitleImage from "@/Components/TitleImage.vue";
                 :modules="modules"
             >
                 <swiper-slide v-for="card in cards" :key="card" class="p-10">
-                    <div
-                        class="text-black backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center mb-5 h-10"
+                  <div
+                        class="text-black backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center mb-5 h-10 text-center"
                     >
                         {{ card.title }}
                     </div>
@@ -163,7 +178,6 @@ import TitleImage from "@/Components/TitleImage.vue";
                 <TitleImage />
             </div>
         </div>
-
         <div class="pt-12">
             <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
                 <div class="overflow-hidden shadow-sm sm:rounded-lg">
@@ -201,6 +215,7 @@ import TitleImage from "@/Components/TitleImage.vue";
 
 <script>
 SwiperCore.use([Scrollbar, Navigation, Autoplay, FreeMode]);
+
 export default {
     setup() {
         const onSwiper = (swiper) => {
@@ -217,77 +232,42 @@ export default {
     },
     data() {
         return {
-            cards: [
+         cards: [
                 {
-                    title: "Защита",
-                    img: "state_1",
-                    content:
-                        "Защита обвиняемого (подозреваемого) на стадии предварительного расследования.",
-                },
-                {
-                    title: "Задержание",
-                    img: "state_2",
-                    content: "Юридическая помощь при задержании гражданина.",
-                },
-                {
-                    title: "Изменение меры",
+                    title: "Права пользования ",
                     img: "state_3",
-                    content: "Отмена или изменение меры пресечения",
-                },
-                {
-                    title: "Первая инстанция",
-                    img: "state_4",
                     content:
-                        "Защита подсудимого в суде первой апелляционной и кассационной инстанции.",
+                        "О прекращении права пользования жилым помещением, снятии с регистрационного учета.",
                 },
                 {
-                    title: "Посещение",
-                    img: "state_5",
-                    content:
-                        "Посещение обвиняемого , подсудимого в следственном изоляторе.",
+                    title: "Определении порядка пользования",
+                    img: "state_11",
+                    content: "Об определении порядка пользования жилым помещением.",
                 },
                 {
-                    title: "Защита несовершеннолетнего",
-                    img: "state_6",
-                    content:
-                        "Защита прав и интересов несовершеннолетнего в уголовном процессе.",
-                },
-                {
-                    title: "Примирительные",
-                    img: "state_7",
-                    content: "Примирительные процедуры в уголовном процессе.",
-                },
-                {
-                    title: "Свидетели",
-                    img: "state_8",
-                    content:
-                        "Представление интересов свидетелей в рамках дознания и предварительного расследования.",
-                },
-                {
-                    title: "Представление потерпевшего",
+                    title: "Признании доли ",
                     img: "state_9",
                     content:
-                        "Yа стадии проверки уголовного дела, на стадии расследования и в процессе судебного разбирательства.",
+                        "О признании доли в имуществе незначительной и ее принудительном выкупе.",
                 },
                 {
-                    title: "Условно-досрочное",
-                    img: "state_10",
-                    content:
-                        "Оказание помощи осужденному в условно-досрочном освобождении и замена наказания более мягким видом и изменение вида исправительного учреждения.",
+                    title: "О разделе имущества",
+                    img: "state_1",
+                    content: "О разделе имущества супругов, а также исключении недвижимого имущества из совместно нажитого супругами.",
                 },
                 {
-                    title: "Освобождение от наказания",
-                    img: "state_11",
-                    content:
-                        "Оказание помощи в освобождении от наказания в связи с болезнью обвиняемого или осужденного.",
+                    title: "Вселении (выселении)",
+                    img: "state_4",
+                    content: "О вселении (выселении) в жилое помещение.",
                 },
+                
             ],
         };
     },
     props: {
         products: Object,
     },
-    name: "DashBoard",
+
     components: {
         CardProduct,
         CircleLogo,
@@ -315,11 +295,9 @@ export default {
     },
     created() {
         window.addEventListener("scroll", this.handleSCroll);
-        window.addEventListener("scroll", this.animateScroll);
     },
     destroyed() {
         window.removeEventListener("scroll", this.handleSCroll);
-        window.removeEventListener("scroll", this.animateScroll);
     },
 
     computed: {},
@@ -327,41 +305,6 @@ export default {
 </script>
 
 <style>
-.cube {
-    transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateZ(0deg)
-        translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
-    animation: transslide 35s infinite linear;
-}
-
-.hideCard {
-    animation-play-state: paused;
-    /* opacity: 0; */
-}
-
-@media (min-width: 1024px) {
-    @keyframes transslide {
-        0% {
-            transform: translateX(-900px) rotateY(-15deg);
-        }
-        100% {
-            transform: translateX(1350px) rotateY(-15deg);
-        }
-    }
-}
-@keyframes transslide {
-    0% {
-        transform: translateX(-600px) rotateY(-15deg);
-    }
-    100% {
-        transform: translateX(1850px) rotateY(-15deg);
-    }
-}
-
-.cube-wrap {
-    perspective: 724px;
-    perspective-origin: 50% 50%;
-}
-
 .addClass {
     opacity: 0;
     transition: all ease-in;

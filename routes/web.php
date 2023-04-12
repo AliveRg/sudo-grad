@@ -42,6 +42,10 @@ Route::get('/contact', function () {
 })->name('contact');
 Route::get('/1',[ ProductController::class, 'indProduct'] )->name('products1');
 Route::get('/2',[ ProductController::class, 'indProductTwo'] )->name('products2');
+Route::get('/3',[ ProductController::class, 'indProductThree'] )->name('products3');
+Route::get('/4',[ ProductController::class, 'indProductFour'] )->name('products4');
+Route::get('/5',[ ProductController::class, 'indProductFive'] )->name('products5');
+Route::get('/6',[ ProductController::class, 'indProductSix'] )->name('products6');
 // Route::get('/2',[ ProductController::class, 'indProductTwo'] )->middleware(['auth', 'verified'])->name('products2');  странинца для зарегестрированного пользователя
 
 

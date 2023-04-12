@@ -1,23 +1,26 @@
 <template>
-    <div
-        class="relative w-44 h-52 sm:w-52 sm:h-64 md:w-64 md:h-72 lg:w-72 lg:h-80"
-    >
+    <div class="relative w-52 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80">
         <div
-            class="CartHoverTranRot absolute w-44 h-52 sm:w-52 sm:h-64 md:w-64 md:h-72 lg:w-72 lg:h-80"
+            class="CartHoverTranRot absolute w-52 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80"
         >
             <div
-                :style="'   background-image: url(https://i.pinimg.com/564x/e0/2e/f3/e02ef3d63aed9511dc15f37a82b3899b.jpg)'"
-                class="FrontHoverTranRot shadow-xl bg-cover bg-center bg-no-repeat flex items-start md:text-2xl justify-start"
+                v-bind:style="{
+                    backgroundImage:
+                        'url(./images/state/' + img__path + '.webp' + ')',
+                }"
+                class="FrontHoverTranRot rounded-lg shadow-xl bg-cover bg-center bg-no-repeat flex items-start md:text-2xl justify-center bg-currentBroun/25 text-center"
             >
-                <div
-                    class="absolute w-1/6 h-full left-0 bottom-0 bg-currentLight/30 text-black backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center leading-loose overflow-hidden"
+                <!-- <div
+                    class="absolute w-1/5 h-full left-0 bottom-0 bg-currentCian/30 text-black backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center leading-loose overflow-hidden"
                 >
-                    <p class="rotate-90">{{ textFront }}</p>
-                </div>
+                    <p class="absolute rotate-90 inline w-80 text-center">
+                        {{ textFront }}
+                    </p>
+                </div> -->
             </div>
             <div class="BackHoverTranRot shadow-xl bg-currentCian">
                 <div
-                    class="h-full p-3 md:p-6 lg:p-7 text-xs sm:text-base md:text-lg lg:text-2xl text-start tracking-tight"
+                    class="h-full p-3 md:p-6 lg:p-7 text-base sm:text-lg lg:text-2xl text-start tracking-tight flex items-start"
                 >
                     <p>{{ textBack }}</p>
                 </div>
@@ -31,7 +34,7 @@ export default {
     props: {
         textFront: String,
         textBack: String,
-        imgPath: String,
+        img__path: String,
     },
 };
 </script>

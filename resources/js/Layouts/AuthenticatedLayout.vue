@@ -194,7 +194,7 @@ const showingNavigationDropdown = ref(false);
                             @click="scrollTop"
                         >
                             <span
-                                class="material-symbols-outlined text-currentBroun"
+                                class="material-symbols-outlined text-currentBroun dark:text-currentCian"
                             >
                                 south
                             </span>
@@ -217,11 +217,13 @@ const showingNavigationDropdown = ref(false);
                         <div class="m-2 flex columns-2 gap-10">
                             <div class="">
                                 <CircleLogo
-                                    color="black"
+                                    color="white"
                                     text="SD-Gorodova-Advokate-GD-"
                                 />
                             </div>
-                            <div class="bg-white w-32 sm:w-full p-2 rounded-lg">
+                            <div
+                                class="text-zinc-600 dark:text-slate-100 text-sm sm:text-lg lg:text-2xl font-semibold bg-white/80 dark:bg-black/80 w-32 sm:w-full p-2 rounded-lg"
+                            >
                                 <p class="w-full h-full">
                                     С @ Адвокатская контора <br />
                                     "Белгород"

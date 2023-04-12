@@ -3,7 +3,7 @@
         id="circle"
         class="h-28 w-28 md:h-40 md:w-40 relative flex justify-center items-center radius"
     >
-        <p class="absolute w-full h-full text rounded-full bg-slate-50">
+        <p class="absolute w-full h-full text rounded-full">
             <span
                 v-for="(item, index) in count"
                 :key="index"

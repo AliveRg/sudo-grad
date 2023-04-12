@@ -30,6 +30,9 @@ module.exports = {
         },
 
         extend: {
+            listStyleImage: {
+                checkmark: 'url("")',
+            },
             translate: {
                 550: "550px",
                 1050: "1050px",

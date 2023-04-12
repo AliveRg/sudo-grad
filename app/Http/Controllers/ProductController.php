@@ -34,6 +34,39 @@ class ProductController extends Controller
         return Inertia::render('ProductTwo', compact('products'));
         
     }
+  
+    public function indProductThree() 
+    {
+        $products = DB::table('products') 
+        -> get();
+        // dd($products);
+        return Inertia::render('ProductThree', compact('products'));
+        
+    }
+    public function indProductFour() 
+    {
+        $products = DB::table('products') 
+        -> get();
+        // dd($products);
+        return Inertia::render('ProductFour', compact('products'));
+        
+    }
+    public function indProductFive() 
+    {
+        $products = DB::table('products') 
+        -> get();
+        // dd($products);
+        return Inertia::render('ProductFive', compact('products'));
+        
+    }
+    public function indProductSix() 
+    {
+        $products = DB::table('products') 
+        -> get();
+        // dd($products);
+        return Inertia::render('ProductSix', compact('products'));
+        
+    }
 
    
 
