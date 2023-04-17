@@ -15,6 +15,36 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
         </template>
 
         <div class="pt-12">
+            <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
+                <div class="overflow-hidden shadow-sm sm:rounded-lg">
+                    <div
+                        class="p-6 text-gray-900 dark:text-gray-400 grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-6"
+                    >
+                        <section
+                            v-for="(product, index) in products"
+                            :key="product.id"
+                            :style="
+                                'transition-duration:' +
+                                ' ' +
+                                '1' +
+                                index +
+                                '0' +
+                                '0' +
+                                'ms'
+                            "
+                            :class="'addClass'"
+                            @scroll="handleSCroll"
+                        >
+                            <CardProduct
+                                :title="product.title"
+                                :content="product.content"
+                                :image_path="product.image_path"
+                                :product_id="product.product_id"
+                            />
+                        </section>
+                    </div>
+                </div>
+            </div>
             <div
                 class="max-w-9xl mx-auto mb-10 md:mb-16 lg:mb-32 sm:px-6 lg:px-8 mt-10 grid grid-rows-5 md:grid-cols-4 gap-2 md:gap-6"
             >
@@ -92,36 +122,6 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
                     </div>
                 </div>
             </div>
-            <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
-                <div class="overflow-hidden shadow-sm sm:rounded-lg">
-                    <div
-                        class="p-6 text-gray-900 dark:text-gray-400 grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-6"
-                    >
-                        <section
-                            v-for="(product, index) in products"
-                            :key="product.id"
-                            :style="
-                                'transition-duration:' +
-                                ' ' +
-                                '1' +
-                                index +
-                                '0' +
-                                '0' +
-                                'ms'
-                            "
-                            :class="'addClass'"
-                            @scroll="handleSCroll"
-                        >
-                            <CardProduct
-                                :title="product.title"
-                                :content="product.content"
-                                :image_path="product.image_path"
-                                :product_id="product.product_id"
-                            />
-                        </section>
-                    </div>
-                </div>
-            </div>
         </div>
     </AuthenticatedLayout>
 </template>
@@ -146,7 +146,7 @@ export default {
             let card = document.querySelectorAll(".addClass");
             for (let index = 0; index < card.length; index++) {
                 const element = card[index];
-                if (window.scrollY > 1000) {
+                if (window.scrollY > 300) {
                     element.classList.add("card_product");
                 }
             }

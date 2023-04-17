@@ -209,26 +209,24 @@ const showingNavigationDropdown = ref(false);
             </main>
             <footer>
                 <div
-                    class="mt-6 sm:mt-12 py-28 flex items-center justify-center h-min bg-fixed bg-center bg-cover custom-img"
+                    class="relative mt-6 sm:mt-12 py-28 flex items-center justify-center h-min bg-fixed bg-center bg-cover custom-img"
                 >
                     <div
-                        class="h-full w-full p-6 grid grid-cols-1 gap-8 md:gap-20 md:grid-cols-2"
+                        class="relative h-full p-6 grid grid-cols-1 gap-8 md:gap-20 md:grid-cols-2"
                     >
-                        <div class="m-2 flex columns-2 gap-10">
-                            <div class="">
-                                <CircleLogo
-                                    color="white"
-                                    text="SD-Gorodova-Advokate-GD-"
-                                />
-                            </div>
-                            <div
-                                class="text-zinc-600 dark:text-slate-100 text-sm sm:text-lg lg:text-2xl font-semibold bg-white/80 dark:bg-black/80 w-32 sm:w-full p-2 rounded-lg"
-                            >
-                                <p class="w-full h-full">
-                                    С @ Адвокатская контора <br />
-                                    "Белгород"
-                                </p>
-                            </div>
+                        <div class="absolute top-0 left-1/2 -translate-y-1/3">
+                            <CircleLogo
+                                color="black"
+                                text="SD-Gorodova-Advokate-GD-"
+                            />
+                        </div>
+                        <div
+                            class="h-full w-full text-zinc-700 dark:text-slate-100 text-sm sm:text-lg lg:text-2xl font-semibold bg-white/60 dark:bg-black/60 p-2 rounded-lg"
+                        >
+                            <p class="w-full h-full">
+                                С @ Адвокатская контора <br />
+                                "Белгород"
+                            </p>
                         </div>
 
                         <TextAdress />
