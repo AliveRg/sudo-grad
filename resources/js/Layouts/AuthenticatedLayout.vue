@@ -214,9 +214,11 @@ const showingNavigationDropdown = ref(false);
                     <div
                         class="relative h-full p-6 grid grid-cols-1 gap-8 md:gap-20 md:grid-cols-2"
                     >
-                        <div class="absolute top-0 left-1/2 -translate-y-1/3">
+                        <div
+                            class="absolute z-0 top-0 left-[85%] md:left-[90%] xl:left-[100%] -translate-x-1/2 -translate-y-1/2 text-slate-900 font-bold"
+                        >
                             <CircleLogo
-                                color="black"
+                                color=""
                                 text="SD-Gorodova-Advokate-GD-"
                             />
                         </div>

@@ -1,7 +1,7 @@
 <template>
     <div
         id="circle"
-        class="h-28 w-28 md:h-40 md:w-40 relative flex justify-center items-center radius"
+        class="h-20 w-20 md:h-28 md:w-28 relative flex justify-center items-center radius"
     >
         <p class="absolute w-full h-full text rounded-full">
             <span
@@ -9,7 +9,7 @@
                 :key="index"
                 :class="'rotate-' + index * 15"
                 :style="'color:' + color"
-                class="absolute left-1/2 text-sm md:text-xl trans"
+                class="absolute left-1/2 text-xs md:text-base trans"
             >
                 {{ item }}
             </span>
@@ -51,12 +51,12 @@ export default {
 }
 
 .trans {
-    transform-origin: 0 58px;
+    transform-origin: 0 40px;
 }
 
 @media (min-width: 768px) {
     .trans {
-        transform-origin: 0 80px;
+        transform-origin: 0 58px;
     }
 }
 </style>

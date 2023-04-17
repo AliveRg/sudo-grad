@@ -1,9 +1,9 @@
 <template>
     <div
-        class="w-full text-zinc-600 dark:text-slate-100 text-sm sm:text-lg lg:text-2xl font-semibold flex items-start justify-start md:justify-center"
+        class="text-zinc-600 dark:text-slate-100 text-sm sm:text-lg lg:text-2xl font-semibold flex items-start justify-start md:justify-center"
     >
         <ul
-            class="flex flex-col gap-5 bg-white/60 dark:bg-black/60 p-5 rounded-lg"
+            class="flex flex-col gap-5 bg-white/60 dark:bg-currentBroun/60 p-2 rounded-lg"
         >
             <li class="w-full flex gap-3 flex-col">
                 <div
