@@ -22,7 +22,7 @@ Route::get('/', function () {
     return Inertia::render('Welcome');
 })->name('welcome');
 
-Route::get('/dashboard',[ ProductControler::class, 'index'] )->name('dashboard');
+Route::get('/dashboard',[ ProductController::class, 'index'] )->name('dashboard');
 Route::get('/cases',[ CasesController::class, 'pug'] )->name('cases');
 // Route::get('/cases/1',[ CasesController::class, 'CaseOne'] )->name('cases1');
 
