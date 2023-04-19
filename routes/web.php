@@ -19,14 +19,10 @@ use App\Http\Controllers\CasesController;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-
-    ]);
+    return Inertia::render('Welcome');
 })->name('welcome');
 
-Route::get('/dashboard',[ ProductController::class, 'index'] )->name('dashboard');
+Route::get('/dashboard',[ ProductControllr::class, 'index'] )->name('dashboard');
 Route::get('/cases',[ CasesController::class, 'pug'] )->name('cases');
 // Route::get('/cases/1',[ CasesController::class, 'CaseOne'] )->name('cases1');
 
