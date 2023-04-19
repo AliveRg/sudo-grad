@@ -2,6 +2,32 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import TextAdress from "@/Components/TextAdress.vue";
 import { Head } from "@inertiajs/vue3";
+// Функция ymaps.ready() будет вызвана, когда
+// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+ymaps.ready(init);
+function init() {
+    // Создание карты.
+    var myMap = new ymaps.Map("map", {
+        // Координаты центра карты.
+        // Порядок по умолчанию: «широта, долгота».
+        // Чтобы не определять координаты центра карты вручную,
+        // воспользуйтесь инструментом Определение координат.
+        center: [55.76, 37.64],
+        // Уровень масштабирования. Допустимые значения:
+        // от 0 (весь мир) до 19.
+        zoom: 7,
+    });
+    var myMap = new ymaps.Map("map_1", {
+        // Координаты центра карты.
+        // Порядок по умолчанию: «широта, долгота».
+        // Чтобы не определять координаты центра карты вручную,
+        // воспользуйтесь инструментом Определение координат.
+        center: [55.76, 37.64],
+        // Уровень масштабирования. Допустимые значения:
+        // от 0 (весь мир) до 19.
+        zoom: 7,
+    });
+}
 </script>
 
 <template>
@@ -14,15 +40,17 @@ import { Head } from "@inertiajs/vue3";
 
         <div class="py-12">
             <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
-                <div class="overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="shadow-sm sm:rounded-lg">
                     <div
                         class="p-6 text-gray-900 dark:text-gray-100 flex gap-14 flex-col h-min"
                     >
                         <div
                             id="map"
-                            class="map w-full h-80 bg-teal-500 rounded-lg"
+                            class="map w-screen -ml-6 sm:-ml-14 h-80 bg-teal-500 rounded-lg"
                         ></div>
-                        <div class="flex flex-col md:flex-row gap-6">
+                        <div
+                            class="flex flex-col md:flex-row justify-center gap-6"
+                        >
                             <TextAdress />
                             <form
                                 class="w-full flex flex-col md:w-1/2"
@@ -97,11 +125,11 @@ import { Head } from "@inertiajs/vue3";
                     </div>
 
                     <div
-                        class="p-6 text-gray-900 dark:text-gray-100 flex flex-col gap-14 h-min"
+                        class="p-6 relative text-gray-900 dark:text-gray-100 flex flex-col gap-14 h-min"
                     >
                         <div
-                            id="map"
-                            class="map w-full h-80 bg-violet-500 rounded-lg"
+                            id="map_1"
+                            class="map w-screen -ml-6 sm:-ml-14 h-80 bg-teal-500 rounded-lg"
                         ></div>
                         <div class="flex flex-col md:flex-row gap-6">
                             <TextAdress />

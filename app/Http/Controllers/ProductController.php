@@ -18,7 +18,7 @@ class ProductController extends Controller
         return Inertia::render('Dashboard', compact('products'));
         
     }
-    public function indProduct() 
+    public function Product() 
     {
         $products = DB::table('products') 
         -> get();
@@ -26,7 +26,7 @@ class ProductController extends Controller
         return Inertia::render('ProductOne', compact('products'));
         
     }
-    public function indProductTwo() 
+    public function ProductTwo() 
     {
         $products = DB::table('products') 
         -> get();
@@ -35,7 +35,7 @@ class ProductController extends Controller
         
     }
   
-    public function indProductThree() 
+    public function ProductThree() 
     {
         $products = DB::table('products') 
         -> get();
@@ -43,7 +43,7 @@ class ProductController extends Controller
         return Inertia::render('ProductThree', compact('products'));
         
     }
-    public function indProductFour() 
+    public function ProductFour() 
     {
         $products = DB::table('products') 
         -> get();
@@ -51,7 +51,7 @@ class ProductController extends Controller
         return Inertia::render('ProductFour', compact('products'));
         
     }
-    public function indProductFive() 
+    public function ProductFive() 
     {
         $products = DB::table('products') 
         -> get();
@@ -59,7 +59,7 @@ class ProductController extends Controller
         return Inertia::render('ProductFive', compact('products'));
         
     }
-    public function indProductSix() 
+    public function ProductSix() 
     {
         $products = DB::table('products') 
         -> get();

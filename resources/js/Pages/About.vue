@@ -35,7 +35,7 @@ function selectDate() {}
                             >
                                 <img
                                     src="/images/ear-stiker.webp"
-                                    class="w-full md:w-1/3 hover:rotate-180 ease-in-out duration-1000"
+                                    class="w-full sm:w-1/2 md:w-1/3 h-1/3 hover:rotate-180 ease-in-out duration-1000"
                                 />
 
                                 <div

@@ -40,13 +40,13 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
-Route::get('/1',[ ProductController::class, 'indProduct'] )->name('products1');
-Route::get('/2',[ ProductController::class, 'indProductTwo'] )->name('products2');
-Route::get('/3',[ ProductController::class, 'indProductThree'] )->name('products3');
-Route::get('/4',[ ProductController::class, 'indProductFour'] )->name('products4');
-Route::get('/5',[ ProductController::class, 'indProductFive'] )->name('products5');
-Route::get('/6',[ ProductController::class, 'indProductSix'] )->name('products6');
-// Route::get('/2',[ ProductController::class, 'indProductTwo'] )->middleware(['auth', 'verified'])->name('products2');  странинца для зарегестрированного пользователя
+Route::get('/1',[ ProductController::class, 'Product'] )->name('products1');
+Route::get('/2',[ ProductController::class, 'ProductTwo'] )->name('products2');
+Route::get('/3',[ ProductController::class, 'ProductThree'] )->name('products3');
+Route::get('/4',[ ProductController::class, 'ProductFour'] )->name('products4');
+Route::get('/5',[ ProductController::class, 'ProductFive'] )->name('products5');
+Route::get('/6',[ ProductController::class, 'ProductSix'] )->name('products6');
+// Route::get('/2',[ ProductController::class, 'ProductTwo'] )->middleware(['auth', 'verified'])->name('products2');  странинца для зарегестрированного пользователя
 
 
 Route::middleware('auth')->group(function () {
