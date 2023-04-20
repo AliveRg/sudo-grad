@@ -17,6 +17,7 @@ function init() {
         // от 0 (весь мир) до 19.
         zoom: 7,
     });
+
     var myMap = new ymaps.Map("map_1", {
         // Координаты центра карты.
         // Порядок по умолчанию: «широта, долгота».
@@ -27,6 +28,15 @@ function init() {
         // от 0 (весь мир) до 19.
         zoom: 7,
     });
+
+    map.controls.remove("mapTools");
+    map.controls.remove("miniMap");
+    map.controls.remove("scaleLine");
+    map.controls.remove("searchControl");
+    map.controls.remove("trafficControl");
+    map.controls.remove("typeSelector");
+    map.controls.remove("zoomControl");
+    map.controls.remove("smallZoomControl");
 }
 </script>
 

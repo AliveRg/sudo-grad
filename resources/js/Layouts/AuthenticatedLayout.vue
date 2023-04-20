@@ -157,7 +157,7 @@ const showingNavigationDropdown = ref(false);
                             :style="'height:' + windowHeight / 1.1 + 'px'"
                         ></div>
                         <div
-                            class="mirror hidden md:block mirror-0 z-20 overflow-hidden"
+                            class="mirror hidden invisible md:block/visible mirror-0 z-20 overflow-hidden"
                         >
                             <div
                                 class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
@@ -165,7 +165,7 @@ const showingNavigationDropdown = ref(false);
                             ></div>
                         </div>
                         <div
-                            class="mirror hidden md:block mirror-1 w-full z-20 overflow-hidden"
+                            class="mirror hidden invisible md:block/visible mirror-1 w-full z-20 overflow-hidden"
                         >
                             <div
                                 class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
