@@ -6,6 +6,17 @@ import CircleLogo from "@/Components/CircleLogo.vue";
 import CartHoverRotate from "@/Components/CartHoverRotate.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 
+import useBreakpoints from "vue-next-breakpoints";
+import "swiper/css/free-mode";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import SwiperCore, { FreeMode, Scrollbar, Navigation, Autoplay } from "swiper";
+
+// swiper bundle styles
+import "swiper/swiper-bundle.min.css";
+import "swiper/css/scrollbar";
+
+// swiper core styles
+import "swiper/swiper.min.css";
 import TitleImage from "@/Components/TitleImage.vue";
 </script>
 
@@ -60,7 +71,52 @@ import TitleImage from "@/Components/TitleImage.vue";
             ></div>
         </div>
 
-        <!-- <div class="w-[150%] h-[23rem] md:h-[25rem] lg:h-[50rem] my-5">
+        <div
+            style="
+                -moz-user-select: none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+            "
+            class="relative max-w-9xl mx-auto sm:px-6 lg:px-8 mb-8 mt-24 flex gap-20 overflow-hidden"
+        >
+            <swiper
+                :breakpoints="{
+                    200: { slidesPerView: 1 },
+                    400: { slidesPerView: 2 },
+                    900: { slidesPerView: 3 },
+                }"
+                :spaceBetween="20"
+                :slidesPerGroup="1"
+                :autoplay="{
+                    delay: 5500,
+                    disableOnInteraction: false,
+                }"
+                :loop="true"
+                :loopFillGroupWithBlank="true"
+                :navigation="false"
+                :freeMode="true"
+                :scrollbar="{
+                    hide: true,
+                }"
+                :modules="modules"
+            >
+                <swiper-slide v-for="card in cards" :key="card" class="p-10">
+                    <div
+                        class="text-black backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center mb-5 h-10"
+                    >
+                        {{ card.title }}
+                    </div>
+                    <CartHoverRotate
+                        class="mx-auto"
+                        :textFront="card.title"
+                        :textBack="card.content"
+                        :img__path="card.img"
+                    />
+                </swiper-slide>
+            </swiper>
+
+            <!-- <div class="w-[150%] h-[23rem] md:h-[25rem] lg:h-[50rem] my-5">
                 <div class="cube-wrap flex">
                     <div class="cube absolute -right-80 flex gap-16 py-5 px-16">
                         <div
@@ -97,7 +153,7 @@ import TitleImage from "@/Components/TitleImage.vue";
                     </div>
                 </div>
             </div> -->
-        <!-- </div> -->
+        </div>
 
         <div class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10">
             <div
@@ -144,7 +200,21 @@ import TitleImage from "@/Components/TitleImage.vue";
 </template>
 
 <script>
+SwiperCore.use([Scrollbar, Navigation, Autoplay, FreeMode]);
 export default {
+    setup() {
+        const onSwiper = (swiper) => {
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log("slide change");
+        };
+        return {
+            onSwiper,
+            onSlideChange,
+            modules: [Autoplay, Navigation, Scrollbar, A11y, FreeMode],
+        };
+    },
     data() {
         return {
             cards: [

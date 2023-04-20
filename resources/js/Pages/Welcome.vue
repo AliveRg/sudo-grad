@@ -3,7 +3,7 @@ import { Head, Link } from "@inertiajs/vue3";
 import LinkWelcome from "@/Components/LinkWelcome.vue";
 
 defineProps({
-    canLogin: Boolean,
+    cancases: Boolean,
     canRegister: Boolean,
     laravelVersion: String,
     phpVersion: String,
@@ -108,10 +108,11 @@ defineProps({
                         >
                             <LinkWelcome
                                 title="Заказать консультацию"
-                                content=" Laravel has wonderful documentation covering every aspect of the
-                                        framework. Whether you are a newcomer or have prior experience
-                                        with Laravel, we recommend reading our documentation from
-                                        beginning to end."
+                                content="
+                                        Получите быструю, бесплатную, квалифицированную помощь
+                                         в решении ваших вопросов по юридическим делам!
+                                          Мы помогаем людям уже более 23 лет и готовы браться 
+                                          за самые сложные дела. Мы делаем максимум для каждого из наших клиентов! Вы сможете прочитать об этом подробнее в разделе 'О Нас'. Ждем вашего звонка! "
                             />
                         </a>
                     </section>
@@ -124,10 +125,8 @@ defineProps({
                         >
                             <LinkWelcome
                                 title="Наши Уcлуги"
-                                content=" Laravel has wonderful documentation covering every aspect of the
-                                        framework. Whether you are a newcomer or have prior experience
-                                        with Laravel, we recommend reading our documentation from
-                                        beginning to end. "
+                                content="
+                                        Для вашего удобства мы разделили дела по категориям и предоставили возможность посмотреть, как будет происходить процесс работы с вами в каждой из них! Во всех делах, мы с вами подписываем договор закрепленный законом, он пригодится для множества вещей, которые вам очень понравятся в нашей работе, но основная его задача - это ваша зашита и душевное спокойствие. Мы заботимся о каждом клиенте!"
                             />
                         </a>
                     </section>
@@ -141,10 +140,7 @@ defineProps({
                         >
                             <LinkWelcome
                                 title="О Нас"
-                                content=" Laravel has wonderful documentation covering every aspect of the
-                                        framework. Whether you are a newcomer or have prior experience
-                                        with Laravel, we recommend reading our documentation from
-                                        beginning to end. "
+                                content="Многие работают с нами на постоянной основе, для защиты своих прав и свобод, и уже знают как это - не волноваться за нарушение своих прав и не изучать всю 'судебную истину', вместе с 'написанием исков и аппеляционных жалоб'. Для новых же клиентов представимся, Городова Елена Николаевна и Городова Лариса Николаевна. Если вы дочитали до этого момента, предлагаю почитать немного о нас и о нашей судебной практике. Уверяю, вам понравится и вы узнаете действительно интересные вещи! "
                             />
                         </a>
                     </section>
@@ -183,41 +179,44 @@ defineProps({
                                 <p
                                     class="mt-4 text-gray-50 dark:text-gray-50 text-sm leading-relaxed"
                                 >
-                                    Laravel's robust library of first-party
-                                    tools and libraries, such as
+                                    Тут представлены самые интересные и
+                                    интригующие дела в нашей практике и поверьте
+                                    названия дел ниже вас не обманывают!
+
                                     <a
-                                        :href="'login'"
+                                        :href="'cases'"
                                         class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
-                                        >Forge</a
+                                        >Пропавший дом!</a
                                     >,
                                     <a
-                                        :href="'login'"
+                                        :href="'cases'"
                                         class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Envoyer</a
                                     >
-                                    help you take your projects to the next
-                                    level. Pair them with powerful open source
-                                    libraries like
+                                    Вы можете ознакомится с ними и основываясь
+                                    уже на этом принять решение о консультации
+                                    или полноценном найме для получении помощи.
+                                    Приятного прочтения!
                                     <a
-                                        :href="'login'"
+                                        :href="'cases'"
                                         class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Cashier</a
                                     >,
                                     <a
-                                        :href="'login'"
+                                        :href="'cases'"
                                         class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Dusk</a
                                     >,
                                     <a
-                                        :href="'login'"
+                                        :href="'cases'"
                                         class="underline hover:text-teal-300 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Sanctum</a
                                     >,
                                     <a
-                                        :href="'login'"
+                                        :href="'cases'"
                                         class="underline hover:text-teal-00 focus:outline focus:outline-2 focus:rounded-sm focus:outline-currentDarkNext"
                                         >Telescope</a
-                                    >, and more.
+                                    >, и так далее.
                                 </p>
                             </div>
                         </div>
