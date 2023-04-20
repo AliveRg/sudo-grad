@@ -79,7 +79,7 @@ import TitleImage from "@/Components/TitleImage.vue";
                 </div>
             </div>
             <div
-                style="background-image: url('./images/sticker-books.webp')"
+                style="background-image: url('/images/sticker-books.webp')"
                 class="p-3 md:order-3 py-5 w-full row-span-2 col-span-2 flex items-center justify-center bg-contain bg-top bg-no-repeat"
             ></div>
         </div>

@@ -157,19 +157,19 @@ const showingNavigationDropdown = ref(false);
                             class="mirror hidden md:block mirror-0 z-20 overflow-hidden"
                         >
                             <div
-                                class="h-screen w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
+                                class="h-screen w-screen bg-[url('/images/title-page.jpeg')] dark:bg-[url('/images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
                             ></div>
                         </div>
                         <div
                             class="mirror hidden md:block mirror-1 w-full z-20 overflow-hidden"
                         >
                             <div
-                                class="h-screen w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
+                                class="h-screen w-screen bg-[url('/images/title-page.jpeg')] dark:bg-[url('/images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
                             ></div>
                         </div>
 
                         <div
-                            class="h-screen absolute w-full mx-auto bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-fixed bg-center bg-no-repeat"
+                            class="h-screen absolute w-full mx-auto bg-[url('/images/title-page.jpeg')] dark:bg-[url('/images/title-page-dark.jpeg')] bg-cover md:bg-fixed bg-center bg-no-repeat"
                         ></div>
                     </div>
 
@@ -281,7 +281,7 @@ export default {
 }
 
 .custom-img {
-    background-image: url(./images/under_main-paralax.jpg);
+    background-image: url(/images/under_main-paralax.jpg);
 }
 .position-center {
     position: absolute;

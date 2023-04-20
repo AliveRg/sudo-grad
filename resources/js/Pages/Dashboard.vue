@@ -90,12 +90,12 @@ import SecondaryButton from "@/Components/SecondaryButton.vue";
                     </div>
                 </div>
                 <div
-                    style="background-image: url('./images/Stickers_Sale.webp')"
+                    style="background-image: url('/images/Stickers_Sale.webp')"
                     class="p-3 py-0 md:order-3 w-full md:row-span-2 md:col-span-2 flex items-center justify-center bg-contain bg-top bg-no-repeat"
                 ></div>
                 <div
                     style="
-                        background-image: url('./images/Athena_Stickers-2.webp');
+                        background-image: url('/images/Athena_Stickers-2.webp');
                     "
                     class="p-3 py-0 order-4 md:order-3 w-full col-span-1 md:row-span-2 md:col-span-2 flex items-center justify-center bg-contain bg-top bg-no-repeat"
                 ></div>

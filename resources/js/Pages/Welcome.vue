@@ -229,7 +229,7 @@ defineProps({
 
 <style>
 .bg-image-welcome {
-    background-image: url(./images/foto_1.png);
+    background-image: url(/images/foto_1.png);
 }
 
 .bg-dots-darker {

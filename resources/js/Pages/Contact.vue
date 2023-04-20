@@ -4,31 +4,74 @@ import TextAdress from "@/Components/TextAdress.vue";
 import { Head } from "@inertiajs/vue3";
 // Функция ymaps.ready() будет вызвана, когда
 // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-ymaps.ready(init);
-function init() {
-    // Создание карты.
-    var myMap = new ymaps.Map("map", {
-        // Координаты центра карты.
-        // Порядок по умолчанию: «широта, долгота».
-        // Чтобы не определять координаты центра карты вручную,
-        // воспользуйтесь инструментом Определение координат.
-        center: [55.76, 37.64],
-        // Уровень масштабирования. Допустимые значения:
-        // от 0 (весь мир) до 19.
-        zoom: 7,
-    });
 
-    var myMap = new ymaps.Map("map_1", {
+function init() {
+    let center = [50.611073431601994, 36.59083218508088];
+    // Создание карты.
+    var map = new ymaps.Map("map", {
         // Координаты центра карты.
         // Порядок по умолчанию: «широта, долгота».
         // Чтобы не определять координаты центра карты вручную,
         // воспользуйтесь инструментом Определение координат.
-        center: [55.76, 37.64],
+        center: center,
+        // Уровень масштабирования. Допустимые значения:
+        // от 0 (весь мир) до 19.
+        zoom: 14,
+    });
+    let placemark = new ymaps.Placemark(
+        center,
+        {},
+        {
+            iconLayout: "default#image",
+            iconImageHref: "/images/marker_map.webp",
+            iconImageSize: [40, 40],
+            iconImageOffset: [-19, -44],
+        }
+    );
+
+    map.controls.remove("geolocationControl"); // удаляем геолокацию
+    map.controls.remove("searchControl"); // удаляем поиск
+    map.controls.remove("trafficControl"); // удаляем контроль трафика
+    map.controls.remove("typeSelector"); // удаляем тип
+    map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    map.controls.remove("rulerControl"); // удаляем контрол правил
+    map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+
+    map.geoObjects.add(placemark);
+
+    var map = new ymaps.Map("map_1", {
+        // Координаты центра карты.
+        // Порядок по умолчанию: «широта, долгота».
+        // Чтобы не определять координаты центра карты вручную,
+        // воспользуйтесь инструментом Определение координат.
+        center: center,
         // Уровень масштабирования. Допустимые значения:
         // от 0 (весь мир) до 19.
         zoom: 7,
     });
+    let placemark_1 = new ymaps.Placemark(
+        center,
+        {},
+        {
+            iconLayout: "default#image",
+            iconImageHref: "/images/marker_map.webp",
+            iconImageSize: [40, 40],
+            iconImageOffset: [-19, -44],
+        }
+    );
+    map.controls.remove("geolocationControl"); // удаляем геолокацию
+    map.controls.remove("searchControl"); // удаляем поиск
+    map.controls.remove("trafficControl"); // удаляем контроль трафика
+    map.controls.remove("typeSelector"); // удаляем тип
+    map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    map.controls.remove("rulerControl"); // удаляем контрол правил
+    map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+
+    map.geoObjects.add(placemark_1);
 }
+ymaps.ready(init);
 </script>
 
 <template>

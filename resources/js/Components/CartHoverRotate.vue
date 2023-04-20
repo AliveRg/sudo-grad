@@ -6,7 +6,7 @@
             <div
                 v-bind:style="{
                     backgroundImage:
-                        'url(./images/state/' + img__path + '.webp' + ')',
+                        'url(/images/state/' + img__path + '.webp' + ')',
                 }"
                 class="FrontHoverTranRot rounded-lg shadow-xl bg-cover bg-center bg-no-repeat flex items-start md:text-2xl justify-center bg-currentBroun/25 text-center"
             >
