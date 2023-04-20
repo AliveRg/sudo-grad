@@ -152,30 +152,24 @@ const showingNavigationDropdown = ref(false);
             >
                 <section class="relative overflow-hidden">
                     <div class="flex">
+                        <div class="h-screen w-full"></div>
                         <div
-                            class="w-full"
-                            :style="'height:' + windowHeight / 1.1 + 'px'"
-                        ></div>
-                        <div
-                            class="mirror hidden invisible md:block/visible mirror-0 z-20 overflow-hidden"
+                            class="mirror hidden md:block mirror-0 z-20 overflow-hidden"
                         >
                             <div
-                                class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
-                                :style="'height:' + windowHeight / 1.1 + 'px'"
+                                class="h-screen w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
                             ></div>
                         </div>
                         <div
-                            class="mirror hidden invisible md:block/visible mirror-1 w-full z-20 overflow-hidden"
+                            class="mirror hidden md:block mirror-1 w-full z-20 overflow-hidden"
                         >
                             <div
-                                class="w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
-                                :style="'height:' + windowHeight / 1.1 + 'px'"
+                                class="h-screen w-screen bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
                             ></div>
                         </div>
 
                         <div
-                            class="absolute w-full mx-auto bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-fixed bg-center bg-no-repeat"
-                            :style="'height:' + windowHeight / 1.1 + 'px'"
+                            class="h-screen absolute w-full mx-auto bg-[url('./images/title-page.jpeg')] dark:bg-[url('./images/title-page-dark.jpeg')] bg-cover md:bg-fixed bg-center bg-no-repeat"
                         ></div>
                     </div>
 
