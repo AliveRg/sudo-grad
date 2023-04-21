@@ -67,9 +67,9 @@ import TitleImage from "@/Components/TitleImage.vue";
                 -webkit-user-select: none;
                 user-select: none;
             "
-            class="relative max-w-9xl mx-auto sm:px-6 lg:px-8 mb-8 mt-24 flex gap-20 overflow-hidden"
+            class="relative max-w-9xl mx-auto sm:px-6 lg:px-8 mb-8 mt-24 flex gap-10 flex-wrap justify-between"
         >
-            <div v-for="card in cards" :key="card" class="p-10">
+            <div v-for="card in cards" :key="card" class="w-72">
                 <div
                     class="text-black backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center mb-5 h-10"
                 >
@@ -215,24 +215,6 @@ export default {
                     img: "state_8",
                     content:
                         "Представление интересов свидетелей в рамках дознания и предварительного расследования.",
-                },
-                {
-                    title: "Представление потерпевшего",
-                    img: "state_9",
-                    content:
-                        "Yа стадии проверки уголовного дела, на стадии расследования и в процессе судебного разбирательства.",
-                },
-                {
-                    title: "Условно-досрочное",
-                    img: "state_10",
-                    content:
-                        "Оказание помощи осужденному в условно-досрочном освобождении и замена наказания более мягким видом и изменение вида исправительного учреждения.",
-                },
-                {
-                    title: "Освобождение от наказания",
-                    img: "state_11",
-                    content:
-                        "Оказание помощи в освобождении от наказания в связи с болезнью обвиняемого или осужденного.",
                 },
             ],
         };
