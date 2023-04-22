@@ -67,7 +67,7 @@ import TitleImage from "@/Components/TitleImage.vue";
                 -webkit-user-select: none;
                 user-select: none;
             "
-            class="relative max-w-9xl mx-auto sm:px-6 lg:px-8 mb-8 mt-24 flex gap-10 flex-wrap justify-between"
+            class="relative max-w-9xl mx-auto sm:px-6 lg:px-8 mb-8 mt-24 flex gap-10 flex-wrap justify-center sm:justify-between"
         >
             <div v-for="card in cards" :key="card" class="w-72">
                 <div
