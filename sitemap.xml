@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+		<loc>https://stgorodova.ru</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>1.0</priority>
+
+	</url>
+	<url>
+		<loc>https://stgorodova.ru/dashboard</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+		
+	</url>
+	<url>
+		<loc>https://stgorodova.ru/cases</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.0</priority>
+		
+	</url>
+	<url>
+		<loc>https://stgorodova.ru/about</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+		
+	</url>
+	<url>
+		<loc>https://stgorodova.ru/contact</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+		
+	</url>
+	<url>
+		<loc>https://stgorodova.ru/dashboard/1</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+		
+	</url>
+	<url>
+		<loc>https://stgorodova.ru/dashboard/2</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+		
+	</url>
+	<url>
+		<loc>https://stgorodova.ru/dashboard/3</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+		
+	</url>
+	<url>
+		<loc>https://stgorodova.ru/dashboard/4</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+		
+	</url>
+	<url>
+		<loc>https://stgorodova.ru/dashboard/5</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+		
+	</url>
+	<url>
+		<loc>https://stgorodova.ru/dashboard/6</loc>
+		<lastmod>2023-01-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+		
+	</url>
+	
+</urlset>

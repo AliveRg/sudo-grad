@@ -99,7 +99,7 @@ module.exports = {
                 "bubble-gum": "#ff77e9",
                 bermuda: "#78dcca",
                 currentDark: "#755E66",
-                currentDarkNext: "#DC4733",
+                currentDarkNext: "#6C41DB",
                 currentLight: "#FEA68E",
                 currentBroun: "#BA6927",
                 currentCian: "#F2AD4E",

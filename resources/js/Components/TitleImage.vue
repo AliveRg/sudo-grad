@@ -26,24 +26,21 @@ onMounted(() => {
         }"
         class="title_image flex flex-row md:odd:flex-row-reverse md:even:flex-row"
     >
-        <div class="w-full flex flex-col md:flex-row justify-between gap-8">
-            <div class="w-full md:w-1/2">
-                <div
-                    class="h-32 md:h-full bg-currentCian rounded-lg flex justify-center items-center"
-                >
-                    <h1 class="block">{{ item }}</h1>
-                </div>
+        <div class="w-full flex flex-col sm:flex-row justify-between gap-8">
+            <div
+                class="h-[23rem] sm:h-[25rem] md:h-[33rem] w-full sm:w-1/3 rounded-lg flex justify-center items-center bg-cover bg-no-repeat bg-center"
+                v-bind:style="{
+                    backgroundImage: 'url(/images/' + img + '.jpg' + ')',
+                }"
+            >
+                <h1 class="block"></h1>
             </div>
-            <div class="w-full md:w-5/12 dark:text-slate-200">
+
+            <div
+                class="w-full md:w-6/12 dark:text-slate-200 text-base md:text-xl lg:text-3xl"
+            >
                 <h2 class="overflow-scroll h-auto inline align-middle">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Iure commodi est illo laborum reprehenderit atque eaque at
-                    dolore repellendus aliquid? Lorem ipsum dolor sit amet
-                    consectetur Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Vero reiciendis sapiente non veritatis
-                    voluptatibus? Rem maiores perspiciatis non dolores
-                    necessitatibus sit culpa ab. Qui quia neque dolores eum
-                    cumque quidem!
+                    {{ text }}
                 </h2>
             </div>
         </div>
@@ -54,6 +51,8 @@ onMounted(() => {
 export default {
     props: {
         reverse: Boolean,
+        text: String,
+        img: String,
     },
 };
 </script>
