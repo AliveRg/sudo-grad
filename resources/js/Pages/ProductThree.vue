@@ -21,7 +21,7 @@ import TitleImage from "@/Components/TitleImage.vue";
             class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10 grid grid-rows-3 md:grid-cols-4 gap-2 md:gap-6"
         >
             <div
-                class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun tracking-widest"
+                class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun "
             >
                 <p>
                     Споры возникающие по поводу
@@ -52,7 +52,7 @@ import TitleImage from "@/Components/TitleImage.vue";
                         <br />
                         <br />
                         <span
-                            class="font-bold text-2xl md:text-4xl text-currentBroun tracking-widest"
+                            class="font-bold text-2xl md:text-4xl text-currentBroun "
                             >Какую помощь окажет адвокат по жилищным
                             вопросам?</span
                         >
@@ -103,7 +103,7 @@ import TitleImage from "@/Components/TitleImage.vue";
                 <div class="cube-wrap flex">
                     <div class="cube absolute -right-80 flex gap-16 py-5 px-16">
                         <div
-                                class="fixed text-md lg:text-2xl -top-12 lg:-top-16 text-white tracking-widest font-sans"
+                                class="fixed text-md lg:text-2xl -top-12 lg:-top-16 text-white  font-sans"
                             >
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Quam recusandae odit
@@ -124,7 +124,7 @@ import TitleImage from "@/Components/TitleImage.vue";
                             />
                         </div>
                         <div
-                                class="fixed text-md lg:text-2xl -bottom-14 lg:-bottom-16 text-white tracking-widest font-sans"
+                                class="fixed text-md lg:text-2xl -bottom-14 lg:-bottom-16 text-white  font-sans"
                             >
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Quam recusandae odit

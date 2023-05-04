@@ -18,7 +18,7 @@
                     </p>
                 </div> -->
             </div>
-            <div class="BackHoverTranRot shadow-xl bg-currentCian">
+            <div class="BackHoverTranRot shadow-xl bg-currentBroun/25">
                 <div
                     class="h-full p-3 md:p-6 lg:p-7 text-base sm:text-lg lg:text-2xl text-start tracking-tight flex items-start"
                 >

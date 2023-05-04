@@ -11,31 +11,45 @@
                 >
                     <p>Адрес</p>
                 </div>
-                <div class="flex gap-3">
-                    <span class="material-symbols-outlined"> pin_drop </span>
-                    <span>улица Маяковского, 26, Белгород</span>
+                <div class="flex gap-3 items-center">
+                    <span class="material-symbols-outlined -mb-1">
+                        pin_drop
+                    </span>
+                    <span>{{ adress }}</span>
                 </div>
             </li>
             <li class="w-full flex-col flex gap-5">
-                <div class="flex gap-3">
-                    <span class="material-symbols-outlined"> call </span>
-                    <span>+7-980-326-97-94</span>
-                </div>
-                <div class="flex gap-3">
-                    <span class="material-symbols-outlined"> call </span>
-                    <span>31-25-05</span>
-                </div>
+                <a :href="'tel:' + ' ' + tel" class="flex gap-3 items-center">
+                    <span class="material-symbols-outlined -mb-1"> call </span>
+                    <span>{{ tel }}</span>
+                </a>
+                <a :href="'tel:' + tel2" class="flex gap-3 items-center">
+                    <span class="material-symbols-outlined -mb-1"> call </span>
+                    <span>{{ tel2 }}</span>
+                </a>
             </li>
-            <li class="w-full flex gap-3">
-                <span class="material-symbols-outlined"> mail </span>
-                <span>gorodova.work49280@gmail.com</span>
+            <li>
+                <a
+                    :href="'mailto:' + mail"
+                    class="w-full flex gap-3 items-center"
+                >
+                    <span class="material-symbols-outlined -mb-1"> mail </span>
+                    <span>{{ mail }}</span>
+                </a>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        tel: String,
+        mail: String,
+        tel2: String,
+        adress: String,
+    },
+};
 </script>
 
 <style></style>

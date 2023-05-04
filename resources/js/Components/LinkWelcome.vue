@@ -10,7 +10,7 @@
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
-                        class="w-7 h-7 stroke-currentDarkNext"
+                        class="w-7 h-7 stroke-currentBroun"
                     >
                         <path
                             stroke-linecap="round"
@@ -37,7 +37,7 @@
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            class="self-center shrink-0 stroke-currentDarkNext w-6 h-6 mx-6"
+            class="self-center shrink-0 stroke-currentBroun w-6 h-6 mx-6"
         >
             <path
                 stroke-linecap="round"

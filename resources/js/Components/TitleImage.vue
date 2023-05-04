@@ -24,11 +24,14 @@ onMounted(() => {
         :class="{
             title_image_active: item == currentTitle,
         }"
-        class="title_image flex flex-row md:odd:flex-row-reverse md:even:flex-row"
+        class="title_image flex flex-row md:flex-row"
     >
-        <div class="w-full flex flex-col sm:flex-row justify-between gap-8">
+        <div
+            class="w-full flex flex-col sm:flex-row justify-between gap-8"
+            :class="reverse ? 'md:flex-row-reverse' : ''"
+        >
             <div
-                class="h-[23rem] sm:h-[25rem] md:h-[33rem] w-full sm:w-1/3 rounded-lg flex justify-center items-center bg-cover bg-no-repeat bg-center"
+                class="h-[23rem] sm:h-[25rem] md:h-[39rem] w-full sm:w-1/3 rounded-lg flex justify-center items-center bg-cover bg-no-repeat bg-center"
                 v-bind:style="{
                     backgroundImage: 'url(/images/' + img + '.jpg' + ')',
                 }"

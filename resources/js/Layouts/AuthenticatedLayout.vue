@@ -203,10 +203,10 @@ const showingNavigationDropdown = ref(false);
             </main>
             <footer>
                 <div
-                    class="relative mt-6 sm:mt-12 py-28 flex items-center justify-center h-min bg-fixed bg-center bg-cover custom-img"
+                    class="relative mt-6 sm:mt-12 py-28 flex items-center justify-center h-min bg-cover md:bg-fixed bg-center bg-[url('/images/under_main-paralax.jpg')] dark:bg-[url('/images/under_main-paralax.jpg')]"
                 >
                     <div
-                        class="relative h-full p-6 grid grid-cols-1 gap-8 md:gap-20 md:grid-cols-2"
+                        class="relative h-full p-6 grid grid-cols-1 gap-8 md:gap-20 md:grid-cols-2 bg-white/60 dark:bg-black/60 rounded-lg"
                     >
                         <div
                             class="absolute z-0 top-0 left-[85%] md:left-[90%] xl:left-[100%] -translate-x-1/2 -translate-y-1/2 text-slate-900 font-bold"
@@ -217,7 +217,7 @@ const showingNavigationDropdown = ref(false);
                             />
                         </div>
                         <div
-                            class="h-full w-full text-zinc-700 dark:text-slate-100 text-sm sm:text-lg lg:text-2xl font-semibold bg-white/60 dark:bg-black/60 p-2 rounded-lg"
+                            class="h-full w-full text-zinc-700 dark:text-slate-100 text-sm sm:text-lg lg:text-2xl font-semibold"
                         >
                             <p class="w-full h-full">
                                 С @ Адвокатская контора <br />
@@ -225,7 +225,12 @@ const showingNavigationDropdown = ref(false);
                             </p>
                         </div>
 
-                        <TextAdress />
+                        <TextAdress
+                            adress="улица Маяковского, 26, Белгород"
+                            tel="+7-980-326-97-94"
+                            tel2="31-25-05"
+                            mail="gorodova.work49280@gmail.com"
+                        />
                     </div>
                 </div>
             </footer>

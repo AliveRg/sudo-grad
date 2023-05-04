@@ -19,7 +19,7 @@ function selectDate() {}
             <div class="max-w-9xl mx-auto sm:px-4 lg:px-6">
                 <div class="overflow-hidden shadow-sm sm:rounded-lg">
                     <div
-                        class="p-2 flex flex-col gap-7 md:gap-10 text-gray-900 dark:text-gray-100"
+                        class="p-2 flex flex-col gap-14 md:gap-28 text-gray-900 dark:text-gray-100"
                     >
                         <div class="grid grid-row-auto gap-24">
                             <TitleImage
@@ -30,11 +30,11 @@ function selectDate() {}
                             />
                         </div>
                         <div class="flex flex-col gap-12">
-                            <div
+                            <!-- <div
                                 class="text-left text-2xl sm:text-3xl md:text-5xl lg:text-7xl w-full text-currentBroun"
                             >
                                 <h1>Who we are</h1>
-                            </div>
+                            </div> -->
                             <div
                                 class="flex flex-col md:flex-row gap-8 justify-between ml-auto mr-16 sm:mr-32 text-left text-lg md:text-xl lg:text-2xl w-full"
                             >
@@ -44,7 +44,7 @@ function selectDate() {}
                                 />
 
                                 <div
-                                    class="flex flex-col justify-center w-full md:w-1/2 gap-8"
+                                    class="flex flex-col justify-center w-full md:w-1/2 gap-8 dark:text-slate-200 text-base md:text-xl lg:text-3xl"
                                 >
                                     <h3 class="max-h-72 overflow-y-auto">
                                         Lorem ipsum dolor sit amet consectetur
@@ -66,15 +66,26 @@ function selectDate() {}
                             </div>
                         </div>
                         <TitleImage
-                            text="Для тех, кто со мной ещё не знаком. Меня зовут Елена Городова.
-Я адвокат с 1999 года, состою в Центральной Свердловской Адвокатской конторе г. Белгорода.
-Адвокатом мечтала быть ещё в школе. Считаю, что адвокатура — мое призвание, я занимаюсь любимым делом. В начале адвокатской деятельности искала себя во всех отраслях права. Со временем определилась со специализацией. Сейчас это уголовные дела, гражданские дела, семейные и наследственные споры, юридическое обслуживание среднего и малого бизнеса. Я нацелена на достижение максимального результата в защите прав и интересов своих клиентов!"
-                            img="09"
+                            text="Для тех, кто со мной ещё не знаком,
+                        позвольте быстро представиться. Меня зовут Лариса
+                        Городова. Я адвокат с 1999 года. Получила два высших
+                        образования, в Воронежском государственном университете,
+                        классическое юридическое и международно-правовое в
+                        ВАВТе, город Москва. Адвокатом мечтала быть ещё в школе.
+                        Считаю, что мне повезло - я занимаюсь любимым делом. В
+                        начале адвокатской деятельности искала себя во всех
+                        направлениях, включая уголовные дела. Со временем
+                        определилась со специализацией. Сейчас это арбитраж,
+                        международный арбитраж и юридическое обслуживание
+                        среднего и малого бизнеса. Оказываю услуги и физическим
+                        лицам в области наследственного и жилищного права."
+                            img="larisa"
+                            :reverse="true"
                         />
                         <div
                             class="mt-16 text-xl sm:text-3xl md:text-4xl lg:text-5xl text-currentBroun w-full text-center"
                         >
-                            <h2>History</h2>
+                            <h2>Наши преймущества</h2>
                         </div>
                         <div
                             class="mb-32 mx-auto w-11/12 grid grid-cols-1 gap-8"
@@ -137,39 +148,33 @@ export default {
             items: [
                 {
                     number: "1",
-                    title: "1982",
+                    title: "Абонентское обслуживание ",
                     message:
-                        "Lorem ipsum dolor sit, ametconsectetur adipisicing elit. Nihil,tempore! Lorem ipsum dolor sit ametconsectetur adipisicing elit.",
+                        "Устное и письменное консультирование по вопросам, возникающим в процессе финансово-хозяйственной деятельности компании; Подготовка экспертных заключений по правовым вопросам; Разработка и правовой анализ различных видов договоров, соглашений и иных документов;Правовое обеспечение трудовых отношений; Участие в переговорах с контрагентами и представление интересов компании при взаимодействии с государственными органами; Обеспечение претензионной деятельности; Правовое обеспечение хозяйственных сделок; Участие и документальное оформление корпоративных процедур; При необходимости, консультирование руководства и сотрудников компании по семейному, жилищному и наследственному праву.",
                 },
                 {
                     number: "2",
-                    title: "1991",
+                    title: "Международное право",
                     message:
-                        "Lorem ipsum dolor sit ametconsectetur adipisicing elit.",
+                        "Международный коммерческий арбитраж; Оспаривание, признание и приведение в исполнение решений международных коммерческих арбитражей и решений иностранных судов; Участие в переговорах по делам в сфере внешнеэкономических сделок; Содействие в заключении мировых соглашений и их реализаций; Консультации и подготовка соглашений, осложненных иностранным элементом с определением арбитражной оговорки; Подготовка меморандумов по фактам для иностранных консультантов; Подготовка юридических заключений и справок по российскому праву;",
                 },
                 {
                     number: "3",
-                    title: "2004",
+                    title: "Арбитражные споры",
                     message:
-                        "aspernatur liberoiste nesciunt aut? Harum, ipsam!",
+                        "Анализ ситуации и оценка перспективы дела в офисе адвоката либо в офисе клиента; Разработка стратегии дела и позиции клиента с учетом возможных рисков; Сбор доказательной базы всеми доступными правовыми методами , в том числе с помощью адвокатских запросов; Проведение переговоров с контрагентом с целью досудебного урегулирования спора; Личное представительство клиента на всех стадиях судебного процесса; Правовое сопровождение исполнительного производства.",
                 },
                 {
                     number: "4",
-                    title: "2011",
+                    title: "Жилищное право",
                     message:
-                        " Lorem ipsum dolor sit, ametconsectetur adipisicing elit. Nihil,tempore! Lorem ipsum dolor sit ametconsectetur adipisicing elit.Adipisci blanditiis, recusandaeaccusamus tenetur aspernatur liberoiste nesciunt aut? Harum, ipsam!",
+                        " Признание утратившим право пользования жилым помещением; Снятие с регистрационного учета; Восстановление на жилищном учете; Изменение договора социального найма; Заключение договора социального найма; Определение порядка пользования жилым помещение; Вселение и нечинение препятствий в пользовании жилым помещением; Признание права собственности; Признание сделки недействительной (договора купли-продажи, ренты, дарения).",
                 },
                 {
                     number: "5",
-                    title: "2022",
+                    title: "Наследственне право",
                     message:
-                        " Lorem ipsum dolor sit, ametconsectetur adipisicing elit. Nihil,tempore! Lorem ipsum dolor sit ametconsectetur adipisicing elit.Adipisci blanditiis, recusandaeaccusamus tenetur aspernatur liberoiste nesciunt aut? Harum, ipsam!iste nesciunt aut?",
-                },
-                {
-                    number: "6",
-                    title: "2023",
-                    message:
-                        " Lorem ipsum dolor sit, ametconsectetur adipisicing elit. Nihil,tempore! Lorem ipsum dolor sit ametconsectetur adipisicing elit.Adipisci blanditiis, recusandaeaccusamus tenetur aspernatur liberoiste nesciunt aut? Harum, ipsam!",
+                        "Правовая помощь в международных наследственных делах; Признание завещания недействительным; Выделение доли супругов; Признание обязательной доли наследства; Признание права собственности на имущество в порядке наследования; Установление факта родственных отношений; Восстановление срока для принятия наследства; Установление факта принятия наследства;",
                 },
             ],
         };
@@ -193,7 +198,7 @@ export default {
 
 <style>
 .unActive {
-    margin-top: -200px;
+    margin-top: -600px;
 }
 
 .active {

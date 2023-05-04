@@ -40,18 +40,19 @@ function init() {
 
     map.geoObjects.add(placemark);
 
+    let centermap_1 = [55.758084325129424, 37.6090622602577];
     var map = new ymaps.Map("map_1", {
         // Координаты центра карты.
         // Порядок по умолчанию: «широта, долгота».
         // Чтобы не определять координаты центра карты вручную,
         // воспользуйтесь инструментом Определение координат.
-        center: center,
+        center: centermap_1,
         // Уровень масштабирования. Допустимые значения:
         // от 0 (весь мир) до 19.
-        zoom: 7,
+        zoom: 14,
     });
     let placemark_1 = new ymaps.Placemark(
-        center,
+        centermap_1,
         {},
         {
             iconLayout: "default#image",
@@ -95,7 +96,14 @@ ymaps.ready(init);
                         <div
                             class="flex flex-col md:flex-row justify-center gap-6"
                         >
-                            <TextAdress />
+                            <TextAdress
+                                class="mt-7"
+                                adress="улица Маяковского, 26, Белгород"
+                                tel="+7-980-326-97-94"
+                                tel2="31-25-05"
+                                mail="gorodova.work49280@gmail.com"
+                            />
+
                             <form
                                 class="w-full flex flex-col md:w-1/2"
                                 ref="form"
@@ -160,7 +168,7 @@ ymaps.ready(init);
                                     value="2023-07-22"
                                 />
                                 <input
-                                    class="px-5 py-3 w-1/2 mx-auto mt-3 bg-teal-500 text-slate-800 dark:text-white dark:bg-amber-700 rounded-xl"
+                                    class="px-5 py-3 w-1/2 mx-auto mt-3 bg-currentCian text-slate-800 dark:text-white dark:bg-currentDark rounded-xl"
                                     type="submit"
                                     value="Отправить"
                                 />
@@ -176,8 +184,13 @@ ymaps.ready(init);
                             class="map w-screen -ml-6 sm:-ml-14 h-80 bg-teal-500 rounded-lg"
                         ></div>
                         <div class="flex flex-col md:flex-row gap-6">
-                            <TextAdress />
-
+                            <TextAdress
+                                class="mt-7"
+                                adress="г.Москва, Газетный пер.,9, стр. 2"
+                                tel="+7 (916) 444-41-33"
+                                tel2="31-25-05"
+                                mail="info@gorodova-advokat.ru"
+                            />
                             <form
                                 class="w-full flex flex-col md:w-1/2"
                                 ref="form1"
@@ -242,7 +255,7 @@ ymaps.ready(init);
                                     value="2023-07-22"
                                 />
                                 <input
-                                    class="px-5 py-3 w-1/2 mx-auto mt-3 bg-violet-500 text-slate-800 dark:text-white dark:bg-amber-700 rounded-xl"
+                                    class="px-5 py-3 w-1/2 mx-auto mt-3 bg-currentCian text-slate-800 dark:text-white dark:bg-currentDark rounded-xl"
                                     type="submit"
                                     value="Отправить"
                                 />

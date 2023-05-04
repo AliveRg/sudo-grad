@@ -20,7 +20,7 @@ import TitleImage from "@/Components/TitleImage.vue";
             class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10 grid grid-rows-3 md:grid-cols-4 gap-2 md:gap-6"
         >
             <div
-                class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun tracking-widest"
+                class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun"
             >
                 <p>
                     <span class="text-currentCian"
