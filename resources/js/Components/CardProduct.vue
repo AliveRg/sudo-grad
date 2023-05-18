@@ -2,7 +2,7 @@
 
 <template>
     <a
-        :href="'/dashboard/' + product_id"
+        :href="'/dashboard/Page' + product_id"
         class="h-full bg-gray-200 dark:bg-gray-900 flex motion-safe:hover:scale-[1.01] transition-all duration-250 hover:outline hover:outline-2 hover:outline-teal-500 focus:outline-teal-700 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none w-full"
     >
         <div class="p-5 w-full flex flex-col">

@@ -36,12 +36,12 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
-Route::get('/dashboard/1',[ ProductController::class, 'Product'] )->name('products1');
-Route::get('/dashboard/2',[ ProductController::class, 'ProductTwo'] )->name('products2');
-Route::get('/dashboard/3',[ ProductController::class, 'ProductThree'] )->name('products3');
-Route::get('/dashboard/4',[ ProductController::class, 'ProductFour'] )->name('products4');
-Route::get('/dashboard/5',[ ProductController::class, 'ProductFive'] )->name('products5');
-Route::get('/dashboard/6',[ ProductController::class, 'ProductSix'] )->name('products6');
+Route::get('/dashboard/Page1',[ ProductController::class, 'Product'] )->name('products1');
+Route::get('/dashboard/Page2',[ ProductController::class, 'ProductTwo'] )->name('products2');
+Route::get('/dashboard/Page3',[ ProductController::class, 'ProductThree'] )->name('products3');
+Route::get('/dashboard/Page4',[ ProductController::class, 'ProductFour'] )->name('products4');
+Route::get('/dashboard/Page5',[ ProductController::class, 'ProductFive'] )->name('products5');
+Route::get('/dashboard/Page6',[ ProductController::class, 'ProductSix'] )->name('products6');
 // Route::get('/2',[ ProductController::class, 'ProductTwo'] )->middleware(['auth', 'verified'])->name('products2');  странинца для зарегестрированного пользователя
 
 
