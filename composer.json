@@ -1,10 +1,9 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Это сайт адвоката",
     "keywords": [
-        "framework",
-        "laravel"
+        "framework"
     ],
     "license": "MIT",
     "require": {

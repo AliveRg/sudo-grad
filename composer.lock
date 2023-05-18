@@ -1179,9 +1179,9 @@
                     "email": "taylor@laravel.com"
                 }
             ],
-            "description": "The Laravel Framework.",
-            "homepage": "https://laravel.com",
-            "keywords": ["framework", "laravel"],
+            "description": "Это сайт адвоката",
+
+            "keywords": ["framework"],
             "support": {
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
