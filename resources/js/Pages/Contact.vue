@@ -89,10 +89,11 @@ ymaps.ready(init);
                     <div
                         class="p-6 text-gray-900 dark:text-gray-100 flex gap-14 flex-col h-min"
                     >
-                        <div
+                        <iframe
                             id="map"
+                            src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=152442756522"
                             class="map w-screen -ml-6 sm:-ml-14 h-80 bg-teal-500 rounded-lg"
-                        ></div>
+                        ></iframe>
                         <div
                             class="flex flex-col md:flex-row justify-center gap-6"
                         >
@@ -307,3 +308,20 @@ export default {
     },
 };
 </script>
+<style>
+.map {
+    filter: brightness(70%);
+    -ms-filter: brightness(70%);
+    -webkit-filter: brightness(70%);
+    -moz-filter: brightness(70%);
+    -o-filter: brightness(70%);
+    transition: all 0.3s;
+}
+.map:hover {
+    filter: brightness(100%);
+    -ms-filter: brightness(100%);
+    -webkit-filter: brightness(100%);
+    -moz-filter: brightness(100%);
+    -o-filter: brightness(100%);
+}
+</style>
