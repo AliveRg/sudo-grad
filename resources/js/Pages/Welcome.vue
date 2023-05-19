@@ -27,7 +27,7 @@ defineProps({
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex justify-center">
-                <img src="/images/LogoSVG.svg" alt="" class="w-36" />
+                <img src="/images/logoSVG.svg" alt="" class="w-36" />
             </div>
 
             <div class="mt-16">
