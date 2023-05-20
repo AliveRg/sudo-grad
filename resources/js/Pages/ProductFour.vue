@@ -8,6 +8,47 @@ import CartHoverRotate from "@/Components/CartHoverRotate.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 
 import TitleImage from "@/Components/TitleImage.vue";
+import TextAdress from "@/Components/TextAdress.vue";
+import FormContact from "@/Components/FormContact.vue"
+
+// Функция ymaps.ready() будет вызвана, когда
+// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+function init() {
+    let center = [50.611073431601994, 36.59083218508088];
+    // Создание карты.
+    var map = new ymaps.Map("map", {
+        // Координаты центра карты.
+        // Порядок по умолчанию: «широта, долгота».
+        // Чтобы не определять координаты центра карты вручную,
+        // воспользуйтесь инструментом Определение координат.
+        center: center,
+        // Уровень масштабирования. Допустимые значения:
+        // от 0 (весь мир) до 19.
+        zoom: 14,
+    });
+    let placemark = new ymaps.Placemark(
+        center,
+        {},
+        {
+            iconLayout: "default#image",
+            iconImageHref: "/images/marker_map.webp",
+            iconImageSize: [40, 40],
+            iconImageOffset: [-19, -44],
+        }
+    );
+
+    map.controls.remove("geolocationControl"); // удаляем геолокацию
+    map.controls.remove("searchControl"); // удаляем поиск
+    map.controls.remove("trafficControl"); // удаляем контроль трафика
+    map.controls.remove("typeSelector"); // удаляем тип
+    map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    map.controls.remove("rulerControl"); // удаляем контрол правил
+    map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+
+    map.geoObjects.add(placemark);
+}
+ymaps.ready(init);
 </script>
 
 <template>
@@ -141,9 +182,30 @@ import TitleImage from "@/Components/TitleImage.vue";
             <div
                 class="overflow-hidden shadow-sm sm:rounded-lg flex flex-col gap-20 p-10"
             >
-                <TitleImage />
-                <TitleImage />
-            </div>
+                <div
+                            class="p-6 text-gray-900 dark:text-gray-100 flex gap-14 flex-col h-min"
+                        >
+                            <iframe
+                                id="map"
+                                src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=152442756522"
+                                class="map w-screen -ml-6 sm:-ml-14 h-80 bg-teal-500 rounded-lg"
+                            ></iframe>
+                            <div
+                                class="flex flex-col md:flex-row justify-center gap-6"
+                            >
+                                <TextAdress
+                                    class="mt-7"
+                                    adress="улица Маяковского, 26, Белгород"
+                                    tel="+7-980-326-97-94"
+                                    tel2="31-25-05"
+                                    mail="gorodova.work49280@gmail.com"
+                                />
+
+                                <FormContact/>
+                            </div>
+                        </div>
+                </div>
+            
         </div>
         <div class="pt-12">
             <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
@@ -223,7 +285,8 @@ export default {
         CardProduct,
         CircleLogo,
         SecondaryButton,
-
+        TextAdress,
+        FormContact,
         TitleImage,
     },
 
@@ -264,5 +327,20 @@ export default {
 .card_product {
     opacity: 1;
     transform: translateY(0);
+}
+.map {
+    filter: brightness(70%);
+    -ms-filter: brightness(70%);
+    -webkit-filter: brightness(70%);
+    -moz-filter: brightness(70%);
+    -o-filter: brightness(70%);
+    transition: all 0.3s;
+}
+.map:hover {
+    filter: brightness(100%);
+    -ms-filter: brightness(100%);
+    -webkit-filter: brightness(100%);
+    -moz-filter: brightness(100%);
+    -o-filter: brightness(100%);
 }
 </style>
