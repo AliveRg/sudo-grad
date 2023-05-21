@@ -219,10 +219,16 @@ const showingNavigationDropdown = ref(false);
                         <div
                             class="h-full w-full text-zinc-700 dark:text-slate-100 text-sm sm:text-lg lg:text-2xl font-semibold"
                         >
-                            <p class="w-full h-full">
+                            <p class="w-full h-1/2">
                                 С @ Адвокатская контора <br />
                                 "Белгород"
                             </p>
+                            <iframe
+                                src="https://yandex.ru/sprav/widget/rating-badge/152442756522?type=rating"
+                                width="150"
+                                height="50"
+                                frameborder="0"
+                            ></iframe>
                         </div>
 
                         <TextAdress

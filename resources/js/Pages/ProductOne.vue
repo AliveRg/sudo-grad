@@ -110,11 +110,6 @@ ymaps.ready(init);
             class="relative max-w-9xl mx-auto sm:px-6 lg:px-8 mb-8 mt-24 flex gap-10 flex-wrap justify-center sm:justify-between"
         >
             <div v-for="card in cards" :key="card" class="w-72">
-                <div
-                    class="text-black backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center mb-5 h-10"
-                >
-                    {{ card.title }}
-                </div>
                 <CartHoverRotate
                     class="mx-auto"
                     :textFront="card.title"

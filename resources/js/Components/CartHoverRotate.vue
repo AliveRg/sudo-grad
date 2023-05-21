@@ -1,4 +1,9 @@
 <template>
+    <div
+        class="text-black dark:text-slate-100 backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center mb-5 h-10"
+    >
+        {{ textFront }}
+    </div>
     <div class="relative w-52 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80">
         <div
             class="CartHoverTranRot absolute w-52 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80"
@@ -20,7 +25,7 @@
             </div>
             <div class="BackHoverTranRot shadow-xl bg-currentBroun/25">
                 <div
-                    class="h-full p-3 md:p-6 lg:p-7 text-base sm:text-lg lg:text-2xl text-start tracking-tight flex items-start"
+                    class="h-full p-3 md:p-6 lg:p-7 text-black dark:text-slate-100 text-base sm:text-lg lg:text-2xl text-start tracking-tight flex items-start"
                 >
                     <p>{{ textBack }}</p>
                 </div>
