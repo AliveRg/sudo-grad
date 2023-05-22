@@ -4,7 +4,7 @@
     >
         {{ textFront }}
     </div>
-    <div class="relative w-52 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80">
+    <div class="relative w-52 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80 mx-auto">
         <div
             class="CartHoverTranRot absolute w-52 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80"
         >

@@ -126,7 +126,6 @@ ymaps.ready(init);
         >
             <div v-for="card in cards" :key="card" class="w-72">
                 <CartHoverRotate
-                    class="mx-auto"
                     :textFront="card.title"
                     :textBack="card.content"
                     :img__path="card.img"
