@@ -82,8 +82,8 @@ ymaps.ready(init);
                         <span class="text-currentCian">
                            Городова Елена Николаевна
                         </span>
-                        работает с арбитражными делами. Оказывает полное сопровождение дел Арбитражной практики во всех инстанциях.
-                        Вступление в дело на любой стадии.<br />
+                        Адвокатская помощь  по земельным и иным спорам в сфере недвижимости, предварительные анализ доказательств и оценка перспектив судебного земельного спора, разработка плана действий для успешного решения земельного вопроса, консультации по земельным делам.
+                        <br />
                         <br />
                         <br />
                         <span
@@ -286,24 +286,24 @@ export default {
         FormContact,    },
 
     methods: {
-        // handleSCroll(event) {
-        //     let card = document.querySelectorAll(".addClass");
-        //     for (let index = 0; index < card.length; index++) {
-        //         const element = card[index];
-        //         if (window.scrollY > 1200) {
-        //             element.classList.add("card_product");
-        //         }
-        //     }
-        // },
+        handleSCroll(event) {
+            let card = document.querySelectorAll(".addClass");
+            for (let index = 0; index < card.length; index++) {
+                const element = card[index];
+                if (window.scrollY > 1200) {
+                    element.classList.add("card_product");
+                }
+            }
+        },
         modulCard: function (event) {
             event.target.classList.toggle("hideCard");
             console.log(event.target);
             // some code to filter users
         },
     },
-    // created() {
-    //     window.addEventListener("scroll", this.handleSCroll);
-    // },
+    created() {
+        window.addEventListener("scroll", this.handleSCroll);
+    },
     destroyed() {
         window.removeEventListener("scroll", this.handleSCroll);
     },
