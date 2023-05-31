@@ -289,24 +289,24 @@ export default {
             let card = document.querySelectorAll(".addClass");
             for (let index = 0; index < card.length; index++) {
                 const element = card[index];
-                if (window.scrollY > 1200) {
+                console.log(window.scrollY);
+                if (window.scrollY > 300) {
                     element.classList.add("card_product");
+                    window.removeEventListener("scroll", this.handleSCroll);
                 }
             }
         },
         modulCard: function (event) {
             event.target.classList.toggle("hideCard");
             console.log(event.target);
+            window.removeEventListener("scroll", this.animateScroll);
+
             // some code to filter users
         },
     },
     created() {
         window.addEventListener("scroll", this.handleSCroll);
         window.addEventListener("scroll", this.animateScroll);
-    },
-    destroyed() {
-        window.removeEventListener("scroll", this.handleSCroll);
-        window.removeEventListener("scroll", this.animateScroll);
     },
 
     computed: {},

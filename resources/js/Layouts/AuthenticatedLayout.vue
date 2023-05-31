@@ -17,7 +17,7 @@ const showingNavigationDropdown = ref(false);
 
 <template>
     <div>
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="min-h-[40vh] bg-gray-100 dark:bg-gray-900">
             <nav
                 class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700"
             >
@@ -27,11 +27,9 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('welcome')">
-                                    <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
-                                    />
-                                </Link>
+                                <ApplicationLogo
+                                    class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
+                                />
                             </div>
 
                             <!-- Navigation Links -->
@@ -55,12 +53,6 @@ const showingNavigationDropdown = ref(false);
                                     :active="route().current('contact')"
                                 >
                                     Заказать консультацию
-                                </NavLink>
-                                <NavLink
-                                    :href="route('cases')"
-                                    :active="route().current('cases')"
-                                >
-                                    Кейсы
                                 </NavLink>
                             </nav>
                         </div>
@@ -135,12 +127,6 @@ const showingNavigationDropdown = ref(false);
                         >
                             Заказать консультацию
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink
-                            :href="route('cases')"
-                            :active="route().current('cases')"
-                        >
-                            Кейсы
-                        </ResponsiveNavLink>
                     </nav>
                 </div>
             </nav>
@@ -152,24 +138,24 @@ const showingNavigationDropdown = ref(false);
             >
                 <section class="relative overflow-hidden">
                     <div class="flex">
-                        <div class="h-screen w-full"></div>
+                        <div class="h-[40vh] w-full"></div>
                         <div
                             class="mirror hidden md:block mirror-0 z-20 overflow-hidden"
                         >
                             <div
-                                class="h-screen w-screen bg-[url('/images/title-page.jpeg')] dark:bg-[url('/images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
+                                class="h-[60vh] w-screen bg-[url('/images/title-page.jpeg')] dark:bg-[url('/images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
                             ></div>
                         </div>
                         <div
                             class="mirror hidden md:block mirror-1 w-full z-20 overflow-hidden"
                         >
                             <div
-                                class="h-screen w-screen bg-[url('/images/title-page.jpeg')] dark:bg-[url('/images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
+                                class="h-[60vh] w-screen bg-[url('/images/title-page.jpeg')] dark:bg-[url('/images/title-page-dark.jpeg')] bg-cover md:bg-120% md:bg-fixed bg-center bg-no-repeat"
                             ></div>
                         </div>
 
                         <div
-                            class="h-screen absolute w-full mx-auto bg-[url('/images/title-page.jpeg')] dark:bg-[url('/images/title-page-dark.jpeg')] bg-cover md:bg-fixed bg-center bg-no-repeat"
+                            class="h-[40vh] absolute w-full mx-auto bg-[url('/images/title-page.jpeg')] dark:bg-[url('/images/title-page-dark.jpeg')] bg-cover md:bg-fixed bg-center bg-no-repeat"
                         ></div>
                     </div>
 

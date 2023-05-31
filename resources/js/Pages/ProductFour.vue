@@ -291,8 +291,10 @@ export default {
             let card = document.querySelectorAll(".addClass");
             for (let index = 0; index < card.length; index++) {
                 const element = card[index];
-                if (window.scrollY > 1200) {
+                console.log(window.scrollY);
+                if (window.scrollY > 300) {
                     element.classList.add("card_product");
+                    window.removeEventListener("scroll", this.handleSCroll);
                 }
             }
         },
@@ -305,9 +307,7 @@ export default {
     created() {
         window.addEventListener("scroll", this.handleSCroll);
     },
-    destroyed() {
-        window.removeEventListener("scroll", this.handleSCroll);
-    },
+    
 
     computed: {},
 };

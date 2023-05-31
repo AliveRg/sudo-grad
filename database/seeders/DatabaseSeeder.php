@@ -16,8 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this -> call(ProductTableSeeder::class);
-        $this -> call(CasesSeeder::class);
+
+        $this->call(PostTableSeeder::class);
+        $this->command->info('Таблица постов блога загружена данными!');
         // Cases::factory(50) -> create(); 
     }
 }

@@ -17,7 +17,7 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_id' => $this ->faker->randomDigitNot(5),
+            'product_id' => $this ->faker->randomDigitNot(),
             'title' => $this ->faker->realText($maxNbChars = 25),
             'content' => $this ->faker->text($maxNbChars = 100),
             'price'=> $this ->faker->numberBetween($min = 1000, $max = 12000),

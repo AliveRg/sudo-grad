@@ -18,22 +18,21 @@ use App\Http\Controllers\CasesController;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome');
-})->name('welcome');
 
-Route::get('/dashboard',[ ProductController::class, 'index'] )->name('dashboard');
-Route::get('/cases',[ CasesController::class, 'pug'] )->name('cases');
+
+Route::get('/',[ ProductController::class, 'index'] )->name('dashboard');
+Route::get('/dashboard/cases', function () {
+    return Inertia::render('notPage');} )->name('cases');
 // Route::get('/cases/1',[ CasesController::class, 'CaseOne'] )->name('cases1');
 
 
 
 
-Route::get('/about', function () {
+Route::get('/dashboard/about', function () {
     return Inertia::render('About');
 })->name('about');
 
-Route::get('/contact', function () {
+Route::get('/dashboard/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
 Route::get('/dashboard/Page1',[ ProductController::class, 'Product'] )->name('products1');
