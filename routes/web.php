@@ -41,6 +41,7 @@ Route::get('/dashboard/Page3',[ ProductController::class, 'ProductThree'] )->nam
 Route::get('/dashboard/Page4',[ ProductController::class, 'ProductFour'] )->name('products4');
 Route::get('/dashboard/Page5',[ ProductController::class, 'ProductFive'] )->name('products5');
 Route::get('/dashboard/Page6',[ ProductController::class, 'ProductSix'] )->name('products6');
+Route::get('/dashboard/test',[ ProductController::class, 'test'] )->name('test');
 // Route::get('/2',[ ProductController::class, 'ProductTwo'] )->middleware(['auth', 'verified'])->name('products2');  странинца для зарегестрированного пользователя
 
 

@@ -17,16 +17,14 @@ const showingNavigationDropdown = ref(false);
 
 <template>
     <div>
-        <div class="min-h-[40vh] bg-gray-100 dark:bg-gray-900">
-            <nav
-                class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700"
-            >
+        <div class="min-h-[40vh]">
+            <nav class="bg-white dark:bg-slate-900">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
-                            <div class="shrink-0 flex items-center">
+                            <div class="shrink-0 flex items-center mr-32">
                                 <ApplicationLogo
                                     class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
                                 />
@@ -111,7 +109,17 @@ const showingNavigationDropdown = ref(false);
                     <nav class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink
                             :href="route('dashboard')"
-                            :active="route().current('dashboard')"
+                            :active="
+                                route().current(
+                                    'dashboard',
+                                    'products1',
+                                    'products2',
+                                    'products3',
+                                    'products4',
+                                    'products5',
+                                    'products6'
+                                )
+                            "
                         >
                             Услуги
                         </ResponsiveNavLink>
@@ -185,11 +193,13 @@ const showingNavigationDropdown = ref(false);
 
             <!-- Page Content -->
             <main>
-                <slot />
+                <div class="dark:bg-slate-900">
+                    <slot />
+                </div>
             </main>
             <footer>
                 <div
-                    class="relative mt-6 sm:mt-12 py-28 flex items-center justify-center h-min bg-cover md:bg-fixed bg-center bg-[url('/images/under_main-paralax.jpg')] dark:bg-[url('/images/under_main-paralax.jpg')]"
+                    class="relative py-28 flex items-center justify-center h-min bg-cover md:bg-fixed bg-center bg-[url('/images/under_main-paralax.jpg')] dark:bg-[url('/images/under_main-paralax.jpg')]"
                 >
                     <div
                         class="relative h-full p-6 grid grid-cols-1 gap-8 md:gap-20 md:grid-cols-2 bg-white/60 dark:bg-black/60 rounded-lg"

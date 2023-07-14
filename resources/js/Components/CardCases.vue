@@ -2,7 +2,7 @@
     <div @mouseover="hover = true" @mouseleave="hover = false" class="relative">
         <img
             :src="'./images/' + src"
-            alt=""
+            alt="Античные фигуры"
             class="rounded-t-lg drop-shadow-2xl"
         />
         <div

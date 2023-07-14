@@ -67,6 +67,13 @@ class ProductController extends Controller
         return Inertia::render('ProductSix', compact('products'));
         
     }
+    public function test() 
+    {
+     
+ 
+        return Inertia::render('TestPage');
+        
+    }
 
    
 

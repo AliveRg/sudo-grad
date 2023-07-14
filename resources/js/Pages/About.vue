@@ -11,10 +11,6 @@ function selectDate() {}
     <Head title="О компании" />
 
     <AuthenticatedLayout>
-        <template #header>
-            <h1>О Нас</h1>
-        </template>
-
         <div class="py-12">
             <div class="max-w-9xl mx-auto sm:px-4 lg:px-6">
                 <div class="overflow-hidden shadow-sm sm:rounded-lg">
@@ -29,42 +25,7 @@ function selectDate() {}
                                 img="09"
                             />
                         </div>
-                        <div class="flex flex-col gap-12">
-                            <!-- <div
-                                class="text-left text-2xl sm:text-3xl md:text-5xl lg:text-7xl w-full text-currentBroun"
-                            >
-                                <h1>Who we are</h1>
-                            </div> -->
-                            <div
-                                class="flex flex-col md:flex-row gap-8 justify-between ml-auto mr-16 sm:mr-32 text-left text-lg md:text-xl lg:text-2xl w-full"
-                            >
-                                <img
-                                    src="/images/ear-stiker.webp"
-                                    class="w-full sm:w-1/2 md:w-1/3 h-1/3 hover:rotate-180 ease-in-out duration-1000"
-                                />
-
-                                <div
-                                    class="flex flex-col justify-center w-full md:w-1/2 gap-8 dark:text-slate-200 text-base md:text-xl lg:text-3xl"
-                                >
-                                    <h3 class="max-h-72 overflow-y-auto">
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Ipsum, magnam aperiam
-                                        quibusdam soluta quasi et dolor porro
-                                        amet quo, distinctio ex sint aspernatur
-                                        nisi.
-                                    </h3>
-
-                                    <h3 class="max-h-72 overflow-y-auto">
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Ipsum, magnam aperiam
-                                        quibusdam soluta quasi et dolor porro
-                                        amet quo, distinctio ex sint aspernatur
-                                        nisi, expedita possimus enim repellendus
-                                        consequuntur veniam magni id!
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="flex flex-col gap-12"></div>
                         <TitleImage
                             text="Для тех, кто со мной ещё не знаком,
                         позвольте быстро представиться. Меня зовут Лариса

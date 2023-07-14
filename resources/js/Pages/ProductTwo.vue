@@ -53,11 +53,11 @@ ymaps.ready(init);
     <Head title="Адвокатская помощь" />
 
     <AuthenticatedLayout>
-        <template #header>
+        <!-- <template #header>
             <h1>Наследственные Споры</h1>
-        </template>
+        </template> -->
         <div
-            class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10 grid grid-rows-3 md:grid-cols-4 gap-2 md:gap-6"
+            class="max-w-9xl mx-auto sm:px-6 lg:px-8 grid grid-rows-3 md:grid-cols-4 gap-2 md:gap-6"
         >
             <div
                 class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun"
@@ -280,26 +280,26 @@ export default {
     },
 
     methods: {
-        handleSCroll(event) {
-            let card = document.querySelectorAll(".addClass");
-            for (let index = 0; index < card.length; index++) {
-                const element = card[index];
-                console.log(window.scrollY);
-                if (window.scrollY > 300) {
-                    element.classList.add("card_product");
-                    window.removeEventListener("scroll", this.handleSCroll);
-                }
-            }
-        },
-        modulCard: function (event) {
-            event.target.classList.toggle("hideCard");
-            console.log(event.target);
-            // some code to filter users
-        },
+        // handleSCroll(event) {
+        //     let card = document.querySelectorAll(".addClass");
+        //     for (let index = 0; index < card.length; index++) {
+        //         const element = card[index];
+        //         console.log(window.scrollY);
+        //         if (window.scrollY > 300) {
+        //             element.classList.add("card_product");
+        //             window.removeEventListener("scroll", this.handleSCroll);
+        //         }
+        //     }
+        // },
+        // modulCard: function (event) {
+        //     event.target.classList.toggle("hideCard");
+        //     console.log(event.target);
+        //     // some code to filter users
+        // },
     },
-    created() {
-        window.addEventListener("scroll", this.handleSCroll);
-    },
+    // created() {
+    //     window.addEventListener("scroll", this.handleSCroll);
+    // },
 
     computed: {},
 };
@@ -307,14 +307,16 @@ export default {
 
 <style>
 .addClass {
-    opacity: 0;
+    opacity: 1;
+    transform: translateY(0);
+    /* opacity: 0;
     transition: all ease-in;
-    transform: translateY(30%);
+    transform: translateY(30%); */
 }
 
 .card_product {
-    opacity: 1;
-    transform: translateY(0);
+    /* opacity: 1;
+    transform: translateY(0); */
 }
 .map {
     filter: brightness(70%);
