@@ -1,9 +1,4 @@
 <template>
-    <div
-        class="text-black dark:text-slate-100 backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center mb-5 h-10"
-    >
-        {{ textFront }}
-    </div>
     <div class="relative w-52 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80 mx-auto">
         <div
             class="CartHoverTranRot absolute w-52 h-64 md:w-64 md:h-72 lg:w-72 lg:h-80"
@@ -13,8 +8,13 @@
                     backgroundImage:
                         'url(/images/state/' + img__path + '.webp' + ')',
                 }"
-                class="FrontHoverTranRot rounded-lg shadow-xl bg-cover bg-center bg-no-repeat flex items-start md:text-2xl justify-center bg-currentBroun/25 text-center"
+                class="FrontHoverTranRot rounded-lg bg-cover bg-center bg-no-repeat flex md:text-2xl justify-center items-end text-center"
             >
+                <div
+                    class="rext-dff w-full text-white bg-black/70 backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center pb-3 min-h-[100px]"
+                >
+                    {{ textFront }}
+                </div>
                 <!-- <div
                     class="absolute w-1/5 h-full left-0 bottom-0 bg-currentCian/30 text-black backdrop-blur-md text-sm sm:text-base md:text-lg lg:text-2xl flex items-center justify-center leading-loose overflow-hidden"
                 >
@@ -23,7 +23,7 @@
                     </p>
                 </div> -->
             </div>
-            <div class="BackHoverTranRot shadow-xl bg-currentBroun/25">
+            <div class="BackHoverTranRot bg-currentBroun/25">
                 <div
                     class="h-full p-3 md:p-6 lg:p-7 text-black dark:text-slate-100 text-base sm:text-lg lg:text-2xl text-start tracking-tight flex items-start"
                 >
@@ -54,6 +54,9 @@ export default {
 
 .CartHoverTranRot:hover .FrontHoverTranRot {
     transform: perspective(600px) rotateY(-180deg);
+}
+.CartHoverTranRot:hover .rext-dff {
+    display: none;
 }
 
 .CartHoverTranRot:hover .BackHoverTranRot {
