@@ -1,0 +1,1 @@
+import{_ as a}from"./AuthenticatedLayout-3d2ef419.js";import{c as t,a as e,u as s,w as r,F as _,o as c,X as n,b as o}from"./app-734553e6.js";const l=o("h1",{class:""},"Наши Услуги",-1),u={data(){return{}}},h=Object.assign(u,{__name:"Articles",setup(i){return(m,d)=>(c(),t(_,null,[e(s(n),{title:"Адвокатская помощь"}),e(a,null,{header:r(()=>[l]),_:1})],64))}});export{h as default};
