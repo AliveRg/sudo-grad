@@ -3,7 +3,6 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import CardProduct from "@/Components/CardProduct.vue";
 import CircleLogo from "@/Components/CircleLogo.vue";
-import SecondaryButton from "@/Components/SecondaryButton.vue";
 import SvgImg1 from "@/Components/SvgImage.vue";
 import TitleImage from "@/Components/TitleImage.vue";
 </script>
@@ -15,6 +14,41 @@ import TitleImage from "@/Components/TitleImage.vue";
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 flex flex-col gap-12 md:gap-20"
         >
+            <section class="layers">
+                <img class="logo" src="/images/Logo.webp" alt="" />
+                <!-- <div class="layers__container">
+                <div
+                    class="layers__item layer-1"
+                    style="background-image: url(images/layer-1.png)"
+                ></div>
+                <div
+                    class="layers__item layer-2"
+                    style="background-image: url(images/layer-2.png)"
+                ></div>
+                <div class="layers__item layer-3">
+                    <div class="hero-content">
+                        <h3>Gorodova</h3>
+                        <div class="hero-content__p">
+                            Студия создания сайтов
+                        </div>
+                        <a href="/ready-html/index.html"
+                            ><button class="button-start">project</button></a
+                        >
+                    </div>
+                </div>
+                <div class="layers__item layer-4">
+                    <canvas class="rain"></canvas>
+                </div>
+                <div
+                    class="layers__item layer-5"
+                    style="background-image: url(images/layer-3.png)"
+                ></div>
+                <div
+                    class="layers__item layer-6"
+                    style="background-image: url(img/layer-6.png)"
+                ></div>
+            </div> -->
+            </section>
             <div
                 class="flex items-center justify-between text-gray-900 dark:text-gray-400"
             >
@@ -27,11 +61,12 @@ import TitleImage from "@/Components/TitleImage.vue";
                         Наши адвокаты - профессионалы с большим опытом и
                         результативностью.
                     </p>
-                    <div
+                    <a
+                        :href="route('contact')"
                         class="w-full sm:w-1/2 bg-[#9C9C1A] text-center px-[26px] py-[14px] text-white/80 rounded-3xl hover:bg-white hover:shadow-md hover:font-semibold hover:text-[#9C9C1A] transition-all duration-150"
                     >
                         Заказать консультацию
-                    </div>
+                    </a>
                 </div>
                 <div class="w-1/3 h-full hidden sm:block">
                     <SvgImg1 />
@@ -57,6 +92,25 @@ import TitleImage from "@/Components/TitleImage.vue";
                     :svg="true"
                 />
             </div>
+            <TitleImage
+                text="Для тех, кто со мной ещё не знаком,
+                        позвольте быстро представиться. Меня зовут Лариса
+                        Городова. Я адвокат с 1999 года. Получила два высших
+                        образования, в Воронежском государственном университете,
+                        классическое юридическое и международно-правовое в
+                        ВАВТе, город Москва. Адвокатом мечтала быть ещё в школе.
+                        Считаю, что мне повезло - я занимаюсь любимым делом. В
+                        начале адвокатской деятельности искала себя во всех
+                        направлениях, включая уголовные дела. Со временем
+                        определилась со специализацией. Сейчас это арбитраж,
+                        международный арбитраж и юридическое обслуживание
+                        среднего и малого бизнеса. Оказываю услуги и физическим
+                        лицам в области наследственного и жилищного права."
+                img="larisa"
+                title="Лариса Городова"
+                pretitle="Профессиональный адвокат"
+                :reverse="false"
+            />
             <div class="max-w-9xl mx-auto">
                 <div class="overflow-hidden sm:rounded-lg">
                     <div
@@ -92,12 +146,19 @@ import TitleImage from "@/Components/TitleImage.vue";
                         class="text-sm border-b-2 border-l-2 border-[#9C9C1A] rounded-lg w-full grid"
                     >
                         <div
-                            class="font-semibold text-base sm:text-2xl flex justify-between pr-8 pl-2"
+                            class="font-semibold text-base sm:text-2xl flex justify-between pr-[5px] pl-2"
                         >
                             <h3>{{ item.title }}</h3>
-                            <h2 class="text-md text-currentLight">
-                                {{ "0" + item.number }}
-                            </h2>
+                            <span class="inline-flex rounded-sm">
+                                <button
+                                    type="button"
+                                    class="inline-flex items-start px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
+                                >
+                                    <span class="material-symbols-outlined">
+                                        expand_more
+                                    </span>
+                                </button>
+                            </span>
                         </div>
                         <div class="overflow-hidden sm:text-lg pl-2">
                             <p
@@ -108,14 +169,6 @@ import TitleImage from "@/Components/TitleImage.vue";
                             </p>
                         </div>
                     </div>
-                    <span class="inline-flex rounded-sm">
-                        <button
-                            type="button"
-                            class="inline-flex items-start px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
-                        >
-                            <span class="material-symbols-outlined"> add </span>
-                        </button>
-                    </span>
                 </div>
             </div>
             <!-- <div
@@ -200,6 +253,82 @@ import TitleImage from "@/Components/TitleImage.vue";
 </template>
 
 <script>
+document.addEventListener("mousemove", (e) => {
+    Object.assign(document.documentElement, {
+        style: `
+		--move-x: ${(e.clientX - window.innerWidth / 2) * -0.005}deg;
+		--move-y: ${(e.clientY - window.innerHeight / 2) * 0.01}deg;
+		`,
+    });
+});
+
+// let canvas = document.getElementsByClassName("rain")[0];
+// canvas.width = window.innerWidth;
+// canvas.height = window.innerHeight;
+
+// let c = canvas.getContext("2d");
+
+// function randomNum(max, min) {
+//     return Math.floor(Math.random() * max) + min;
+// }
+
+// function RainDrops(x, y, endy, velocity, opacity) {
+//     this.x = x;
+//     this.y = y;
+//     this.endy = endy;
+//     this.velocity = velocity;
+//     this.opacity = opacity;
+
+//     this.draw = function () {
+//         c.beginPath();
+//         c.moveTo(this.x, this.y);
+//         c.lineTo(this.x, this.y - this.endy);
+//         c.lineWidth = 1;
+//         c.strokeStyle = "rgba(255, 255, 255, " + this.opacity + ")";
+//         c.stroke();
+//     };
+
+//     this.update = function () {
+//         let rainEnd = window.innerHeight + 100;
+//         if (this.y >= rainEnd) {
+//             this.y = this.endy - 100;
+//         } else {
+//             this.y = this.y + this.velocity;
+//         }
+//         this.draw();
+//     };
+// }
+
+// let rainArray = [];
+
+// for (let i = 0; i < 140; i++) {
+//     let rainXLocation = Math.floor(Math.random() * window.innerWidth) + 1;
+//     let rainYLocation = Math.random() * -500;
+//     let randomRainHeight = randomNum(10, 2);
+//     let randomSpeed = randomNum(20, 0.2);
+//     let randomOpacity = Math.random() * 0.55;
+//     rainArray.push(
+//         new RainDrops(
+//             rainXLocation,
+//             rainYLocation,
+//             randomRainHeight,
+//             randomSpeed,
+//             randomOpacity
+//         )
+//     );
+// }
+
+// function animateRain() {
+//     requestAnimationFrame(animateRain);
+//     c.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+//     for (let i = 0; i < rainArray.length; i++) {
+//         rainArray[i].update();
+//     }
+// }
+
+// animateRain();
+
 export default {
     data() {
         return {
@@ -248,7 +377,6 @@ export default {
     components: {
         CardProduct,
         CircleLogo,
-        SecondaryButton,
         TitleImage,
         SvgImg1,
     },
@@ -281,6 +409,100 @@ export default {
 </script>
 
 <style>
+:root {
+    --index: calc(1vw + 1vh);
+    --transition: 1.5s cubic-bezier(0.05, 0.5, 0, 1);
+}
+
+.logo {
+    --logo-size: calc(var(--index) * 7.8);
+    width: var(--logo-size);
+
+    background-repeat: no-repeat;
+    position: absolute;
+    left: calc(51% - calc(var(--logo-size) / 2));
+    top: calc(var(--index) * 2.8);
+    z-index: 1;
+}
+.layers {
+    perspective: 1000px;
+    overflow: hidden;
+}
+.layers__container {
+    height: 100vh;
+    min-height: 500px;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition);
+}
+.layers__item {
+    position: absolute;
+    inset: -5vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.layer-1 {
+    transform: translateZ(-55px) scale(1.06);
+}
+.layer-2 {
+    transform: translateZ(80px) scale(0.88);
+}
+.layer-3 {
+    transform: translateZ(180px) scale(0.8);
+}
+.layer-4 {
+    transform: translateZ(190px) scale(0.9);
+}
+.layer-5 {
+    transform: translateZ(300px) scale(0.9);
+}
+.layer-6 {
+    transform: translateZ(380px);
+}
+.hero-content {
+    font-size: calc(var(--index) * 2.9);
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: calc(var(--index) * -0.15);
+    line-height: 1.35em;
+    margin-top: calc(var(--index) * 5.5);
+}
+.hero-content span {
+    display: block;
+}
+.hero-content__p {
+    text-transform: none;
+    font-family: merriweather-italic-3d;
+    letter-spacing: normal;
+    font-size: calc(var(--index) * 0.73);
+    line-height: 3;
+}
+.button-start {
+    font-family: Arial;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: calc(var(--index) * 0.71);
+    letter-spacing: -0.02vw;
+    padding: calc(var(--index) * 0.7) calc(var(--index) * 1.25);
+    background-color: transparent;
+    color: #121111;
+    border-radius: 10em;
+    border: #f4ce0e 3px solid;
+    outline: none;
+    cursor: pointer;
+    margin-top: calc(var(--index) * 2.5);
+}
+.layer-4,
+.layer-5,
+.layer-6 {
+    pointer-events: none;
+}
+
 .addClass {
     opacity: 1;
     transform: translateY(0);

@@ -2,13 +2,13 @@
     <div
         class="text-zinc-600 dark:text-slate-100 text-sm sm:text-lg lg:text-2xl font-semibold flex items-start justify-start md:justify-center"
     >
-        <ul class="flex flex-col gap-5 p-2 rounded-lg">
+        <ul class="flex flex-col gap-5 rounded-lg">
             <li class="w-full flex gap-3 flex-col">
-                <div
+                <!-- <div
                     class="mb-3 sm:mb-5 font-bold text-2xl sm:text-3xl lg:text-4xl"
                 >
                     <p>Адрес</p>
-                </div>
+                </div> -->
                 <div class="flex gap-3 items-center">
                     <span class="material-symbols-outlined -mb-1">
                         pin_drop

@@ -91,45 +91,48 @@ ymaps.ready(init);
                     <div
                         class="p-6 text-gray-900 dark:text-gray-100 flex gap-14 flex-col h-min"
                     >
+                        <div
+                            class="flex flex-col md:flex-row justify-center gap-6"
+                        >
+                            <div class="pt-6 p-2 min-w-[330px]">
+                                <div
+                                    class="w-full flex items-center justify-between mb-3 sm:mb-5 font-bold text-2xl sm:text-3xl lg:text-4xl"
+                                >
+                                    <div class="" @click="toggleAdressfa">
+                                        <p :class="adress ? '' : 'underline'">
+                                            Москва
+                                        </p>
+                                    </div>
+                                    <div class="" @click="toggleAdresstr">
+                                        <p :class="adress ? 'underline' : ''">
+                                            Белгород
+                                        </p>
+                                    </div>
+                                </div>
+                                <TextAdress
+                                    v-if="adress"
+                                    class="mt-7"
+                                    adress="улица Маяковского, 26, Белгород"
+                                    tel="+7-980-326-97-94"
+                                    tel2="31-25-05"
+                                    mail="gorodova.work49280@gmail.com"
+                                />
+                                <TextAdress
+                                    v-if="!adress"
+                                    class="mt-7"
+                                    adress="г.Москва, Газетный пер.,9, стр. 2"
+                                    tel="+7 (916) 444-41-33"
+                                    tel2="31-25-05"
+                                    mail="info@gorodova-advokat.ru"
+                                />
+                            </div>
+                            <FormContact />
+                        </div>
                         <iframe
                             id="map"
                             src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=152442756522"
                             class="map w-screen -ml-6 sm:-ml-14 h-80 bg-teal-500 rounded-lg"
                         ></iframe>
-                        <div
-                            class="flex flex-col md:flex-row justify-center gap-6"
-                        >
-                            <TextAdress
-                                class="mt-7"
-                                adress="улица Маяковского, 26, Белгород"
-                                tel="+7-980-326-97-94"
-                                tel2="31-25-05"
-                                mail="gorodova.work49280@gmail.com"
-                            />
-
-                            <FormContact />
-                        </div>
-                    </div>
-
-                    <div
-                        class="p-6 relative text-gray-900 dark:text-gray-100 flex flex-col gap-14 h-min"
-                    >
-                        <div
-                            id="map_1"
-                            class="map w-screen -ml-6 sm:-ml-14 h-80 bg-teal-500 rounded-lg"
-                        ></div>
-                        <div
-                            class="flex flex-col md:flex-row justify-center gap-6"
-                        >
-                            <TextAdress
-                                class="mt-7"
-                                adress="г.Москва, Газетный пер.,9, стр. 2"
-                                tel="+7 (916) 444-41-33"
-                                tel2="31-25-05"
-                                mail="info@gorodova-advokat.ru"
-                            />
-                            <FormContact />
-                        </div>
                     </div>
                 </div>
             </div>
@@ -147,11 +150,22 @@ document.addEventListener("submit", (e) => {
 });
 
 export default {
+    data() {
+        return {
+            adress: true,
+        };
+    },
     components: {
         TextAdress,
         FormContact,
     },
     methods: {
+        toggleAdressfa() {
+            this.adress = false;
+        },
+        toggleAdresstr() {
+            this.adress = true;
+        },
         sendEmail() {
             emailjs
                 .sendForm(

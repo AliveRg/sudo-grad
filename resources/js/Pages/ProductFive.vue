@@ -5,8 +5,6 @@ import CardProduct from "@/Components/CardProduct.vue";
 import CircleLogo from "@/Components/CircleLogo.vue";
 import CartHoverRotate from "@/Components/CartHoverRotate.vue";
 
-import SecondaryButton from "@/Components/SecondaryButton.vue";
-
 import TitleImage from "@/Components/TitleImage.vue";
 import TextAdress from "@/Components/TextAdress.vue";
 import FormContact from "@/Components/FormContact.vue";
@@ -268,8 +266,6 @@ export default {
     components: {
         CardProduct,
         CircleLogo,
-        SecondaryButton,
-
         TextAdress,
         TitleImage,
         FormContact,

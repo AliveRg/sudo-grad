@@ -3,7 +3,7 @@
 </template>
 
 <style scoped>
-.filt {
+/* .filt {
     filter: drop-shadow(3px 3px 10px #f2ad4e);
-}
+} */
 </style>

@@ -7,9 +7,7 @@ import NavLink from "@/Components/NavLink.vue";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import CardProduct from "@/Components/CardProduct.vue";
 import CircleLogo from "@/Components/CircleLogo.vue";
-import HistoryButton from "@/Components/HistoryButton.vue";
 import { Link } from "@inertiajs/vue3";
-import SecondaryButton from "@/Components/SecondaryButton.vue";
 import TextAdress from "@/Components/TextAdress.vue";
 
 const showingNavigationDropdown = ref(false);
@@ -40,12 +38,12 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Услуги
                                 </NavLink>
-                                <NavLink
+                                <!-- <NavLink
                                     :href="route('about')"
                                     :active="route().current('about')"
                                 >
                                     О Нас
-                                </NavLink>
+                                </NavLink> -->
                                 <NavLink
                                     :href="route('contact')"
                                     :active="route().current('contact')"
@@ -123,12 +121,12 @@ const showingNavigationDropdown = ref(false);
                         >
                             Услуги
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink
+                        <!-- <ResponsiveNavLink
                             :href="route('about')"
                             :active="route().current('about')"
                         >
                             О Нас
-                        </ResponsiveNavLink>
+                        </ResponsiveNavLink> -->
                         <ResponsiveNavLink
                             :href="route('contact')"
                             :active="route().current('contact')"

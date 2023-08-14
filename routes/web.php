@@ -28,9 +28,9 @@ Route::get('/dashboard/cases', function () {
 
 
 
-Route::get('/dashboard/about', function () {
-    return Inertia::render('About');
-})->name('about');
+// Route::get('/dashboard/about', function () {
+//     return Inertia::render('About');
+// })->name('about');
 
 Route::get('/dashboard/contact', function () {
     return Inertia::render('Contact');

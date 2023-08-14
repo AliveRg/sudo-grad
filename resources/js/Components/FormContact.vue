@@ -60,9 +60,9 @@
             type="date"
             value="2023-07-22"
         />
-        <button @click="success" class="button">
+        <button @click="success" class="button w-full flex justify-end">
             <input
-                class="px-5 py-3 w-1/2 mx-auto mt-3 bg-[#9C9C1A] text-slate-800 dark:text-white dark:bg-[#9C9C1A] rounded-xl"
+                class="px-5 py-3 w-1/2 mt-3 bg-[#9C9C1A] text-slate-800 dark:text-white dark:bg-[#9C9C1A] rounded-xl"
                 type="submit"
                 value="Отправить"
             />
