@@ -21,8 +21,8 @@ use App\Http\Controllers\CasesController;
 
 
 Route::get('/',[ ProductController::class, 'index'] )->name('dashboard');
-Route::get('/dashboard/cases', function () {
-    return Inertia::render('notPage');} )->name('cases');
+// Route::get('/dashboard/cases', function () {
+//     return Inertia::render('notPage');} )->name('cases');
 // Route::get('/cases/1',[ CasesController::class, 'CaseOne'] )->name('cases1');
 
 
@@ -35,20 +35,19 @@ Route::get('/dashboard/cases', function () {
 Route::get('/dashboard/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
+
+Route::get('/dashboard/contact/privacy',function () {
+    return Inertia::render('Privacy');
+})->name('privacy');
 Route::get('/dashboard/Page1',[ ProductController::class, 'Product'] )->name('products1');
 Route::get('/dashboard/Page2',[ ProductController::class, 'ProductTwo'] )->name('products2');
 Route::get('/dashboard/Page3',[ ProductController::class, 'ProductThree'] )->name('products3');
 Route::get('/dashboard/Page4',[ ProductController::class, 'ProductFour'] )->name('products4');
 Route::get('/dashboard/Page5',[ ProductController::class, 'ProductFive'] )->name('products5');
 Route::get('/dashboard/Page6',[ ProductController::class, 'ProductSix'] )->name('products6');
-Route::get('/dashboard/test',[ ProductController::class, 'test'] )->name('test');
+// Route::get('/dashboard/test',[ ProductController::class, 'test'] )->name('test');
 // Route::get('/2',[ ProductController::class, 'ProductTwo'] )->middleware(['auth', 'verified'])->name('products2');  странинца для зарегестрированного пользователя
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
 require __DIR__.'/auth.php';

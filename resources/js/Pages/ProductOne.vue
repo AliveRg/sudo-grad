@@ -58,12 +58,9 @@ ymaps.ready(init);
             <div
                 class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun"
             >
-                <p>
-                    <span class="text-currentCian"
-                        >Квалифицированная помощь</span
-                    >
-                    на любой стадии уголовного дела
-                </p>
+                <h1>
+                    Квалифицированная помощь на любой стадии уголовного дела
+                </h1>
             </div>
 
             <div

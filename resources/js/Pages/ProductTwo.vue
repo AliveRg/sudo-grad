@@ -61,15 +61,10 @@ ymaps.ready(init);
             <div
                 class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun"
             >
-                <p>
-                    Адвокат
-                    <span class="text-currentCian">
-                        Городова Елена Николаевна </span
-                    >занимается наследственными делами и поможет
-                    <span class="text-currentCian">
-                        вступить или оспорить наследство.
-                    </span>
-                </p>
+                <h1>
+                    Адвокат Городова Елена Николаевна занимается наследственными
+                    делами и поможет вступить или оспорить наследство.
+                </h1>
             </div>
 
             <div

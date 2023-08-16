@@ -16,38 +16,6 @@ import TitleImage from "@/Components/TitleImage.vue";
         >
             <section class="layers">
                 <img class="logo" src="/images/Logo.webp" alt="" />
-                <!-- <div class="layers__container">
-                <div
-                    class="layers__item layer-1"
-                    style="background-image: url(images/layer-1.png)"
-                ></div>
-                <div
-                    class="layers__item layer-2"
-                    style="background-image: url(images/layer-2.png)"
-                ></div>
-                <div class="layers__item layer-3">
-                    <div class="hero-content">
-                        <h3>Gorodova</h3>
-                        <div class="hero-content__p">
-                            Студия создания сайтов
-                        </div>
-                        <a href="/ready-html/index.html"
-                            ><button class="button-start">project</button></a
-                        >
-                    </div>
-                </div>
-                <div class="layers__item layer-4">
-                    <canvas class="rain"></canvas>
-                </div>
-                <div
-                    class="layers__item layer-5"
-                    style="background-image: url(images/layer-3.png)"
-                ></div>
-                <div
-                    class="layers__item layer-6"
-                    style="background-image: url(img/layer-6.png)"
-                ></div>
-            </div> -->
             </section>
             <div
                 class="flex items-center justify-between text-gray-900 dark:text-gray-400"
@@ -57,10 +25,10 @@ import TitleImage from "@/Components/TitleImage.vue";
                         Работайте только с <br />
                         проверенными специалистами.
                     </p>
-                    <p class="w-1/2 text-lg font-semibold">
+                    <h1 class="w-1/2 text-lg font-semibold">
                         Наши адвокаты - профессионалы с большим опытом и
                         результативностью.
-                    </p>
+                    </h1>
                     <a
                         :href="route('contact')"
                         class="w-full sm:w-1/2 bg-[#9C9C1A] text-center px-[26px] py-[14px] text-white/80 rounded-3xl hover:bg-white hover:shadow-md hover:font-semibold hover:text-[#9C9C1A] transition-all duration-150"

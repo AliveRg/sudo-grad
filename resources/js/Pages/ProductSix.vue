@@ -63,12 +63,12 @@ ymaps.ready(init);
             <div
                 class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun "
             >
-                <p>
+                <h1>
                   От   
-                    <span class="text-currentCian"> претензии </span
-                    >до
-                    <span class="text-currentCian"> успешного  </span>судебного решения.
-                </p>
+                     претензии
+                    до
+                    успешного судебного решения.
+                </h1>
             </div>
 
             <div
@@ -134,43 +134,7 @@ ymaps.ready(init);
                 />
             </div>
 
-            <!-- <div class="w-[150%] h-[23rem] md:h-[25rem] lg:h-[50rem] my-5">
-                <div class="cube-wrap flex">
-                    <div class="cube absolute -right-80 flex gap-16 py-5 px-16">
-                        <div
-                                class="fixed text-md lg:text-2xl -top-12 lg:-top-16 text-white  font-sans"
-                            >
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quam recusandae odit
-                                accusantium vitae, aliquid sit totam unde
-                                tempora saepe praesentium. Lorem ipsum dolor sit
-                                amet consectetur, adipisicing elit. Quasi saepe
-                                inventor.
-                            </div> 
-                        <div
-                            v-for="card in cards"
-                            :key="card"
-                            class="front w-44 h-56 lg:w-80 lg:h-96 hover:scale-125 duration-150 shadow-xl rounded-lg flex flex-row-reverse items-center justify-center rotate-y-4"
-                            @click.stop="modulCard($event)"
-                        >
-                            <CartHoverRotate
-                                textFront="Сопровождение"
-                                textBack="Сопровождение при допросе клиента в качестве свидетеля по уголовному делу."
-                            />
-                        </div>
-                        <div
-                                class="fixed text-md lg:text-2xl -bottom-14 lg:-bottom-16 text-white  font-sans"
-                            >
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quam recusandae odit
-                                accusantium vitae, aliquid sit totam unde
-                                tempora saepe praesentium. Lorem ipsum dolor sit
-                                amet consectetur, adipisicing elit. Quasi saepe
-                                inventor.
-                            </div>
-                    </div>
-                </div>
-            </div> -->
+           
         </div>
 
         <div class="max-w-9xl mx-auto sm:px-6 lg:px-8 mt-10">
@@ -282,28 +246,7 @@ export default {
         TitleImage,
         FormContact,    },
 
-    methods: {
-        // handleSCroll(event) {
-        //     let card = document.querySelectorAll(".addClass");
-        //     for (let index = 0; index < card.length; index++) {
-        //         const element = card[index];
-        //         console.log(window.scrollY);
-        //         if (window.scrollY > 300) {
-        //             element.classList.add("card_product");
-        //             window.removeEventListener("scroll", this.handleSCroll);
-        //         }
-        //     }
-        // },
-        // modulCard: function (event) {
-        //     event.target.classList.toggle("hideCard");
-        //     console.log(event.target);
-        //     // some code to filter users
-        // },
-    },
-    // created() {
-    //     window.addEventListener("scroll", this.handleSCroll);
-    // },
-
+   
 
     computed: {},
 };
@@ -318,10 +261,6 @@ export default {
     transform: translateY(30%); */
 }
 
-.card_product {
-    /* opacity: 1;
-    transform: translateY(0); */
-}
 .map {
     filter: brightness(70%);
     -ms-filter: brightness(70%);

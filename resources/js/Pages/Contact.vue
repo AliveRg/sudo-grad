@@ -99,32 +99,48 @@ ymaps.ready(init);
                                     class="w-full flex items-center justify-between mb-3 sm:mb-5 font-bold text-2xl sm:text-3xl lg:text-4xl"
                                 >
                                     <div class="" @click="toggleAdressfa">
-                                        <p :class="adress ? '' : 'underline'">
+                                        <p
+                                            :class="
+                                                adress
+                                                    ? 'opacity-50'
+                                                    : 'underline'
+                                            "
+                                        >
                                             Москва
                                         </p>
                                     </div>
                                     <div class="" @click="toggleAdresstr">
-                                        <p :class="adress ? 'underline' : ''">
+                                        <p
+                                            :class="
+                                                adress1
+                                                    ? 'opacity-50 '
+                                                    : ' underline'
+                                            "
+                                        >
                                             Белгород
                                         </p>
                                     </div>
                                 </div>
-                                <TextAdress
-                                    v-if="adress"
-                                    class="mt-7"
-                                    adress="улица Маяковского, 26, Белгород"
-                                    tel="+7-980-326-97-94"
-                                    tel2="31-25-05"
-                                    mail="gorodova.work49280@gmail.com"
-                                />
-                                <TextAdress
-                                    v-if="!adress"
-                                    class="mt-7"
-                                    adress="г.Москва, Газетный пер.,9, стр. 2"
-                                    tel="+7 (916) 444-41-33"
-                                    tel2="31-25-05"
-                                    mail="info@gorodova-advokat.ru"
-                                />
+                                <Transition>
+                                    <TextAdress
+                                        v-if="adress"
+                                        class="mt-7"
+                                        adress="улица Маяковского, 26, Белгород"
+                                        tel="+7-980-326-97-94"
+                                        tel2="31-25-05"
+                                        mail="gorodova.work49280@gmail.com"
+                                    />
+                                </Transition>
+                                <Transition>
+                                    <TextAdress
+                                        v-if="adress1"
+                                        class="mt-7"
+                                        adress="г.Москва, Газетный пер.,9, стр. 2"
+                                        tel="+7 (916) 444-41-33"
+                                        tel2="31-25-05"
+                                        mail="info@gorodova-advokat.ru"
+                                    />
+                                </Transition>
                             </div>
                             <FormContact />
                         </div>
@@ -153,6 +169,7 @@ export default {
     data() {
         return {
             adress: true,
+            adress1: false,
         };
     },
     components: {
@@ -162,9 +179,15 @@ export default {
     methods: {
         toggleAdressfa() {
             this.adress = false;
+            setTimeout(() => {
+                this.adress1 = true;
+            }, 500);
         },
         toggleAdresstr() {
-            this.adress = true;
+            this.adress1 = false;
+            setTimeout(() => {
+                this.adress = true;
+            }, 500);
         },
         sendEmail() {
             emailjs
@@ -206,5 +229,14 @@ export default {
     -webkit-filter: brightness(100%);
     -moz-filter: brightness(100%);
     -o-filter: brightness(100%);
+}
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
 }
 </style>

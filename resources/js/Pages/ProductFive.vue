@@ -57,14 +57,12 @@ ymaps.ready(init);
             class="max-w-9xl mx-auto sm:px-6 lg:px-8 grid grid-rows-3 md:grid-cols-4 gap-2 md:gap-6"
         >
             <div
-                class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentCian"
+                class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun"
             >
-                <p>
-                    <span class="text-currentBroun">
-                        Городова Елена Николаевна </span
-                    >поможет урегулировать семейный спор
-                    <span class="text-currentBroun"> любой сложности.</span>
-                </p>
+                <h1>
+                    Городова Елена Николаевна поможет урегулировать семейный
+                    спор любой сложности.
+                </h1>
             </div>
 
             <div

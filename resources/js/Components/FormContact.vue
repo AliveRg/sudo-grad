@@ -1,8 +1,10 @@
+<script setup></script>
+
 <template>
     <form
-        class="w-full flex flex-col md:w-1/2"
+        class="w-full flex flex-col md:w-1/2 gap-3"
         ref="form"
-        @submit.prevent="sendEmail"
+        @submit.prevent="sendMail"
     >
         <label
             class="after:content-['*'] after:ml-0.5 after:text-red-500"
@@ -60,18 +62,30 @@
             type="date"
             value="2023-07-22"
         />
-        <button @click="success" class="button w-full flex justify-end">
-            <input
-                class="px-5 py-3 w-1/2 mt-3 bg-[#9C9C1A] text-slate-800 dark:text-white dark:bg-[#9C9C1A] rounded-xl"
-                type="submit"
-                value="Отправить"
-            />
-        </button>
+        <div class="w-full flex justify-between items-center flex-wrap">
+            <button @click="success" class="button w-fit">
+                <input
+                    class="px-5 py-3 bg-[#9C9C1A] text-slate-800 dark:text-white dark:bg-[#9C9C1A] rounded-xl"
+                    type="submit"
+                    value="Отправить"
+                />
+            </button>
+            <div class="flex items-center h-full min-w-fit">
+                <a
+                    :href="route('privacy')"
+                    class="underline text-sky-600 cursor-pointer"
+                >
+                    Политика конфиденциальности
+                </a>
+            </div>
+        </div>
     </form>
 </template>
 
 <script>
-import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
+import { ref } from "vue";
+
 document.addEventListener("submit", (e) => {
     // Отключаем событие по умолчанию
 
@@ -80,22 +94,23 @@ document.addEventListener("submit", (e) => {
 });
 
 export default {
-    methods: {
-        sendEmail() {
+    setup() {
+        const form = ref(null);
+        const inputFieldReset = ref(null);
+
+        const sendMail = () => {
             emailjs
                 .sendForm(
-                    "service_8r2js99",
+                    "service_mw6ouzg",
                     "template_q6vr08j",
-                    this.$refs.form,
+                    form.value,
                     "HApXh8Y7mK6mSQcK3"
                 )
                 .then(
                     (result) => {
                         const contactForm = document.querySelectorAll("form");
-
                         console.log("SUCCESS!", result.text);
                         const contactForm1 = document.querySelectorAll("form1");
-
                         console.log("SUCCESS!", result.text);
                         alert("Success!");
                     },
@@ -104,7 +119,12 @@ export default {
                         alert("FAILED!");
                     }
                 );
-        },
+        };
+        return {
+            form,
+            inputFieldReset,
+            sendMail,
+        };
     },
 };
 </script>

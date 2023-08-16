@@ -61,12 +61,9 @@ ymaps.ready(init);
             <div
                 class="p-3 py-5 col-span-2 font-bold text-2xl md:text-4xl text-currentBroun "
             >
-                <p>
-                  От   
-                    <span class="text-currentCian"> претензии </span
-                    >до
-                    <span class="text-currentCian"> успешного  </span>судебного решения.
-                </p>
+                <h1>
+                  От претензии до успешного удебного решения.
+                </h1>
             </div>
 
             <div
